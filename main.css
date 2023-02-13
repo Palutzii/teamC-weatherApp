@@ -1,1 +1,19 @@
 /*# sourceMappingURL=main.css.map */
+
+.hourlyInfo {
+    display: flex;
+}
+
+.info {
+    display: flex;
+}
+
+.info1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.hourlyElementDiv {
+    display: flex;
+    
+}
