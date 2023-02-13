@@ -21,4 +21,85 @@
   font-style: normal;
   font-weight: 700;
   src: url("../fonts/inter-v12-latin-700.woff2") format("woff2"), url("../fonts/inter-v12-latin-700.woff") format("woff"); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+@media (min-width: 740px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 980px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+h2 {
+  font-size: 1.625rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+@media (min-width: 740px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 980px) {
+  h2 {
+    font-size: 2.25rem;
+  }
+}
+
+h3 {
+  font-size: 1.375rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+@media (min-width: 740px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 980px) {
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+
+h4 {
+  font-size: 1.125rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+nav ul {
+  list-style: none;
+}
+
+.content-wrapper {
+  max-width: 67.5rem;
+  padding: 0 1rem;
+  margin: auto;
+  position: relative;
 }/*# sourceMappingURL=main.css.map */
