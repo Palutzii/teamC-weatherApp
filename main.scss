@@ -1,1 +1,5 @@
 // Här importerar vi alla partials och componenter scss filer
+@import "partials/fonts";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/reset";
