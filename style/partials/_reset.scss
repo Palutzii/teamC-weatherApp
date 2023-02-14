@@ -68,3 +68,8 @@ nav {
   margin: auto;
   position: relative;
 }
+
+body {
+  background: linear-gradient(to bottom, $mainColor, #fff);
+  background-repeat: no-repeat;
+}
