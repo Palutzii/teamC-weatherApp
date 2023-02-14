@@ -5,5 +5,5 @@ let fourthBtn = document.querySelector("fourthBtn");
 let fifthBtn = document.querySelector("fifthBtn");
 let sixthBtn = document.querySelector("sixthBtn");
 let seventhBtn = document.querySelector("seventhBtn");
-
+let dayBtn= document.querySelectorAll("button");
 
