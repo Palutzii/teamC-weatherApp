@@ -1,14 +1,5 @@
-
-
 // hittar och skriver ut koordinater för enhetens plats
 import {myLocation} from "./javascript/myLocation.js";
-
-myLocation();
-
-console.log("hej")
-
-// tillfällig array 
-
 import { getWeather } from "./javascript/getWeather.js";
 
 let latitude, longitude
@@ -21,7 +12,6 @@ myLocation((position) => {
 });
 
 // tillfällig array
-
 import { dataArray } from "./javascript/dataArray.js";
 //loggar array
 console.log(dataArray);
@@ -37,3 +27,4 @@ runHourlyElement();
 
 import {imgIcons} from "./javascript/hourlyElement.js";
 imgIcons();
+
