@@ -130,7 +130,7 @@ export let dataArray = [
             apparentTemp: "-1.8", //upplevd temp
             rain: "0.2",
             temp: "2.3",
-            weathercode: "3", //väderkod för timmen (ikon)
+            weathercode: "4", //väderkod för timmen (ikon)
             windDirection: "264",
             windSpeed: "3.9",
             },
