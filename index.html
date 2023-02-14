@@ -1,29 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Weather right now</title>
     <script type="module" src="main.js" defer></script>
   </head>
   <body>
+    <!-- <header>
+      <div class="navbar">
+        <nav>
+          <div class="logo">
+            <a href="index.html">
+              <img
+                src="img_sun.jpg"
+                alt="placeholder sun"
+                width="50"
+                height="60"> 
+              -->
+
     <header class="header">
       <div class="navbar">
         <nav>
           <div class="logo-wrapper">
+            
             <a href="index.html">
               <img
                 class="logo"
                 src="content/images/Logo-sun.svg"
-                alt="placeholder sun"
-            /></a>
+                alt="placeholder sun"/></a>
           </div>
         </nav>
       </div>
     </header>
-
+    <div><div>Väder</div><div>Högst Lägst</div></div>
     <div class="main-daydiv">
     </div>
     <h3>Övrig Info</h3>
@@ -52,6 +72,29 @@
       <p>1011 hPa</p>
     </article>
 
+
+    <h2 class="hourlyWeekday">Måndag</h2>
+
+    <!-- here is the code for the hourly weather -->
+
+    <div class="hourlyElement">
+      <div class="hourlyInfo">
+        <span class="timeInfo">Tid</span>
+        <div class="infoDiv" style="display: flex">
+          <div class="hourlyWind">
+            <span>Vind</span>
+            <span>(m/s)</span>
+          </div>
+          <div>
+            <span>Regn</span>
+            <span>(mm)</span>
+          </div>
+          <span>Väder</span>
+          <span>Temp</span>
+        </div>
+      </div>
+      <div class="hourlyWeatherDiv"></div>
+    </div>
     <footer>
       <div class="copyright">
         <p>©copy right lorem-2023</p>
