@@ -132,23 +132,70 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px;
-  gap: 82px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
+  padding: 8px 10px;
+  gap: 48px;
+  position: relative;
+  width: 100%;
   border: none;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
   color: #fff;
-  height: 72px;
 }
-.main-daydiv button div:first-child {
+.main-daydiv button :last-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.main-daydiv button :last-child :last-child {
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: 1rem;
+}
+.main-daydiv button :last-child :last-child :first-child {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 700;
 }
 
+.dayBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 184px;
+  width: 100%;
+  gap: 20px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+.dayBtn h3:nth-child(2) {
+  text-align: right;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
 
+.weather-temp-titles {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.5rem;
+  margin-right: 8px;
+  font-size: 0.75rem;
+  padding: 8px 1px 8px 8px;
+}
 
-/*# sourceMappingURL=main.css.map */
-
-
-
-
+.temp-high-low {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.temp-high-low p:first-child {
+  border-bottom: 1px solid #fff;
+  margin-bottom: 1px;
+  padding-bottom: 1px;
+}/*# sourceMappingURL=main.css.map */
