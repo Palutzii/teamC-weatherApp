@@ -117,7 +117,7 @@ body {
   margin: auto;
 }
 .logo-wrapper .logo {
-  width: 180px;
+  width: 70px;
 }
 
 nav {
@@ -137,6 +137,7 @@ nav {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
   border: none;
   color: #fff;
+  height: 72px;
 }
 .main-daydiv button div:first-child {
   font-family: "Inter", Arial, Helvetica, sans-serif;
