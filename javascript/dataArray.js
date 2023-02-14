@@ -18,7 +18,7 @@ export let dataArray = [
             apparentTemp: "-1.8", //upplevd temp
             rain: "0.2",
             temp: "2.3",
-            weathercode: "3", //väderkod för timmen (ikon)
+            weathercode: "0", //väderkod för timmen (ikon)
             windDirection: "264",
             windSpeed: "3.9",
             },
@@ -28,7 +28,7 @@ export let dataArray = [
             temp: "2.6",
             weathercode: "3",
             windDirection: "264",
-            windSpeed: "3.9",
+            windSpeed: "3.5",
             },
             {
             apparentTemp: "-0.8",
@@ -36,7 +36,7 @@ export let dataArray = [
             temp: "0.3",
             weathercode: "3",
             windDirection: "264",
-            windSpeed: "5",
+            windSpeed: "5.3",
             },
             {
             apparentTemp: "-1.8", //upplevd temp
@@ -130,7 +130,7 @@ export let dataArray = [
             apparentTemp: "-1.8", //upplevd temp
             rain: "0.2",
             temp: "2.3",
-            weathercode: "3", //väderkod för timmen (ikon)
+            weathercode: "4", //väderkod för timmen (ikon)
             windDirection: "264",
             windSpeed: "3.9",
             },
@@ -202,7 +202,7 @@ export let dataArray = [
             apparentTemp: "-1.8", //upplevd temp
             rain: "0.2",
             temp: "2.3",
-            weathercode: "3", //väderkod för timmen (ikon)
+            weathercode: "0", //väderkod för timmen (ikon)
             windDirection: "264",
             windSpeed: "3.9",
             },
@@ -228,7 +228,7 @@ export let dataArray = [
             apparentTemp: "-1.8", //upplevd temp
             rain: "0.2",
             temp: "2.3",
-            weathercode: "3", //väderkod för timmen (ikon)
+            weathercode: "1", //väderkod för timmen (ikon)
             windDirection: "264",
             windSpeed: "3.9",
             },
@@ -1276,7 +1276,7 @@ export let dataArray = [
         [
             {
             apparentTemp: "-1.8", //upplevd temp
-            rain: "0.2",
+            rain: "0.",
             temp: "2.3",
             weathercode: "3", //väderkod för timmen (ikon)
             windDirection: "264",
