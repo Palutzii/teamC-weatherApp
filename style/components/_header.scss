@@ -1,0 +1,17 @@
+.header {
+}
+
+.logo-wrapper {
+  display: flex;
+  a {
+    display: inline-block;
+    margin: auto;
+  }
+  .logo {
+    width: 180px;
+  }
+}
+
+nav {
+  padding: 1rem;
+}

@@ -107,4 +107,19 @@ nav ul {
 body {
   background: linear-gradient(to bottom, #20a2be, #fff);
   background-repeat: no-repeat;
+}
+
+.logo-wrapper {
+  display: flex;
+}
+.logo-wrapper a {
+  display: inline-block;
+  margin: auto;
+}
+.logo-wrapper .logo {
+  width: 180px;
+}
+
+nav {
+  padding: 1rem;
 }/*# sourceMappingURL=main.css.map */
