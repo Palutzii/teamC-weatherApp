@@ -6,3 +6,4 @@ export async function getWeather(latitude, longitude) {
     weatherData = data;
     console.log(weatherData)
 }
+

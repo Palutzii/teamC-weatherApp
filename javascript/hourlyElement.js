@@ -97,7 +97,7 @@ export const runHourlyElement = () => {
             
             //---------------------- NEXT DAY CODE -------------------------------
 
-// AIzaSyAjoZIsItF0afNBSe_nMp9Mlw5fbZdCoBc
+
 
 
 
