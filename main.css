@@ -25,6 +25,7 @@
 * {
   padding: 0;
   margin: 0;
+  color: #fff;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -105,8 +106,7 @@ nav ul {
 }
 
 body {
-  background: linear-gradient(to bottom, #20a2be, #fff);
-  background-repeat: no-repeat;
+  background-color: #20a2be;
 }
 
 .logo-wrapper {
@@ -122,4 +122,24 @@ body {
 
 nav {
   padding: 1rem;
+}
+
+.main-daydiv {
+  display: flex;
+  flex-direction: column;
+}
+.main-daydiv button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  gap: 82px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
+  border: none;
+  color: #fff;
+}
+.main-daydiv button div:first-child {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
 }/*# sourceMappingURL=main.css.map */
