@@ -14,3 +14,6 @@ console.log(dataArray);
 //Kör hourlyElement.js
 import {runHourlyElement} from "./javascript/hourlyElement.js";
 runHourlyElement();
+
+import {imgIcons} from "./javascript/hourlyElement.js";
+imgIcons();

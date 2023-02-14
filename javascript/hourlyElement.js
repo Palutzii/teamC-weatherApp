@@ -4,34 +4,73 @@ import { dataArray } from "./dataArray.js";
 let hourlyWeekday = document.querySelector(".hourlyWeekday");
 let hourlyWeatherDiv = document.querySelector(".hourlyWeatherDiv");
 
+export const imgIcons = () => {
+    let cloudBolt = `<img src="content/icons/cloud-bolt.svg" alt="cloudBolt">`;
+    let cloudRain = `<img src="content/icons/cloud-rain.svg" alt="cloudBolt">`;
+    let cloudShowersHeavy = `<img src="content/icons/cloud-showers-heavy.svg" alt="cloudBolt">`;
+    let cloudSunRain = `<img src="content/icons/cloud-sun-rain.svg" alt="cloudBolt">`;
+    let cloudSun = `<img style="width: 30px" src="content/icons/cloud-sun.svg" alt="cloudBolt">`;
+    let cloud = `<img src="content/icons/cloud.svg" alt="cloudBolt">`;
+    let snowflake = `<img src="content/icons/snowflake.svg" alt="cloudBolt">`;
+    let sun = `<img style="width: 25px" src="content/icons/sun.svg" alt="cloudBolt">`;
+    let tornado = `<img src="content/icons/tornado.svg" alt="cloudBolt">`;
+}
+
+
+
 export const runHourlyElement = () => {
     
+    let cloudBolt = `<img src="content/icons/cloud-bolt.svg" alt="cloudBolt">`;
+    let cloudRain = `<img src="content/icons/cloud-rain.svg" alt="cloudBolt">`;
+    let cloudShowersHeavy = `<img src="content/icons/cloud-showers-heavy.svg" alt="cloudBolt">`;
+    let cloudSunRain = `<img src="content/icons/cloud-sun-rain.svg" alt="cloudBolt">`;
+    let cloudSun = `<img style="width: 30px" src="content/icons/cloud-sun.svg" alt="cloudBolt">`;
+    let cloud = `<img src="content/icons/cloud.svg" alt="cloudBolt">`;
+    let snowflake = `<img src="content/icons/snowflake.svg" alt="cloudBolt">`;
+    let sun = `<img style="width: 25px" src="content/icons/sun.svg" alt="cloudBolt">`;
+    let tornado = `<img src="content/icons/tornado.svg" alt="cloudBolt">`;
   
-    //     // let currentTime = 24 - new Date().getHours();
-    
-   
+        // let currentTime = 24 - new Date().getHours();
+
+
+            let weathericon = "";
 
             let hourlyData = dataArray[0].hourly;
             let currentTimeStamp = new Date().getHours();
             var oneDate = moment(new Date(), 'DD-MM-YYYY');
             var dayName = oneDate.format('dddd');
             console.log(currentTimeStamp)
-            hourlyWeekday.innerHTML = `${dayName}`;
+            hourlyWeekday.innerHTML = `${dataArray[0].name}`;
+            
+            
             
             for (let i = currentTimeStamp; i < 24; i++) {
-              let currentHour = hourlyData[i];
-              currentTimeStamp++
-              let formattedHour = (currentTimeStamp - 1 < 10 ? '0' : '') + (currentTimeStamp - 1);
+                let currentHour = hourlyData[i];
+                currentTimeStamp++
+                let formattedHour = (currentTimeStamp - 1 < 10 ? '0' : '') + (currentTimeStamp - 1);
+                
+
+                
+                if (currentHour.weathercode == 0) {
+                   weathericon = sun;
+                   
+                }
+                
+                else if (currentHour.weathercode > 0 && currentHour.weathercode < 4) {
+                     weathericon = cloudSun;
+                    
+                }
               
+
               hourlyWeatherDiv.innerHTML += `<div class="hourlyElementDiv" style="display: flex; gap: 20px">
                 <span class="hourlyElementDiv__time info">${formattedHour}.00</span>
                 <div class="hourlyDayDiv" style="display: flex; gap: 20px">
                 <span class="hourlyElementDiv__Wind info">${currentHour.windSpeed}</span>
                 <span class="hourlyElementDiv__Rain info">${currentHour.rain}</span>
-                <span class="hourlyElementDiv__Weather info">${currentHour.weathercode}</span>
+                ${weathericon}
                 <span class="hourlyElementDiv__Temp info">${currentHour.temp}</span>
                 </div>
-                </div>`;
+                </div>`;    
             }
 
 
@@ -64,3 +103,5 @@ export const runHourlyElement = () => {
 //           </div>`;
       
 //   }
+
+
