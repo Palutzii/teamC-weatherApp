@@ -7,52 +7,36 @@ let hourlyWeatherDiv = document.querySelector(".hourlyWeatherDiv");
 export const runHourlyElement = () => {
     
   
+    //     // let currentTime = 24 - new Date().getHours();
+    
+   
 
             let hourlyData = dataArray[0].hourly;
-            // let currentTime = 24 - new Date().getHours();
-
-        let currentTimeStamp = new Date().getHours();
-        var oneDate = moment(new Date(), 'DD-MM-YYYY');
+            let currentTimeStamp = new Date().getHours();
+            var oneDate = moment(new Date(), 'DD-MM-YYYY');
+            var dayName = oneDate.format('dddd');
+            console.log(currentTimeStamp)
+            hourlyWeekday.innerHTML = `${dayName}`;
             
-        var dayName = oneDate.format('dddd');
-
-        
-
-        hourlyWeekday.innerHTML = `${dayName}`;
-        
-
             for (let i = currentTimeStamp; i < 24; i++) {
               let currentHour = hourlyData[i];
-                
-                currentTimeStamp++
-                   
-                    
-
-                  hourlyWeatherDiv.innerHTML += `<div class="hourlyElementDiv">
-                    <span class="hourlyElementDiv__time info">${currentTimeStamp - 1}.00</span>
-                    <div class="hourlyDayDiv">
-                    <span class="hourlyElementDiv__Wind info">${currentHour.windSpeed}</span>
-                    <span class="hourlyElementDiv__Rain info">${currentHour.rain}</span>
-                    <span class="hourlyElementDiv__Weather info">${currentHour.weathercode}</span>
-                    <span class="hourlyElementDiv__Temp info">${currentHour.temp}</span>
-                    </div>
-                    </div>`;
-                
+              currentTimeStamp++
+              let formattedHour = (currentTimeStamp - 1 < 10 ? '0' : '') + (currentTimeStamp - 1);
+              
+              hourlyWeatherDiv.innerHTML += `<div class="hourlyElementDiv" style="display: flex; gap: 20px">
+                <span class="hourlyElementDiv__time info">${formattedHour}.00</span>
+                <div class="hourlyDayDiv" style="display: flex; gap: 20px">
+                <span class="hourlyElementDiv__Wind info">${currentHour.windSpeed}</span>
+                <span class="hourlyElementDiv__Rain info">${currentHour.rain}</span>
+                <span class="hourlyElementDiv__Weather info">${currentHour.weathercode}</span>
+                <span class="hourlyElementDiv__Temp info">${currentHour.temp}</span>
+                </div>
+                </div>`;
             }
 
 
 
-           
-    
-            // console.log(dayName);
 
-    
-            
-            
-            // let d = currentTime.getHours();
-
-        
-            
         }
   
     
