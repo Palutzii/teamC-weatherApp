@@ -6,7 +6,8 @@ let dataArray = [];
 
 let createArray = () => {
     for (let i = 0; i < 7; i++){
-
+        let date = weatherData.daily.time[i];
+        console.log(date);
         let day = weatherData.daily.time[i].substr(8, 2);
         let month = weatherData.daily.time[i].substr(5, 2);
         let year = weatherData.daily.time[i].substr(0, 4);
