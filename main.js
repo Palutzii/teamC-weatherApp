@@ -16,3 +16,5 @@ myLocation((position) => {
 import { dataArray } from "./javascript/dataArray.js";
 //loggar array
 console.log(dataArray);
+import { runDailyElements } from "./javascript/dayJava.js";
+runDailyElements();
