@@ -17,12 +17,12 @@ export const weatherIcons = {
 
 
 
-export const runHourlyElement = () => {
-    let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
-    let hourlyWeekday = document.querySelector(".hourlyWeekday");
-    let hourlyWeatherDiv = document.querySelector(".hourlyWeatherDiv");
-    
-hourlyDivWrapper.style.display = "none";
+export const runHourlyElement = (buttonValue) => {
+  let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
+  let hourlyWeekday = document.querySelector(".hourlyWeekday");
+  let hourlyWeatherDiv = document.querySelector(".hourlyWeatherDiv");
+  
+  // hourlyDivWrapper.style.display = "none";
 
   const {
     cloudBolt,
@@ -36,49 +36,60 @@ hourlyDivWrapper.style.display = "none";
     tornado,
   } = weatherIcons;
 
-
- 
-
-
-
-  // let currentTime = 24 - new Date().getHours();
-
-
-  
-
   let weathericon = "";
-  let hourlyData = dataArray[0].hourly;
+  let hourlyData = null;
+
+  // Find the corresponding hourly data for the button clicked
+  for (let i = 0; i < dataArray.length; i++) {
+    if (dataArray[i].name === buttonValue) {
+      hourlyData = dataArray[i].hourly;
+      break;
+    }
+  }
+
+  // If no corresponding hourly data found, return
+  if (!hourlyData) {
+    return;
+  }
+
   let currentTimeStamp = new Date().getHours();
   var oneDate = moment(new Date(), "DD-MM-YYYY");
   var dayName = oneDate.format("dddd");
-  console.log(currentTimeStamp);
-  hourlyWeekday.innerHTML = `${dataArray[0].name}`;
 
-  for (let i = currentTimeStamp; i < 24; i++) {
+  hourlyWeekday.innerHTML = `${buttonValue}`;
+
+  hourlyWeatherDiv.innerHTML = "";
+
+let weekdayTime = -1;
+
+for (let i = 0; i < hourlyData.length; i++) {
     let currentHour = hourlyData[i];
-    currentTimeStamp++;
-    let formattedHour =
-      (currentTimeStamp - 1 < 10 ? "0" : "") + (currentTimeStamp - 1);
+    weekdayTime++;
 
-    
-      if (currentHour.weathercode == 0) {
+    // Add a leading zero to the hour value if it's less than 10
+    let formattedHour = (weekdayTime < 10 ? '0' : '') + weekdayTime;
+
+    if (currentHour.weathercode == 0) {
         weathericon = sun;
-      } else if (currentHour.weathercode > 0 && currentHour.weathercode < 3) {
+    }
+    else if (currentHour.weathercode > 0 && currentHour.weathercode < 3) {
         weathericon = cloudSun;
-      } else if (currentHour.weathercode == 3) {
+    }
+    else if (currentHour.weathercode == 3) {
         weathericon = cloud;
-      } else if (currentHour.weathercode > 3 && currentHour.weathercode < 68) {
-        weathericon = cloudRain;
-      } else if (currentHour.weathercode > 79 && currentHour.weathercode < 83) {
-        weathericon = cloudShowersHeavy;
-      } else if (
-        (currentHour.weathercode > 70 && currentHour.weathercode < 78) ||
-        (currentHour.weathercode > 84 && currentHour.weathercode < 87)
-      ) {
-        weathericon = snowflake;
-      } else if (currentHour.weathercode > 94) {
-        weathericon = cloudBolt;
-      }
+    }
+    else if (currentHour.weathercode > 3 && currentHour.weathercode < 68) {
+        weathericon = cloudRain
+    }
+    else if (currentHour.weathercode > 79 && currentHour.weathercode < 83) {
+        weathericon = cloudShowersHeavy
+    }
+    else if ((currentHour.weathercode > 70 && currentHour.weathercode < 78) || currentHour.weathercode > 84 && currentHour.weathercode < 87) {
+        weathericon = snowflake
+    }
+    else if (currentHour.weathercode > 94) {
+        weathericon = cloudBolt
+    }
 
     hourlyWeatherDiv.innerHTML += `<div class="hourlyElementDiv" style="display: flex; gap: 20px">
         <span class="hourlyElementDiv__time info">${formattedHour}.00</span>
@@ -89,7 +100,7 @@ hourlyDivWrapper.style.display = "none";
             <span class="hourlyElementDiv__Temp info">${currentHour.temp}&deg</span>
         </div>
     </div>`;
-  }
+}
 
 //---------------------- NEXT DAY CODE -------------------------------
 
@@ -194,3 +205,42 @@ hourlyDivWrapper.style.display = "none";
 // let celsiusToFahren = "";
 
 // celsiusToFahren = Math.round(currentHour.temp * 1.8 + 32);
+
+
+
+// for (let i = currentTimeStamp; i < 24; i++) {
+//   let currentHour = hourlyData[i];
+//   currentTimeStamp++;
+//   let formattedHour =
+//     (currentTimeStamp - 1 < 10 ? "0" : "") + (currentTimeStamp - 1);
+
+  
+//     if (currentHour.weathercode == 0) {
+//       weathericon = sun;
+//     } else if (currentHour.weathercode > 0 && currentHour.weathercode < 3) {
+//       weathericon = cloudSun;
+//     } else if (currentHour.weathercode == 3) {
+//       weathericon = cloud;
+//     } else if (currentHour.weathercode > 3 && currentHour.weathercode < 68) {
+//       weathericon = cloudRain;
+//     } else if (currentHour.weathercode > 79 && currentHour.weathercode < 83) {
+//       weathericon = cloudShowersHeavy;
+//     } else if (
+//       (currentHour.weathercode > 70 && currentHour.weathercode < 78) ||
+//       (currentHour.weathercode > 84 && currentHour.weathercode < 87)
+//     ) {
+//       weathericon = snowflake;
+//     } else if (currentHour.weathercode > 94) {
+//       weathericon = cloudBolt;
+//     }
+
+//   hourlyWeatherDiv.innerHTML += `<div class="hourlyElementDiv" style="display: flex; gap: 20px">
+//       <span class="hourlyElementDiv__time info">${formattedHour}.00</span>
+//       <div class="hourlyDayDiv" style="display: flex; gap: 20px">
+//           <span class="hourlyElementDiv__Wind info">${currentHour.windSpeed}</span>
+//           <span class="hourlyElementDiv__Rain info">${currentHour.rain}</span>
+//           ${weathericon}
+//           <span class="hourlyElementDiv__Temp info">${currentHour.temp}&deg</span>
+//       </div>
+//   </div>`;
+// }
