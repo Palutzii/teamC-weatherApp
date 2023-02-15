@@ -21,5 +21,8 @@ console.log(dataArray);
 import { runHourlyElement } from "./javascript/hourlyElement.js";
 runHourlyElement();
 
-import { runDailyElements } from "./javascript/dayJava.js";
-runDailyElements();
+// import {imgIcons} from "./javascript/hourlyElement.js";
+// imgIcons();
+
+import { runDailyElement } from "./javascript/dayElement.js";
+runDailyElement();
