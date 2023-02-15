@@ -20,6 +20,7 @@ export const runDailyElement = () => {
     for (let i = 0; i < dataArray.length; i++) {
         //skapar knappar
         let button = document.createElement('button');
+        button.classList.add("dayButton");
         button.value = dataArray[i].name;
         //lägger till rätt väder ikon
         if (dataArray[i].daily.weathercode == 0) {
@@ -46,7 +47,7 @@ export const runDailyElement = () => {
           <h2>${dataArray[i].name}</h2> <h3>${dataArray[i].date.day}/${dataArray[i].date.month}</h3>
         </div>
         <div>
-          <h3>${weathericon}</h3><div> <h3>${dataArray[i].daily.tempMax}</h3>  <h3>${dataArray[i].daily.tempMin}</h3>
+        ${weathericon}<div> <h3>${dataArray[i].daily.tempMax}</h3>  <h3>${dataArray[i].daily.tempMin}</h3>
         </div>
       `;
     mainDiv.append(button); 
