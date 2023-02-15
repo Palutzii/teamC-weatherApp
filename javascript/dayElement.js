@@ -21,6 +21,7 @@ export const runDailyElement = () => {
         //skapar knappar
         let button = document.createElement('button');
         button.value = dataArray[i].name;
+        //lägger till rätt väder ikon
         if (dataArray[i].daily.weathercode == 0) {
           weathericon = sun;
         } else if (dataArray[i].daily.weathercode > 0 && dataArray[i].daily.weathercode < 3) {
@@ -51,8 +52,10 @@ export const runDailyElement = () => {
     mainDiv.append(button); 
 console.log(button)
 
+
 button.addEventListener("click", (event) => {
-runHourlyElement(event.target.value)
-console.log(event.target.value)
+  let hourlyWeatherDiv = document.querySelector(".hourlyWeatherDiv");
+  hourlyWeatherDiv.innerHTML = "";
+    runHourlyElement(event.target.value)
   })
 }}

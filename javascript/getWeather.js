@@ -3,6 +3,35 @@ const weekday = ["Söndag","Måndag","Tisdag","Onsdag","Torsdag","Fredag","Lörd
 
 let weatherData = "";
 export let dataArray = [];
+export let currentWeatherObject = {};
+
+let createCurrentWeatherObject = () => {
+
+
+    let date = todayDate.getDate();
+    if (date.toString().length < 2) {
+    date = `0${date}`
+    }
+    let month = (todayDate.getMonth() + 1)
+    if (month.toString().length < 2) {
+    month = `0${month}`
+    }
+    let year = todayDate.getFullYear();
+    let hour = todayDate.getHours();
+    if (hour.toString().length < 2) {
+    hour = `0${hour}`
+    }
+    let currentDateAndTimeByHour = `${year}-${month}-${date}T${hour}:00`
+
+    currentWeatherObject = {
+        temp: weatherData.current_weather.temperature,
+        weathercode: weatherData.current_weather.weathercode,
+        apparentTemp: (weatherData.hourly.apparent_temperature[weatherData.hourly.time.indexOf(currentDateAndTimeByHour)]),
+        name: dataArray[0].name,
+        date: dataArray[0].date,
+        location: "Din Plats" //placeholder så länge
+    }
+}
 
 let createArray = () => {
 
@@ -54,4 +83,5 @@ export async function getWeather(latitude, longitude) {
     const data = await res.json();
     weatherData = data;
     createArray();
+    createCurrentWeatherObject();
 }
