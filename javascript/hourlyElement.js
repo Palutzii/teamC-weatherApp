@@ -47,9 +47,9 @@ export const runHourlyElement = (buttonValue) => {
     return;
   }
 
-  let currentTimeStamp = new Date().getHours();
-  var oneDate = moment(new Date(), "DD-MM-YYYY");
-  var dayName = oneDate.format("dddd");
+  //   let currentTimeStamp = new Date().getHours();
+  //   var oneDate = moment(new Date(), "DD-MM-YYYY");
+  //   var dayName = oneDate.format("dddd");
 
   hourlyWeekday.innerHTML = `${buttonValue}`;
 
@@ -61,8 +61,34 @@ export const runHourlyElement = (buttonValue) => {
     let currentHour = hourlyData[i];
     weekdayTime++;
 
+    if (buttonValue == dataArray[0].name) {
+      let currentTimeStamp = new Date().getHours();
+      // var oneDate = moment(new Date(), "DD-MM-YYYY");
+      // var dayName = oneDate.format("dddd");
+
+      if (weekdayTime < currentTimeStamp) {
+        continue;
+      }
+    }
+
+
+    
+        
+
+   
+
+
+
+
     // Add a leading zero to the hour value if it's less than 10
     let formattedHour = (weekdayTime < 10 ? "0" : "") + weekdayTime;
+        currentHour.temp = Math.round(currentHour.temp)
+        currentHour.windSpeed = Math.round(currentHour.windSpeed)
+
+
+
+        console.log(currentHour.temp)
+
 
     if (currentHour.weathercode == 0) {
       weathericon = sun;
