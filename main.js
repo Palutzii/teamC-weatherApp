@@ -18,7 +18,7 @@ myLocation(async function(position) {
 
   console.log(dataArray)
 
-  runHourlyElement();
+  // runHourlyElement(1);
   runDailyElement();
 });
 
