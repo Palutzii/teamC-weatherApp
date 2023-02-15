@@ -5,9 +5,25 @@ let weatherData = "";
 let dataArray = [];
 
 let createArray = () => {
+
     for (let i = 0; i < 7; i++){
         let date = weatherData.daily.time[i];
-        console.log(date);
+        let hours = [];
+
+        weatherData.hourly.time.forEach((element, index) => {
+            if (element.substr(0, 10) === date) {
+                let hour = {
+                    apparentTemp: weatherData.hourly.apparent_temperature[index],
+                    rain: weatherData.hourly.rain[index],
+                    temp: weatherData.hourly.temperature_2m[index],
+                    weathercode: weatherData.hourly.weathercode[index],
+                    windDirection: weatherData.hourly.winddirection_10m[index],
+                    windSpeed: weatherData.hourly.windspeed_10m[index],
+                }
+                hours.push(hour);
+            }
+        })
+
         let day = weatherData.daily.time[i].substr(8, 2);
         let month = weatherData.daily.time[i].substr(5, 2);
         let year = weatherData.daily.time[i].substr(0, 4);
@@ -25,11 +41,12 @@ let createArray = () => {
                 tempMin: weatherData.daily.temperature_2m_min[i],
                 weathercode: weatherData.daily.weathercode[i], //väderkod för dagen (ikon)
             },
+            hourly: hours,
         }
         dataArray.push(obj);
-        console.log(dataArray);
     }
 }
+console.log(dataArray);
 
 export async function getWeather(latitude, longitude) {
     weatherData = "";
