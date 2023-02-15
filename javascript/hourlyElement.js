@@ -15,6 +15,8 @@ export const weatherIcons = {
 
 
 
+
+
 let hourlyWeekday = document.querySelector(".hourlyWeekday");
 let hourlyWeatherDiv = document.querySelector(".hourlyWeatherDiv");
 
@@ -39,7 +41,7 @@ export const runHourlyElement = () => {
   var oneDate = moment(new Date(), "DD-MM-YYYY");
   var dayName = oneDate.format("dddd");
   console.log(currentTimeStamp);
-  hourlyWeekday.innerHTML = `${dataArray[1].name}`;
+  hourlyWeekday.innerHTML = `${dataArray[0].name}`;
 
   for (let i = currentTimeStamp; i < 24; i++) {
     let currentHour = hourlyData[i];
@@ -77,6 +79,9 @@ export const runHourlyElement = () => {
     </div>`;
   }
 };
+
+
+
 
 //---------------------- NEXT DAY CODE -------------------------------
 
