@@ -26,5 +26,5 @@ runHourlyElement();
 import {imgIcons} from "./javascript/hourlyElement.js";
 imgIcons();
 
-import { runDailyElements } from "./javascript/dayJava.js";
-runDailyElements();
+import { runDailyElement } from "./javascript/dayElement.js";
+runDailyElement();

@@ -1,5 +1,5 @@
 import { dataArray } from "./dataArray.js";
-export const runDailyElements = () => {
+export const runDailyElement = () => {
     // Hämtar main-div
     let mainDiv = document.querySelector(".main-daydiv");
     // Loopar igenom dataArray och skapar knappar 
