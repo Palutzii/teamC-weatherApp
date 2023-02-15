@@ -228,9 +228,6 @@ nav {
   gap: 0.9rem;
   padding: 8px 1px 8px 8px;
   margin-right: 14px;
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 400;
 }
 
 .hourlyWind {
@@ -239,10 +236,16 @@ nav {
   justify-content: center;
   align-items: center;
 }
+.hourlyWind :first-child {
+  font-weight: 600;
+}
 
 .hourly-rain {
   display: flex;
   flex-direction: column;
+}
+.hourly-rain :first-child {
+  font-weight: 600;
 }
 
 .hourlyWeatherDiv {
