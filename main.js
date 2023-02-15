@@ -16,6 +16,8 @@ import { dataArray } from "./javascript/dataArray.js";
 //loggar array
 console.log(dataArray);
 
+export { dataArray };
+
 //Kör hourlyElement.js
 
 import { runHourlyElement } from "./javascript/hourlyElement.js";

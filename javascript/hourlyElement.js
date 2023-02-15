@@ -1,4 +1,4 @@
-import { dataArray } from "./dataArray.js";
+import { dataArray } from "../main.js";
 
 export const weatherIcons = {
   cloudBolt: `<img style="width: 30px" src="content/icons/cloud-bolt.svg" alt="cloudBolt">`,
@@ -17,10 +17,13 @@ export const weatherIcons = {
 
 
 
-let hourlyWeekday = document.querySelector(".hourlyWeekday");
-let hourlyWeatherDiv = document.querySelector(".hourlyWeatherDiv");
-
 export const runHourlyElement = () => {
+    let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
+    let hourlyWeekday = document.querySelector(".hourlyWeekday");
+    let hourlyWeatherDiv = document.querySelector(".hourlyWeatherDiv");
+    
+hourlyDivWrapper.style.display = "none";
+
   const {
     cloudBolt,
     cloudRain,
@@ -40,6 +43,9 @@ export const runHourlyElement = () => {
 
   // let currentTime = 24 - new Date().getHours();
 
+
+  
+
   let weathericon = "";
   let hourlyData = dataArray[0].hourly;
   let currentTimeStamp = new Date().getHours();
@@ -54,24 +60,25 @@ export const runHourlyElement = () => {
     let formattedHour =
       (currentTimeStamp - 1 < 10 ? "0" : "") + (currentTimeStamp - 1);
 
-    if (currentHour.weathercode == 0) {
-      weathericon = sun;
-    } else if (currentHour.weathercode > 0 && currentHour.weathercode < 3) {
-      weathericon = cloudSun;
-    } else if (currentHour.weathercode == 3) {
-      weathericon = cloud;
-    } else if (currentHour.weathercode > 3 && currentHour.weathercode < 68) {
-      weathericon = cloudRain;
-    } else if (currentHour.weathercode > 79 && currentHour.weathercode < 83) {
-      weathericon = cloudShowersHeavy;
-    } else if (
-      (currentHour.weathercode > 70 && currentHour.weathercode < 78) ||
-      (currentHour.weathercode > 84 && currentHour.weathercode < 87)
-    ) {
-      weathericon = snowflake;
-    } else if (currentHour.weathercode > 94) {
-      weathericon = cloudBolt;
-    }
+    
+      if (currentHour.weathercode == 0) {
+        weathericon = sun;
+      } else if (currentHour.weathercode > 0 && currentHour.weathercode < 3) {
+        weathericon = cloudSun;
+      } else if (currentHour.weathercode == 3) {
+        weathericon = cloud;
+      } else if (currentHour.weathercode > 3 && currentHour.weathercode < 68) {
+        weathericon = cloudRain;
+      } else if (currentHour.weathercode > 79 && currentHour.weathercode < 83) {
+        weathericon = cloudShowersHeavy;
+      } else if (
+        (currentHour.weathercode > 70 && currentHour.weathercode < 78) ||
+        (currentHour.weathercode > 84 && currentHour.weathercode < 87)
+      ) {
+        weathericon = snowflake;
+      } else if (currentHour.weathercode > 94) {
+        weathericon = cloudBolt;
+      }
 
     hourlyWeatherDiv.innerHTML += `<div class="hourlyElementDiv" style="display: flex; gap: 20px">
         <span class="hourlyElementDiv__time info">${formattedHour}.00</span>
