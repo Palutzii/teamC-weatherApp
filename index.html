@@ -1,102 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Weather right now</title>
     <script type="module" src="main.js" defer></script>
   </head>
   <body>
-    <header> 
-      <div class="navbar"> 
-        <nav> 
-          
+    <!-- <header>
+      <div class="navbar">
+        <nav>
           <div class="logo">
-            <a href="index.html"> <img src="img_sun.jpg" alt="placeholder sun" width="50" height="60"></a>
-            
+            <a href="index.html">
+              <img
+                src="img_sun.jpg"
+                alt="placeholder sun"
+                width="50"
+                height="60"> 
+              -->
+
+    <header class="header">
+      <div class="navbar">
+        <nav>
+          <div class="logo-wrapper">
+            <a href="index.html">
+              <img
+                class="logo"
+                src="content/images/Logo-sun.svg"
+                alt="placeholder sun"
+            /></a>
           </div>
-          
-
-          </nav>
-
+        </nav>
       </div>
     </header>
-    
-    <div class="main-daydiv">
-      <button class="first-day">
-        <div class="first-dayname">MÅNDAG</div>
-        <div class="first-daydate">12/12</div>
-        <div class="first-dayicon"></div>
-        <div class="first-daytemp"></div>
-      </button>
-      <button class="second-day">
-        <div class="second-dayname">TISDAG</div>
-        <div class="second-daydate">12/12</div>
-        <div class="second-dayicon"></div>
-        <div class="second-daytemp"></div>
-      </button>
-      <button class="third-day">
-        <div class="third-dayname">ONSDAG</div>
-        <div class="third-daydate">12/12</div>
-        <div class="third-dayicon"></div>
-        <div class="third-daytemp"></div>
-      </button>
-      <button class="fourth-day">
-        <div class="fourth-dayname">TORSDAG</div>
-        <div class="fourth-daydate">12/12</div>
-        <div class="fourth-dayicon"></div>
-        <div class="fourth-daytemp"></div>
-      </button>
-      <button class="fifth-day">
-        <div class="fifth-dayname">FREDAG</div>
-        <div class="fifth-daydate">12/12</div>
-        <div class="fifth-dayicon"></div>
-        <div class="fifth-daytemp"></div>
-      </button>
-      <button class="sixth-day">
-        <div class="sixth-dayname">LÖRDAG</div>
-        <div class="sixth-daydate">12/12</div>
-        <div class="sixth-dayicon"></div>
-        <div class="sixth-daytemp"></div>
-      </button>
-      <button class="seventh-day">
-        <div class="seventh-dayname">SÖNDAG</div>
-        <div class="seventh-daydate">12/12</div> 
-        <div class="seventh-dayicon"></div>
-        <div class="seventh-daytemp"></div>
-      </button>
-    </div>
-    <h3>Övrig Info</h3>
-      <article>
-        <h4>Nederbörd</h4>
-        <p>2 mm</p>
-      </article>
-      <article>
-        <h4>Luftfuktighet</h4>
-        <p>75%</p>
-      </article>
-      <article>
-        <h4>Sikt</h4>
-        <p>2 km</p>
-      </article>
-      <article>
-        <h4>UV-Index</h4>
-        <p>0</p>
-      </article>
-      <article>
-        <h4>Vind</h4>
-        <p>4 m/s</p>
-      </article>
-      <article>
-        <h4>Tryck</h4>
-        <p>1011 hPa</p>
-      </article>
+    <main class="main content-wrapper">
+      <div class="weather-temp-titles">
+        <div>Väder</div>
+        <div class="temp-high-low">
+          <p>Högst</p>
+          <p>Lägst</p>
+        </div>
+      </div>
+      <div class="main-daydiv"></div>
 
-    <footer>
-      <div class="copyright">
-         <p>©copy right lorem-2023</p>
+
+      <div class="hourlyDivWrapper">
+
+      
+        <!-- here is the code for the hourly weather -->
+        <h2 class="hourlyWeekday">Måndag</h2>
+        
+        
+        <div class="hourlyElement">
+          <div class="hourlyInfo">
+            <span class="timeInfo">Tid</span>
+            <div class="infoDiv" style="display: flex">
+              <div class="hourlyWind">
+                <span>Vind</span>
+                <span>(m/s)</span>
+              </div>
+              <div>
+                <span>Regn</span>
+                <span>(mm)</span>
+              </div>
+              <span>Väder</span>
+              <span>Temp</span>
+            </div>
+          </div>
+          <div class="hourlyWeatherDiv"></div>
+        </div>
+      </div>
+
+
+
+    </main>
+    <h3>Övrig Info</h3>
+    <article>
+      <h4>Nederbörd</h4>
+      <p>2 mm</p>
+    </article>
+    <article>
+      <h4>Luftfuktighet</h4>
+      <p>75%</p>
+    </article>
+    <article>
+      <h4>Sikt</h4>
+      <p>2 km</p>
+    </article>
+    <article>
+      <h4>UV-Index</h4>
+      <p>0</p>
+    </article>
+    <article>
+      <h4>Vind</h4>
+      <p>4 m/s</p>
+    </article>
+    <article>
+      <h4>Tryck</h4>
+      <p>1011 hPa</p>
+    </article>
+
+    
+      <footer>
+        <div class="copyright">
+          <p>©copy right lorem-2023</p>
       </div>
     </footer>
   </body>
