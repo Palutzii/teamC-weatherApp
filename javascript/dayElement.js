@@ -1,4 +1,4 @@
-import { dataArray } from "./dataArray.js";
+import { dataArray } from "../main.js";
 import { weatherIcons} from "./hourlyElement.js";
 import { runHourlyElement } from "./hourlyElement.js";
 export const runDailyElement = () => {
