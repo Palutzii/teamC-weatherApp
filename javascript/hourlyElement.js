@@ -52,9 +52,9 @@ export const runHourlyElement = (buttonValue) => {
     return;
   }
 
-  let currentTimeStamp = new Date().getHours();
-  var oneDate = moment(new Date(), "DD-MM-YYYY");
-  var dayName = oneDate.format("dddd");
+//   let currentTimeStamp = new Date().getHours();
+//   var oneDate = moment(new Date(), "DD-MM-YYYY");
+//   var dayName = oneDate.format("dddd");
 
   hourlyWeekday.innerHTML = `${buttonValue}`;
 
