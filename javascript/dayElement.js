@@ -21,7 +21,6 @@ export const runDailyElement = () => {
         //skapar knappar
         let button = document.createElement('button');
         button.value = dataArray[i].name;
-        //lägger till rätt väder ikon
         if (dataArray[i].daily.weathercode == 0) {
           weathericon = sun;
         } else if (dataArray[i].daily.weathercode > 0 && dataArray[i].daily.weathercode < 3) {

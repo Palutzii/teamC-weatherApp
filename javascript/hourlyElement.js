@@ -1,21 +1,16 @@
 import { dataArray } from "../main.js";
 
 export const weatherIcons = {
-  cloudBolt: `<img style="width: 30px" src="content/icons/cloud-bolt.svg" alt="cloudBolt">`,
-  cloudRain: `<img style="width: 30px" src="content/icons/cloud-rain.svg" alt="cloudBolt">`,
-  cloudShowersHeavy: `<img style="width: 30px" src="content/icons/cloud-showers-heavy.svg" alt="cloudBolt">`,
-  cloudSunRain: `<img style="width: 30px" src="content/icons/cloud-sun-rain.svg" alt="cloudBolt">`,
-  cloudSun: `<img style="width: 30px" src="content/icons/cloud-sun.svg" alt="cloudBolt">`,
-  cloud: `<img style="width: 30px" src="content/icons/cloud.svg" alt="cloudBolt">`,
-  snowflake: `<img style="width: 30px" src="content/icons/snowflake.svg" alt="cloudBolt">`,
-  sun: `<img style="width: 25px" src="content/icons/sun.svg" alt="cloudBolt">`,
-  tornado: `<img style="width: 30px" src="content/icons/tornado.svg" alt="cloudBolt">`,
+  cloudBolt: `<img class="weatherIcon" src="content/icons/cloud-bolt.svg" alt="cloudBolt">`,
+  cloudRain: `<img class="weatherIcon"  src="content/icons/cloud-rain.svg" alt="cloudBolt">`,
+  cloudShowersHeavy: `<img class="weatherIcon"  src="content/icons/cloud-showers-heavy.svg" alt="cloudBolt">`,
+  cloudSunRain: `<img class="weatherIcon"  src="content/icons/cloud-sun-rain.svg" alt="cloudBolt">`,
+  cloudSun: `<img class="weatherIcon"  src="content/icons/cloud-sun.svg" alt="cloudBolt">`,
+  cloud: `<img class="weatherIcon"  src="content/icons/cloud.svg" alt="cloudBolt">`,
+  snowflake: `<img class="weatherIcon"  src="content/icons/snowflake.svg" alt="cloudBolt">`,
+  sun: `<img class="weatherIcon"  src="content/icons/sun.svg" alt="cloudBolt">`,
+  tornado: `<img class="weatherIcon"  src="content/icons/tornado.svg" alt="cloudBolt">`,
 };
-
-
-
-
-
 
 export const runHourlyElement = (buttonValue) => {
   let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
@@ -114,9 +109,9 @@ export const runHourlyElement = (buttonValue) => {
       weathericon = cloudBolt;
     }
 
-    hourlyWeatherDiv.innerHTML += `<div class="hourlyElementDiv" style="display: flex; gap: 20px">
+    hourlyWeatherDiv.innerHTML += `<div class="hourlyElementDiv" >
         <span class="hourlyElementDiv__time info">${formattedHour}.00</span>
-        <div class="hourlyDayDiv" style="display: flex; gap: 20px">
+        <div class="hourlyDayDiv" >
             <span class="hourlyElementDiv__Wind info">${currentHour.windSpeed}</span>
             <span class="hourlyElementDiv__Rain info">${currentHour.rain}</span>
             ${weathericon}
