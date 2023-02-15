@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
     <title>Weather right now</title>
-    <script type="module" src="otherInfo.js" defer></script>
+    <script type="module" src="./javascript/otherInfo.js" defer></script>
   </head>
   <body>
     <header> 
@@ -68,31 +68,33 @@
         <div class="seventh-daytemp"></div>
       </button>
     </div>
-    <h3>Övrig Info</h3>
-      <article>
+    <div class="otherinfo-div">
+    <h3 class="otherinfo-heading">Övrig Info</h3>
+      <article class="otherinfo-article">
         <h4>Nederbörd</h4>
-        <p>2 mm</p>
+        <p id="daily-precip">2 mm</p>
       </article>
-      <article>
+      <article class="otherinfo-article">
         <h4>Luftfuktighet</h4>
         <p>75%</p>
       </article>
-      <article>
+      <article class="otherinfo-article">
         <h4>Sikt</h4>
         <p>2 km</p>
       </article>
-      <article>
+      <article class="otherinfo-article">
         <h4>UV-Index</h4>
         <p>0</p>
       </article>
-      <article>
+      <article class="otherinfo-article">
         <h4>Vind</h4>
-        <p>4 m/s</p>
+        <p id="daily-windspeed">4 m/s</p>
       </article>
-      <article>
+      <article class="otherinfo-article">
         <h4>Tryck</h4>
         <p>1011 hPa</p>
       </article>
+    </div>
 
     <footer>
       <div class="copyright">
