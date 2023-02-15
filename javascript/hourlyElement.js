@@ -22,7 +22,7 @@ export const runHourlyElement = () => {
     let hourlyWeekday = document.querySelector(".hourlyWeekday");
     let hourlyWeatherDiv = document.querySelector(".hourlyWeatherDiv");
     
-hourlyDivWrapper.style.display = "none";
+// hourlyDivWrapper.style.display = "none";
 
   const {
     cloudBolt,
@@ -43,7 +43,7 @@ hourlyDivWrapper.style.display = "none";
 
   // let currentTime = 24 - new Date().getHours();
 
-
+  
   
 
   let weathericon = "";
