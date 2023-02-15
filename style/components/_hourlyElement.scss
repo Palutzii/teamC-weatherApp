@@ -1,0 +1,86 @@
+.hourlyDivWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.hourlyWeekday {
+  margin-bottom: 1.5rem;
+}
+
+.hourlyElement {
+}
+
+.hourlyInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timeInfo {
+  margin-left: 8px;
+}
+
+.infoDiv {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.75rem;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 8px 1px 8px 8px;
+  margin-right: 14px;
+}
+
+.hourlyWind {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  :first-child {
+    font-weight: 600;
+  }
+}
+
+.hourly-rain {
+  display: flex;
+  flex-direction: column;
+
+  :first-child {
+    font-weight: 600;
+  }
+}
+
+.hourlyWeatherDiv {
+  margin-bottom: 1.5rem;
+
+  span {
+    @include fontRegular("Inter");
+    font-weight: 100;
+  }
+}
+
+.hourlyElementDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 22px;
+  padding: 6px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+}
+
+.hourlyDayDiv {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.weatherIcon {
+  width: 15px;
+  filter: invert(1) grayscale(100%) brightness(1000%);
+}
