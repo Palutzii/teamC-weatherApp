@@ -21,8 +21,12 @@ myLocation(async function(position) {
   console.log(dataArray)
   console.log(currentWeatherObject)
 
+
+  // runHourlyElement(1);
+
  // runHourlyElement();
-  runDailyElement();
+
+ runDailyElement();
 });
 
 //loggar array

@@ -20,9 +20,7 @@ export const runDailyElement = () => {
     for (let i = 0; i < dataArray.length; i++) {
         //skapar knappar
         let button = document.createElement('button');
-        button.classList.add("dayButton");
         button.value = dataArray[i].name;
-        //lägger till rätt väder ikon
         if (dataArray[i].daily.weathercode == 0) {
           weathericon = sun;
         } else if (dataArray[i].daily.weathercode > 0 && dataArray[i].daily.weathercode < 3) {
@@ -47,17 +45,15 @@ export const runDailyElement = () => {
           <h2>${dataArray[i].name}</h2> <h3>${parseInt(dataArray[i].date.day,10)}/${parseInt(dataArray[i].date.month,10)}</h3>
         </div>
         <div>
-        ${weathericon}<div> <h3>${dataArray[i].daily.tempMax}</h3>  <h3>${dataArray[i].daily.tempMin}</h3>
+          <h3>${weathericon}</h3><div> <h3>${dataArray[i].daily.tempMax}</h3>  <h3>${dataArray[i].daily.tempMin}</h3>
         </div>
       `;
     mainDiv.append(button); 
 console.log(button)
 
-
 button.addEventListener("click", (event) => {
-  let hourlyWeatherDiv = document.querySelector(".hourlyWeatherDiv");
-  hourlyWeatherDiv.innerHTML = "";
-    runHourlyElement(event.target.value)
-  mainDiv.innerHTML = "";
+runHourlyElement(event.target.value)
+mainDiv.innerHTML = "";
+console.log(event.target.value)
   })
 }}
