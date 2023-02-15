@@ -1,4 +1,4 @@
-import { dataArray } from "./dataArray.js";
+import { dataArray } from "../main.js";
 
 export const weatherIcons = {
   cloudBolt: `<img style="width: 30px" src="content/icons/cloud-bolt.svg" alt="cloudBolt">`,
