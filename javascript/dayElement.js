@@ -1,4 +1,4 @@
-import { dataArray } from "./dataArray.js";
+import { dataArray } from "../main.js";
 export const runDailyElement = () => {
     // Hämtar main-div
     let mainDiv = document.querySelector(".main-daydiv");

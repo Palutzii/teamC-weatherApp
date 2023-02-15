@@ -2,7 +2,7 @@ const todayDate = new Date();
 const weekday = ["Söndag","Måndag","Tisdag","Onsdag","Torsdag","Fredag","Lördag","Söndag","Måndag","Tisdag","Onsdag","Torsdag","Fredag","Lördag"];
 
 let weatherData = "";
-let dataArray = [];
+export let dataArray = [];
 
 let createArray = () => {
 
@@ -46,7 +46,6 @@ let createArray = () => {
         dataArray.push(obj);
     }
 }
-console.log(dataArray);
 
 export async function getWeather(latitude, longitude) {
     weatherData = "";
@@ -54,6 +53,5 @@ export async function getWeather(latitude, longitude) {
     const res = await fetch(url);
     const data = await res.json();
     weatherData = data;
-    console.log(weatherData)
     createArray();
 }
