@@ -88,6 +88,9 @@ export const runHourlyElement = (buttonValue) => {
     // Add a leading zero to the hour value if it's less than 10
     let formattedHour = (weekdayTime < 10 ? "0" : "") + weekdayTime;
         currentHour.temp = Math.round(currentHour.temp)
+        currentHour.windSpeed = Math.round(currentHour.windSpeed)
+
+
 
         console.log(currentHour.temp)
 

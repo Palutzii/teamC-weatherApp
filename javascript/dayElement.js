@@ -52,11 +52,8 @@ export const runDailyElement = () => {
     mainDiv.append(button); 
 console.log(button)
 
-
 button.addEventListener("click", (event) => {
-  let hourlyWeatherDiv = document.querySelector(".hourlyWeatherDiv");
-  hourlyWeatherDiv.innerHTML = "";
-    runHourlyElement(event.target.value)
-  mainDiv.innerHTML = "";
+runHourlyElement(event.target.value)
+console.log(event.target.value)
   })
 }}
