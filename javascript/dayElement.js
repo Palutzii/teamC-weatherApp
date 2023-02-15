@@ -44,7 +44,7 @@ export const runDailyElement = () => {
       // Ger knappar inehåll från dataArray
       button.innerHTML = `
         <div class="dayBtn">
-          <h2>${dataArray[i].name}</h2> <h3>${dataArray[i].date.day}/${dataArray[i].date.month}</h3>
+          <h2>${dataArray[i].name}</h2> <h3>${parseInt(dataArray[i].date.day,10)}/${parseInt(dataArray[i].date.month,10)}</h3>
         </div>
         <div>
         ${weathericon}<div> <h3>${dataArray[i].daily.tempMax}</h3>  <h3>${dataArray[i].daily.tempMin}</h3>
