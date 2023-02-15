@@ -17,13 +17,10 @@ export const weatherIcons = {
 
 
 
-export const runHourlyElement = () => {
-    let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
-    let hourlyWeekday = document.querySelector(".hourlyWeekday");
-    let hourlyWeatherDiv = document.querySelector(".hourlyWeatherDiv");
-    
-// hourlyDivWrapper.style.display = "none";
+let hourlyWeekday = document.querySelector(".hourlyWeekday");
+let hourlyWeatherDiv = document.querySelector(".hourlyWeatherDiv");
 
+export const runHourlyElement = () => {
   const {
     cloudBolt,
     cloudRain,
@@ -43,8 +40,8 @@ export const runHourlyElement = () => {
 
   // let currentTime = 24 - new Date().getHours();
 
-  
-  
+
+
 
   let weathericon = "";
   let hourlyData = dataArray[0].hourly;
