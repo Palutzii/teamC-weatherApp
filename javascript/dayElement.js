@@ -53,6 +53,7 @@ console.log(button)
 
 button.addEventListener("click", (event) => {
 runHourlyElement(event.target.value)
+mainDiv.innerHTML = "";
 console.log(event.target.value)
   })
 }}
