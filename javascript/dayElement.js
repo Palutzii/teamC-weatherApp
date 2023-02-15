@@ -9,12 +9,12 @@ export const runDailyElement = () => {
       // Ger knappar inehåll från dataArray
       button.innerHTML = `
         <div class="dayBtn">
-          <h2>${dataArray[i].name} ${dataArray[i].date.day}/${dataArray[i].date.month}</h2>
+          <h2>${dataArray[i].name}</h2> <h3>${dataArray[i].date.day}/${dataArray[i].date.month}</h3>
         </div>
         <div>
-          <div>${dataArray[i].daily.weathercode}</div><div> ${dataArray[i].daily.tempMax} ${dataArray[i].daily.tempMin}</div>
+          <h3>${dataArray[i].daily.weathercode}</h3><div> <h3>${dataArray[i].daily.tempMax}</h3>  <h3>${dataArray[i].daily.tempMin}</h3>
         </div>
       `;
-      mainDiv.append(button);
-    }
+    mainDiv.append(button);
+  }
 };
