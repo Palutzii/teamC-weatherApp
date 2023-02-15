@@ -87,6 +87,10 @@ export const runHourlyElement = (buttonValue) => {
 
     // Add a leading zero to the hour value if it's less than 10
     let formattedHour = (weekdayTime < 10 ? "0" : "") + weekdayTime;
+        currentHour.temp = Math.round(currentHour.temp)
+
+        console.log(currentHour.temp)
+
 
     if (currentHour.weathercode == 0) {
       weathericon = sun;
