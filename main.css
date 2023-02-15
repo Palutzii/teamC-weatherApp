@@ -276,4 +276,25 @@ nav {
 .weatherIcon {
   width: 25px;
   filter: invert(1) grayscale(100%) brightness(1000%);
+}
+
+.otherinfo-div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.article-info-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.otherinfo-article {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 16px 8px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
 }/*# sourceMappingURL=main.css.map */
