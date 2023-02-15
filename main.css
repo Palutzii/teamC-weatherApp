@@ -124,6 +124,86 @@ nav {
   padding: 1rem;
 }
 
+.hero-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.hero-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero-location {
+  text-align: center;
+}
+.hero-location .hero-date span {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.hero-current {
+  display: flex;
+  gap: 1rem;
+}
+.hero-current .hero-icon .weatherIcon {
+  width: 100px;
+}
+
+#hero-temp {
+  font-size: 60px;
+  text-align: center;
+}
+
+#right-now {
+  font-size: 1.5;
+  font-weight: 400;
+  text-align: center;
+}
+
+.hero-feel {
+  display: flex;
+  gap: 6px;
+  text-align: center;
+}
+
+.now-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.now-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  width: 290px;
+  height: 150px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.09) 100%);
+}
+
+.now-warning {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.now-icon .weatherIcon {
+  width: 48px;
+}
+
+.now-message {
+  font-size: 20px;
+}
+
 .main-daydiv {
   display: flex;
   flex-direction: column;
