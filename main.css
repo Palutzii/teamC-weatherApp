@@ -403,6 +403,12 @@ nav {
   grid-template-rows: repeat(3, 1fr);
   gap: 16px;
 }
+@media (min-width: 980px) {
+  .article-info-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
 
 .otherinfo-article {
   display: flex;
