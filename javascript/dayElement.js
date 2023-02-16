@@ -66,5 +66,6 @@ export const runDailyElement = () => {
     mainDiv.innerHTML = "";
     infoDiv.style.display="inherit";
     timeInfo.style.display="inherit";
+    console.log(button);
   })
 }}
