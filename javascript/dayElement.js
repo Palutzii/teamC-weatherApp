@@ -74,12 +74,12 @@ export const runDailyElement = () => {
         </div>
       `;
     mainDiv.append(button);
-    console.log(button);
     let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
     let otherInfoDiv = document.querySelector(".otherinfo-div");
-    button.addEventListener("click", (event) => {
-      runHourlyElement(event.target.value);
-      runotherInfo(event.target.value);
+    console.log(button)
+    button.addEventListener("click", () => {
+      runHourlyElement(button.value);
+      runotherInfo(button.value);
       otherInfoDiv.style.display = "block";
       hourlyDivWrapper.style.display = "block";
       mainDiv.innerHTML = "";
