@@ -32,6 +32,7 @@ export const runHourlyElement = (buttonValue) => {
   let weathericon = "";
   let hourlyData = null;
 
+
   // Find the corresponding hourly data for the button clicked
   for (let i = 0; i < dataArray.length; i++) {
     if (dataArray[i].name === buttonValue) {
@@ -64,6 +65,10 @@ export const runHourlyElement = (buttonValue) => {
         continue;
       }
     }
+
+
+    
+
 
     // Add a leading zero to the hour value if it's less than 10
     let formattedHour = (weekdayTime < 10 ? "0" : "") + weekdayTime;

@@ -109,6 +109,16 @@ body {
   background-color: #20a2be;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 980px) {
+  .header {
+    justify-content: flex-start;
+  }
+}
+
 .logo-wrapper {
   display: flex;
 }
@@ -118,6 +128,11 @@ body {
 }
 .logo-wrapper .logo {
   width: 70px;
+}
+@media (min-width: 980px) {
+  .logo-wrapper .logo {
+    width: 150px;
+  }
 }
 
 nav {
@@ -130,6 +145,15 @@ nav {
   align-items: center;
   gap: 3rem;
   margin-bottom: 4rem;
+}
+@media (min-width: 980px) {
+  .hero-box {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    margin-top: 3rem;
+  }
 }
 
 .hero-info {
@@ -224,18 +248,27 @@ nav {
 }
 .main-daydiv button :last-child {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
 }
-.main-daydiv button :last-child :last-child {
+.main-daydiv button :last-child div:first-child {
+  display: flex;
+  margin-right: 2rem;
+}
+@media (min-width: 980px) {
+  .main-daydiv button :last-child div:first-child .weatherIcon {
+    width: 30px;
+  }
+}
+.main-daydiv button :last-child div:last-child {
   flex-direction: column;
   align-items: flex-end;
-  margin-left: 1rem;
+  width: 30px;
 }
-.main-daydiv button :last-child :last-child :first-child {
+.main-daydiv button :last-child div:last-child :first-child {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -350,7 +383,7 @@ nav {
 
 .hourlyDayDiv {
   display: flex;
-  gap: 1.2rem;
+  gap: 1.9rem;
 }
 
 .weatherIcon {
@@ -369,6 +402,12 @@ nav {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 16px;
+}
+@media (min-width: 980px) {
+  .article-info-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
 }
 
 .otherinfo-article {
