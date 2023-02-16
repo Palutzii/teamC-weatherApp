@@ -109,6 +109,16 @@ body {
   background-color: #20a2be;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 980px) {
+  .header {
+    justify-content: flex-start;
+  }
+}
+
 .logo-wrapper {
   display: flex;
 }
@@ -118,6 +128,11 @@ body {
 }
 .logo-wrapper .logo {
   width: 70px;
+}
+@media (min-width: 980px) {
+  .logo-wrapper .logo {
+    width: 150px;
+  }
 }
 
 nav {
