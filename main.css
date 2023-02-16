@@ -128,6 +128,7 @@ body {
 }
 .logo-wrapper .logo {
   width: 70px;
+  animation: rotateSun 10s linear infinite;
 }
 @media (min-width: 980px) {
   .logo-wrapper .logo {
@@ -139,6 +140,14 @@ nav {
   padding: 1rem;
 }
 
+@keyframes rotateSun {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .hero-box {
   display: flex;
   flex-direction: column;
@@ -161,6 +170,9 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+.hero-info:hover {
+  cursor: pointer;
 }
 
 .hero-location {
@@ -255,6 +267,10 @@ nav {
   margin-bottom: 8px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
   color: #fff;
+}
+.main-daydiv button:hover {
+  cursor: pointer;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
 }
 .main-daydiv button :last-child {
   display: flex;
@@ -437,7 +453,7 @@ nav {
 }
 @media (min-width: 980px) {
   .article-info-wrapper {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
 }
