@@ -162,6 +162,9 @@ nav {
   flex-direction: column;
   gap: 1rem;
 }
+.hero-info:hover {
+  cursor: pointer;
+}
 
 .hero-location {
   text-align: center;
