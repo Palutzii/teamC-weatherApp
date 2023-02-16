@@ -56,14 +56,24 @@
 .dayBtn {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  max-width: 184px;
-  width: 100%;
-  gap: 20px;
-
   @include fontSemiBold("Inter");
 
-  h3:nth-child(2) {
+  h2 {
+    width: 105px;
+    margin-right: 1rem;
+
+    @include devices(tablet) {
+      width: 126px;
+      margin-right: 2rem;
+    }
+
+    @include devices(desktop) {
+      width: 140px;
+      margin-right: 3rem;
+    }
+  }
+
+  h3 {
     text-align: right;
 
     @include fontRegular("Inter");

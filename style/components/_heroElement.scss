@@ -4,6 +4,7 @@
   align-items: center;
   gap: 3rem;
   margin-bottom: 4rem;
+  margin-top: 1rem;
 
   @include devices(desktop) {
     flex-direction: row;
@@ -34,13 +35,23 @@
 }
 
 .hero-current {
-  display: flex;
-  gap: 1rem;
-
   .hero-icon {
+    display: flex;
+    gap: 1rem;
+
     .weatherIcon {
       width: 100px;
     }
+  }
+}
+
+.hero-temp {
+  display: flex;
+  flex-direction: column;
+
+  .hero-feels {
+    display: flex;
+    gap: 4px;
   }
 }
 
