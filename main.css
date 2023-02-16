@@ -258,6 +258,11 @@ nav {
   display: flex;
   margin-right: 2rem;
 }
+@media (min-width: 980px) {
+  .main-daydiv button :last-child div:first-child .weatherIcon {
+    width: 30px;
+  }
+}
 .main-daydiv button :last-child div:last-child {
   flex-direction: column;
   align-items: flex-end;
