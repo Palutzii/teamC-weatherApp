@@ -1,6 +1,7 @@
 import { dataArray } from "../main.js";
 import { weatherIcons } from "./hourlyElement.js";
 import { runHourlyElement } from "./hourlyElement.js";
+import { runotherInfo } from "./otherInfo.js";
 export const runDailyElement = () => {
   const {
     cloudBolt,

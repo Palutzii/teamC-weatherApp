@@ -1,28 +1,27 @@
-import { dataArray } from "./dataArray.js";
+import { dataArray } from "../main.js";
+export const runotherInfo = (buttonValue) => {
+    
 
-let dailyPrecip = document.querySelector("#daily-precip");
-let dailyWindspeed = document.querySelector("#daily-windspeed");
+let dailyPrecip = document.querySelector(".dailyprecip-info");
+let dailyWindspeed = document.querySelector(".dailywindspeed-info");
 
-// function getDailyWindspeed(){
-//     for(let i = 0; i < dataArray.length; i++){
-//         dailyWindspeed += dataArray[i].hourly.windSpeed / 24;
-//     }
-// }
-//getDailyWindspeed()
 
-function getDailyPrecip(){
     for(let i = 0; i < dataArray.length; i++){
-         dailyPrecip = dataArray[i].daily.precipitationSum;
+         if(dataArray[i].name === buttonValue){
+            dailyPrecip.innerHTML = dataArray[i].daily.precipitationSum + " mm";
+            break;
+         }
     }
-}
-getDailyPrecip();
-
-
-
-
-
-
-
-function renderOtherInfo(){
-
+    
+    for(let i = 0; i < dataArray.length; i++){
+        if(dataArray[i].name === buttonValue){
+            let sumWind = 0;
+            dataArray[i].hourly.forEach(hour => {
+                sumWind += hour.windSpeed;
+            })
+            let avrageWind = (sumWind / 24);
+            dailyWindspeed.innerHTML = Math.round(avrageWind) + " m/s";
+        }
+     }
+ 
 }
