@@ -6,6 +6,7 @@ import { dataArray } from "./javascript/getWeather.js";
 export { dataArray };
 import { runHourlyElement } from "./javascript/hourlyElement.js";
 import { runDailyElement } from "./javascript/dayElement.js";
+import { runotherInfo } from "./javascript/otherInfo.js";
 async function main(){
 
 // hittar och skriver ut koordinater för enhetens plats
