@@ -32,6 +32,12 @@
       div:first-child {
         display: flex;
         margin-right: 2rem;
+
+        .weatherIcon {
+          @include devices(desktop) {
+            width: 30px;
+          }
+        }
       }
 
       div:last-child {

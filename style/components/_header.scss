@@ -1,4 +1,10 @@
 .header {
+  display: flex;
+  justify-content: center;
+
+  @include devices(desktop) {
+    justify-content: flex-start;
+  }
 }
 
 .logo-wrapper {
@@ -9,6 +15,10 @@
   }
   .logo {
     width: 70px;
+
+    @include devices(desktop) {
+      width: 150px;
+    }
   }
 }
 
