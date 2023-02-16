@@ -43,7 +43,55 @@
         </nav>
       </div>
     </header>
+
+    <artical class="hero">
+      <div class="hero-box content-wrapper">
+        <div class="hero-info">
+          <div class="hero-location">
+            <h1 id="location"> Stockholm </h1>
+            <div class="hero-date">
+              <span>
+              <p id="hero-day">söndag</p>
+              <p id="day-date">12/2</p>
+            </span>
+            </div>
+          </div>
+          
+          <div class="hero-current">
+            <div class="hero-icon">
+              <img class="weatherIcon" src="content/icons/cloud-sun-rain.svg" alt="" id="hero-icon">
+            </div>
+            <div class="hero-temp">
+              <p id="hero-temp">3'C</p>
+              <div class="hero-feel">
+                <p >känns som</p>
+                <p id="feels">-7c</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-now">
+          <div class="now-box">
+            <div class ="now-now">
+              <h2 id="right-now">Just nu:</h2>
+            </div>
+            <div class="now-info">
+              <div class="now-warning">
+                <div class="now-icon">
+               <img class="weatherIcon"src="content/icons/tornado.svg" alt="" id="varning-icon">
+                </div>
+                <div class="now-message">
+                  <p id="message">kraftiga vindar</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </artical>
+
     <main class="main content-wrapper">
+      <div class="main-daydiv">
       <div class="weather-temp-titles">
         <div>Väder</div>
         <div class="temp-high-low">
@@ -51,11 +99,11 @@
           <p>Lägst</p>
         </div>
       </div>
-      <div class="main-daydiv"></div>
+      </div>
 
       <div class="hourlyDivWrapper">
         <!-- here is the code for the hourly weather -->
-        <h2 class="hourlyWeekday">Måndag</h2>
+        <h2 class="hourlyWeekday"></h2>
 
         <div class="hourlyElement">
           <div class="hourlyInfo">
@@ -76,12 +124,12 @@
           <div class="hourlyWeatherDiv"></div>
         </div>
       </div>
-
-      
-      
-       <div class="otherinfo-div">
+    
+    <div class="otherinfo-div">
       <h3 class="otherinfo-heading">Övrig Info</h3>
-      <article class="otherinfo-article">
+
+      <div class="article-info-wrapper">
+        <article class="otherinfo-article">
         <h4>Nederbörd</h4>
         <p>2 mm</p>
       </article>
@@ -105,9 +153,11 @@
         <h4>Tryck</h4>
         <p>1011 hPa</p>
       </article>
-    </div>
+      </div>
 
-      <footer>
+    </main>
+
+    <footer>
         <div class="copyright">
           <p>©copy right lorem-2023</p>
       </div>
