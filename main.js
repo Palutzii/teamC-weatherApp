@@ -1,9 +1,9 @@
 import { myLocation } from "./javascript/myLocation.js";
 import { getWeather } from "./javascript/getWeather.js";
 import {currentWeatherObject} from "./javascript/getWeather.js"; // Object att använda i "hero"
-export {currentWeatherObject};
+export { currentWeatherObject };
 import { dataArray } from "./javascript/getWeather.js";
-export {dataArray};
+export { dataArray };
 import { runHourlyElement } from "./javascript/hourlyElement.js";
 import { runDailyElement } from "./javascript/dayElement.js";
 async function main(){
