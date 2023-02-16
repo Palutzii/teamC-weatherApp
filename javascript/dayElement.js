@@ -23,6 +23,7 @@ export const runDailyElement = () => {
   infoDiv.style.display = "none";
   timeInfo.style.display = "none";
   otherInfo.style.display = "none";
+  mainDiv.style.display = "block"
   let weathericon = "";
   // Loopar igenom dataArray och skapar knappar
   for (let i = 0; i < dataArray.length; i++) {
@@ -74,15 +75,18 @@ export const runDailyElement = () => {
       `;
     mainDiv.append(button);
     console.log(button);
-
+    let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
+    let otherInfoDiv = document.querySelector(".otherinfo-div");
     button.addEventListener("click", (event) => {
       runHourlyElement(event.target.value);
       runotherInfo(event.target.value);
+      otherInfoDiv.style.display = "block";
+      hourlyDivWrapper.style.display = "block";
       mainDiv.innerHTML = "";
       heroBox.innerHTML = "";
       infoDiv.style.display = "inherit";
       timeInfo.style.display = "inherit";
-      otherInfo.style.display = "inherit";
+      // otherInfo.style.display = "inherit";
     });
   }
 };
