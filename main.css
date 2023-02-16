@@ -348,7 +348,7 @@ nav {
   justify-content: flex-end;
   font-size: 0.75rem;
   align-items: center;
-  gap: 0.9rem;
+  gap: 1.2rem;
   padding: 8px 1px 8px 8px;
   margin-right: 14px;
 }
@@ -393,7 +393,12 @@ nav {
 
 .hourlyDayDiv {
   display: flex;
-  gap: 1.9rem;
+  gap: 1.5rem;
+}
+.hourlyDayDiv span,
+.hourlyDayDiv img {
+  text-align: center;
+  width: 30px;
 }
 
 .weatherIcon {
