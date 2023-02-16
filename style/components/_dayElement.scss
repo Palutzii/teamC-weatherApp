@@ -57,11 +57,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 184px;
   width: 100%;
-  gap: 20px;
-
+  align-content: center;
   @include fontSemiBold("Inter");
+
+  @include devices(desktop) {
+    max-width: 25%;
+  }
 
   h3:nth-child(2) {
     text-align: right;

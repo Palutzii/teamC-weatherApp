@@ -288,12 +288,16 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 184px;
   width: 100%;
-  gap: 20px;
+  align-content: center;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 700;
+}
+@media (min-width: 980px) {
+  .dayBtn {
+    max-width: 25%;
+  }
 }
 .dayBtn h3:nth-child(2) {
   text-align: right;
