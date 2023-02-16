@@ -68,9 +68,8 @@ export const runDailyElement = () => {
     )}/${parseInt(dataArray[i].date.month, 10)}</h3>
         </div>
         <div>
-          <div>${weathericon}</div><div> <h3>${
-      dataArray[i].daily.tempMax
-    }</h3>  <h3>${dataArray[i].daily.tempMin}</h3>
+          <div>${weathericon}</div><div> <h3>${Math.round(
+      dataArray[i].daily.tempMax)}&deg</h3>  <h3>${Math.round(dataArray[i].daily.tempMin)}&deg</h3>
         </div>
       `;
     mainDiv.append(button);
