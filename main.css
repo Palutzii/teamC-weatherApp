@@ -145,6 +145,7 @@ nav {
   align-items: center;
   gap: 3rem;
   margin-bottom: 4rem;
+  margin-top: 1rem;
 }
 @media (min-width: 980px) {
   .hero-box {
@@ -172,12 +173,21 @@ nav {
   gap: 0.5rem;
 }
 
-.hero-current {
+.hero-current .hero-icon {
   display: flex;
   gap: 1rem;
 }
 .hero-current .hero-icon .weatherIcon {
   width: 100px;
+}
+
+.hero-temp {
+  display: flex;
+  flex-direction: column;
+}
+.hero-temp .hero-feels {
+  display: flex;
+  gap: 4px;
 }
 
 #hero-temp {
