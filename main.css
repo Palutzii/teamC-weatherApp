@@ -384,7 +384,7 @@ nav {
 }
 
 .hourlyWeatherDiv {
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 .hourlyWeatherDiv span {
   font-family: "Inter", Arial, Helvetica, sans-serif;
@@ -423,6 +423,10 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+.otherinfo-heading {
+  margin-bottom: 1.5rem;
 }
 
 .article-info-wrapper {
