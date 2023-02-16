@@ -1,4 +1,4 @@
-import { dataArray } from "./dataArray.js";
+import { dataArray } from "../main.js";
 
 let dailyPrecip = document.querySelector("#daily-precip");
 let dailyWindspeed = document.querySelector("#daily-windspeed");
