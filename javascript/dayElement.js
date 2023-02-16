@@ -88,4 +88,23 @@ export const runDailyElement = () => {
       // otherInfo.style.display = "inherit";
     });
   }
+  // Fetches hero-info
+  let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
+  let otherInfoDiv = document.querySelector(".otherinfo-div");
+  let heroinfo = document.querySelector(".hero-info");
+
+  // Gives hero-info value from dataArray
+  heroinfo.value = dataArray[0].name;
+  //
+  heroinfo.addEventListener("click", () => {
+    runHourlyElement(heroinfo.value);
+    runotherInfo(heroinfo.value);
+    otherInfoDiv.style.display = "block";
+    hourlyDivWrapper.style.display = "block";
+    mainDiv.innerHTML = "";
+    heroBox.innerHTML = "";
+    infoDiv.style.display = "inherit";
+    timeInfo.style.display = "inherit";
+  });
+
 };
