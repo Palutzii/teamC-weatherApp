@@ -8,15 +8,19 @@ let dailyWindspeed = document.querySelector(".dailywindspeed-info");
 
     for(let i = 0; i < dataArray.length; i++){
          if(dataArray[i].name === buttonValue){
-            dailyPrecip.textcontent = dataArray[i].daily.precipitationSum + " mm";
+            dailyPrecip.innerHTML = dataArray[i].daily.precipitationSum + " mm";
             break;
          }
     }
-      
- 
-     for(let i = 0; i < dataArray.length; i++){
+    
+    for(let i = 0; i < dataArray.length; i++){
         if(dataArray[i].name === buttonValue){
-            dailyWindspeed.textContent += dataArray[i].hourly.windSpeed / 24 + " m/s";
+            let sumWind = 0;
+            dataArray[i].hourly.forEach(hour => {
+                sumWind += hour.windSpeed;
+            })
+            let avrageWind = (sumWind / 24);
+            dailyWindspeed.innerHTML = Math.round(avrageWind) + " m/s";
         }
      }
  
