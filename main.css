@@ -224,18 +224,22 @@ nav {
 }
 .main-daydiv button :last-child {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
 }
-.main-daydiv button :last-child :last-child {
+.main-daydiv button :last-child div:first-child {
+  display: flex;
+  margin-right: 2rem;
+}
+.main-daydiv button :last-child div:last-child {
   flex-direction: column;
   align-items: flex-end;
-  margin-left: 1rem;
+  width: 30px;
 }
-.main-daydiv button :last-child :last-child :first-child {
+.main-daydiv button :last-child div:last-child :first-child {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -350,7 +354,7 @@ nav {
 
 .hourlyDayDiv {
   display: flex;
-  gap: 1.2rem;
+  gap: 1.9rem;
 }
 
 .weatherIcon {
