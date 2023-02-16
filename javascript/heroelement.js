@@ -58,10 +58,10 @@ export const runHeroElement = () => {
             <div class="hero-icon">
               <p id="hero-icon" class="wheatericon">${weathericon}</p>
                <div class="hero-temp">
-                  <p id="hero-temp">${currentWeatherObject.temp}</p> 
+                  <p id="hero-temp">${Math.round(currentWeatherObject.temp)}&deg</p> 
                   <div class="hero-feels">
                    <p> känns som <p>
-                    <p id="feels">${currentWeatherObject.apparentTemp}</p>
+                    <p id="feels">${Math.round(currentWeatherObject.apparentTemp)}&deg</p>
                   </div>
                  </div>
                 </div>
