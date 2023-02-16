@@ -146,6 +146,15 @@ nav {
   gap: 3rem;
   margin-bottom: 4rem;
 }
+@media (min-width: 980px) {
+  .hero-box {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    margin-top: 3rem;
+  }
+}
 
 .hero-info {
   display: flex;
