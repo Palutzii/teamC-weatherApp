@@ -77,6 +77,7 @@ export const runDailyElement = () => {
 
     button.addEventListener("click", (event) => {
       runHourlyElement(event.target.value);
+      runotherInfo(event.target.value);
       mainDiv.innerHTML = "";
       heroBox.innerHTML = "";
       infoDiv.style.display = "inherit";
