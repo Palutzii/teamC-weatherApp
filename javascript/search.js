@@ -2,6 +2,7 @@ import { getWeather } from "./getWeather.js";
 import { dataArray } from "../main.js";
 import { runDailyElement } from "./dayElement.js";
 import {runHeroElement } from "./heroelement.js";
+import {currentWeatherObject} from "../main.js";
 export {searchInput};
 export {searchBtn};
 
@@ -63,9 +64,11 @@ const createPlacesList = (arr) => {
 
 }
 
-async function getSearchWeather(latitude, longitude) {
+async function getSearchWeather(latitude, longitude, name) {
     await getWeather(latitude, longitude);
     console.log(dataArray)
+    currentWeatherObject.location = name;
+    console.log(currentWeatherObject)
     runHeroElement();
     runDailyElement();
 
@@ -75,7 +78,7 @@ const getCoordinates = (id) => {
     let idAsNumber = (parseInt(id))
     searchResults.forEach((index) => {
         if (index.id === idAsNumber) {
-            getSearchWeather(index.latitude, index.longitude)
+            getSearchWeather(index.latitude, index.longitude, index.name)
         }
     })
     placesList.innerHTML = "";
