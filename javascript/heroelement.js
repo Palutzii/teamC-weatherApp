@@ -70,12 +70,6 @@ export const runHeroElement = () => {
 
    heroinfo.append(hero); 
 console.log(hero)
-
-//hero.addEventListener("click", (event) => {
-//runHourlyElement(event.target.value)
-//heroinfo.innerHTML = "";
-
-// })
 }; 
 
 
