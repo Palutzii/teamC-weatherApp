@@ -34,7 +34,7 @@ let createCurrentWeatherObject = () => {
 }
 
 let createArray = () => {
-
+    dataArray = [];
     for (let i = 0; i < 7; i++){
         let date = weatherData.daily.time[i];
         let hours = [];

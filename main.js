@@ -8,6 +8,7 @@ import { runHourlyElement } from "./javascript/hourlyElement.js";
 import { runDailyElement } from "./javascript/dayElement.js";
 import { runotherInfo } from "./javascript/otherInfo.js";
 import {runHeroElement } from "./javascript/heroelement.js";
+import {searchInput} from "./javascript/search.js"
 async function main(){
   let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
   let otherInfoDiv = document.querySelector(".otherinfo-div");
