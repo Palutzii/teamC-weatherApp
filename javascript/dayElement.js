@@ -2,6 +2,7 @@ import { dataArray } from "../main.js";
 import { weatherIcons } from "./hourlyElement.js";
 import { runHourlyElement } from "./hourlyElement.js";
 import { runotherInfo } from "./otherInfo.js";
+
 export const runDailyElement = () => {
   const {
     cloudBolt,
@@ -14,20 +15,20 @@ export const runDailyElement = () => {
     sun,
     tornado,
   } = weatherIcons;
-  // Hämtar main-div
+  
+  // Fetches elements from html
   let mainDiv = document.querySelector(".main-daydiv");
   let infoDiv = document.querySelector(".infoDiv");
   let timeInfo = document.querySelector(".timeInfo");
   let heroBox = document.querySelector(".hero-box");
   let otherInfo = document.querySelector(".otherinfo-div");
-  infoDiv.style.display = "none";
-  timeInfo.style.display = "none";
-  otherInfo.style.display = "none";
+
   mainDiv.style.display = "block"
   let weathericon = "";
-  // Loopar igenom dataArray och skapar knappar
+
+  // Loops thrue dataArray 
   for (let i = 0; i < dataArray.length; i++) {
-    //skapar knappar
+    //creates buttons
     let button = document.createElement("button");
     button.value = dataArray[i].name;
     if (dataArray[i].daily.weathercode == 0) {
@@ -59,13 +60,11 @@ export const runDailyElement = () => {
     } else if (currentHour.weathercode > 94) {
       weathericon = cloudBolt;
     }
-    // Ger knappar inehåll från dataArray
+    // Gives button content from dataArray
     button.innerHTML = `
         <div class="dayBtn">
-          <h2>${dataArray[i].name}</h2> <h3>${parseInt(
-      dataArray[i].date.day,
-      10
-    )}/${parseInt(dataArray[i].date.month, 10)}</h3>
+          <h2>${dataArray[i].name}</h2> <h3>${parseInt(dataArray[i].date.day,10)}/
+          ${parseInt(dataArray[i].date.month, 10)}</h3>
         </div>
         <div>
           <div>${weathericon}</div><div> <h3>${Math.round(
@@ -73,9 +72,12 @@ export const runDailyElement = () => {
         </div>
       `;
     mainDiv.append(button);
+
+    // Fetches elements from html
     let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
     let otherInfoDiv = document.querySelector(".otherinfo-div");
-    console.log(button)
+
+    // Eventlistener for buttons
     button.addEventListener("click", () => {
       runHourlyElement(button.value);
       runotherInfo(button.value);
@@ -85,17 +87,17 @@ export const runDailyElement = () => {
       heroBox.innerHTML = "";
       infoDiv.style.display = "inherit";
       timeInfo.style.display = "inherit";
-      // otherInfo.style.display = "inherit";
     });
   }
-  // Fetches hero-info
+  // Fetches elements from html
   let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
   let otherInfoDiv = document.querySelector(".otherinfo-div");
   let heroinfo = document.querySelector(".hero-info");
 
   // Gives hero-info value from dataArray
   heroinfo.value = dataArray[0].name;
-  //
+
+  // Eventlistener for hero
   heroinfo.addEventListener("click", () => {
     runHourlyElement(heroinfo.value);
     runotherInfo(heroinfo.value);
