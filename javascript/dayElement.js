@@ -24,6 +24,13 @@ export const runDailyElement = () => {
   let otherInfo = document.querySelector(".otherinfo-div");
 
   mainDiv.style.display = "block"
+  mainDiv.innerHTML = "";
+  mainDiv.innerHTML = `<div class="weather-temp-titles">
+  <div>Väder</div>
+  <div class="temp-high-low">
+    <p>Högst</p>
+    <p>Lägst</p>
+  </div>`
   let weathericon = "";
 
   // Loops thrue dataArray 
