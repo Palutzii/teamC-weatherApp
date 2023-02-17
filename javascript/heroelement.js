@@ -19,6 +19,8 @@ export const runHeroElement = () => {
     let heroinfo = document.querySelector(".hero-info");
     let weathericon = "";
 
+    heroinfo.innerHTML = ""; // Tillagt av Tobbe, tömmer heron när vi sökt på annat ställe.
+
    // Loopar igenom dataArray och skapar knappar 
 
    let hero = document.createElement('div');
