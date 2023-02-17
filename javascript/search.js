@@ -11,7 +11,7 @@ const searchBtn = document.getElementById("searchBtn");
 const placesList = document.getElementById("placesList");
 let searchResults = [];
 
-searchBtn.addEventListener("click", () => {
+searchInput.addEventListener("input", () => {
     console.log("hej")
     const places = searchInput.value;
     getPlaces(places);
