@@ -1,3 +1,5 @@
+// KOD FÖR ATT KÖRA LOADING SCREEN
+
 export const loadingScreen = () => {
 
 
@@ -18,6 +20,8 @@ hero.style.display = "none";
 
 
 };
+
+// KOD FÖR ATT STÄNGA LOADING SCREEN
 
 
 export const loadingScreenOff = () => {

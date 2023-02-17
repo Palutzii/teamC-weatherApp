@@ -18,6 +18,8 @@ async function main(){
   otherInfoDiv.style.display = "none";
   hourlyDivWrapper.style.display = "none";
 
+  // Kör loading screen innan vi hämtar data ------------------------------
+
   loadingScreen();
 
 // hittar och skriver ut koordinater för enhetens plats
@@ -33,6 +35,7 @@ myLocation(async function(position) {
   console.log(dataArray)
   console.log(currentWeatherObject)
 
+// Kör loadingScreenOff och stänger loadingScreen när vi har hämtat data ------------------------------
 
 loadingScreenOff();
 
@@ -42,17 +45,6 @@ runHeroElement();
 
 //loggar array
 console.log(dataArray);
-
-
-//Kör hourlyElement.js
-
-
-
-// import {imgIcons} from "./javascript/hourlyElement.js";
-// imgIcons();
-
-
-
 }
 
 main();
