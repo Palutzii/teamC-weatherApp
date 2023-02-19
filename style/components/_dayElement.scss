@@ -7,12 +7,16 @@
     justify-content: space-between;
     align-items: center;
     padding: 8px 10px;
-    gap: 48px;
+
     position: relative;
     width: 100%;
     border: none;
     border-radius: 8px;
     margin-bottom: 8px;
+
+    @include devices(mobile) {
+      gap: 48px;
+    }
 
     &:hover {
       cursor: pointer;
@@ -34,7 +38,11 @@
 
       div:first-child {
         display: flex;
-        margin-right: 2rem;
+        margin-right: .5rem;
+
+        @include devices(mobile) {
+          margin-right: 2rem;
+        }
 
         .weatherIcon {
           @include devices(desktop) {
@@ -63,8 +71,12 @@
   text-align: left;
 
   h2 {
-    width: 105px;
-    margin-right: 1rem;
+    width: 95px;
+
+    @include devices(mobile) {
+      width: 105px;
+      margin-right: 1rem;
+    }
 
     @include devices(tablet) {
       width: 126px;
@@ -88,10 +100,16 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
+  font-size: 0.6rem;
   margin-right: 8px;
-  font-size: 0.75rem;
   padding: 8px 1px 8px 8px;
+
+  @include devices(mobile) {
+    gap: 1.5rem;
+    font-size: 0.75rem;
+    margin-right: 20px;
+  }
 }
 
 .temp-high-low {

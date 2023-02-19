@@ -32,10 +32,15 @@
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 700;
+}
+@media (min-width: 320px) {
+  h1 {
+    font-size: 2rem;
+  }
 }
 @media (min-width: 740px) {
   h1 {
@@ -49,10 +54,15 @@ h1 {
 }
 
 h2 {
-  font-size: 1.625rem;
+  font-size: 1.375rem;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 600;
+}
+@media (min-width: 320px) {
+  h2 {
+    font-size: 1.625rem;
+  }
 }
 @media (min-width: 740px) {
   h2 {
@@ -66,10 +76,15 @@ h2 {
 }
 
 h3 {
-  font-size: 1.375rem;
+  font-size: 1rem;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 600;
+}
+@media (min-width: 320px) {
+  h3 {
+    font-size: 1.375rem;
+  }
 }
 @media (min-width: 740px) {
   h3 {
@@ -187,10 +202,19 @@ nav {
 
 .hero-current .hero-icon {
   display: flex;
-  gap: 1rem;
+}
+@media (min-width: 320px) {
+  .hero-current .hero-icon {
+    gap: 1rem;
+  }
 }
 .hero-current .hero-icon .weatherIcon {
-  width: 100px;
+  width: 75px;
+}
+@media (min-width: 320px) {
+  .hero-current .hero-icon .weatherIcon {
+    width: 100px;
+  }
 }
 
 .hero-temp {
@@ -259,7 +283,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 8px 10px;
-  gap: 48px;
   position: relative;
   width: 100%;
   border: none;
@@ -267,6 +290,11 @@ nav {
   margin-bottom: 8px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
   color: #fff;
+}
+@media (min-width: 320px) {
+  .main-daydiv button {
+    gap: 48px;
+  }
 }
 .main-daydiv button:hover {
   cursor: pointer;
@@ -282,7 +310,12 @@ nav {
 }
 .main-daydiv button :last-child div:first-child {
   display: flex;
-  margin-right: 2rem;
+  margin-right: 0.5rem;
+}
+@media (min-width: 320px) {
+  .main-daydiv button :last-child div:first-child {
+    margin-right: 2rem;
+  }
 }
 @media (min-width: 980px) {
   .main-daydiv button :last-child div:first-child .weatherIcon {
@@ -309,8 +342,13 @@ nav {
   text-align: left;
 }
 .dayBtn h2 {
-  width: 105px;
-  margin-right: 1rem;
+  width: 95px;
+}
+@media (min-width: 320px) {
+  .dayBtn h2 {
+    width: 105px;
+    margin-right: 1rem;
+  }
 }
 @media (min-width: 740px) {
   .dayBtn h2 {
@@ -335,10 +373,17 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
+  font-size: 0.6rem;
   margin-right: 8px;
-  font-size: 0.75rem;
   padding: 8px 1px 8px 8px;
+}
+@media (min-width: 320px) {
+  .weather-temp-titles {
+    gap: 1.5rem;
+    font-size: 0.75rem;
+    margin-right: 20px;
+  }
 }
 
 .temp-high-low {
