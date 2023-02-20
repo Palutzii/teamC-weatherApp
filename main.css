@@ -150,6 +150,9 @@ body {
     width: 150px;
   }
 }
+.logo-wrapper .logo:hover {
+  animation-duration: 3s;
+}
 
 nav {
   padding: 1rem;
