@@ -310,6 +310,7 @@ nav {
 .dayBtn h2 {
   width: 105px;
   margin-right: 1rem;
+  text-align: left;
 }
 @media (min-width: 740px) {
   .dayBtn h2 {

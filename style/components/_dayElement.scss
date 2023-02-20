@@ -68,6 +68,7 @@
   h2 {
     width: 105px;
     margin-right: 1rem;
+    text-align: left;
 
     @include devices(tablet) {
       width: 126px;
