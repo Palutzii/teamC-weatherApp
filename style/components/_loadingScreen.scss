@@ -8,7 +8,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #20a2be;;
-  
   }
   .progress {
     align-self: center;
@@ -47,7 +46,7 @@
 
 
 
-  @media (min-width: 740px) {
+  @include devices(tablet) {
 
 
   .loading {

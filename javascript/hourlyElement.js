@@ -31,7 +31,6 @@ export const runHourlyElement = (buttonValue) => {
   let weathericon = "";
   let hourlyData = null;
 
-
   // Find the corresponding hourly data for the button clicked
   for (let i = 0; i < dataArray.length; i++) {
     if (dataArray[i].name === buttonValue) {
@@ -44,8 +43,6 @@ export const runHourlyElement = (buttonValue) => {
   if (!hourlyData) {
     return;
   }
-
-
 
   hourlyWeekday.innerHTML = `${buttonValue}`;
 
@@ -65,17 +62,12 @@ export const runHourlyElement = (buttonValue) => {
       }
     }
 
-
-    
-
-
     // Add a leading zero to the hour value if it's less than 10
     let formattedHour = (weekdayTime < 10 ? "0" : "") + weekdayTime;
 
     currentHour.temp = Math.round(currentHour.temp);
     currentHour.windSpeed = Math.round(currentHour.windSpeed);
 
-    
     if (currentHour.weathercode == 0) {
       weathericon = sun;
     } else if (currentHour.weathercode > 0 && currentHour.weathercode < 3) {
@@ -95,8 +87,6 @@ export const runHourlyElement = (buttonValue) => {
       weathericon = cloudBolt;
     }
 
-    
-
     let hourlyWeatherDiv = document.querySelector(".hourlyWeatherDiv");
 
     hourlyWeatherDiv.innerHTML += `<div class="hourlyElementDiv" >
@@ -108,10 +98,5 @@ export const runHourlyElement = (buttonValue) => {
             <span class="hourlyElementDiv__Temp info">${currentHour.temp}&deg</span>
         </div>
     </div>`;
-
-    
   }
 };
-
-
-  
