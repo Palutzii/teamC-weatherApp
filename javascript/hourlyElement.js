@@ -1,4 +1,5 @@
 import { dataArray } from "../main.js";
+import {currentWeatherObject} from "../main.js";
 
 export const weatherIcons = {
   cloudBolt: `<img class="weatherIcon" src="content/icons/cloud-bolt.svg" alt="cloudBolt">`,
@@ -110,7 +111,32 @@ export const runHourlyElement = (buttonValue) => {
     </div>`;
 
     
-  }
+  } //ANNAS KOD
+  let breadNav = document.querySelector("#breadNav");
+  let breadNavContent = document.createElement("div");
+  let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
+  let otherInfoDiv = document.querySelector(".otherinfo-div");
+  let mainDiv = document.querySelector(".main-daydiv");
+  let infoDiv = document.querySelector(".infoDiv");
+  let timeInfo = document.querySelector(".timeInfo");
+  let heroBox = document.querySelector(".hero-box");
+
+  breadNavContent.innerHTML = `
+        <div id="home">
+          <h3>${currentWeatherObject.location}/</h3><h3>${buttonValue}</h3>
+        </div>`;
+  breadNav.append(breadNavContent);
+
+  let homeDiv= document.querySelector("#home")
+  homeDiv.addEventListener("click", () => {
+    otherInfoDiv.style.display = "none";
+    hourlyDivWrapper.style.display = "none";
+    mainDiv.style.display = "block";
+    heroBox.style.display = "block";
+    infoDiv.style.display = "none";
+    timeInfo.style.display = "none";
+    breadNavContent.innerHTML = "";
+  });
 };
 
 

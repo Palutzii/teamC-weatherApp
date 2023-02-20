@@ -2,6 +2,7 @@ import { dataArray } from "../main.js";
 import { weatherIcons } from "./hourlyElement.js";
 import { runHourlyElement } from "./hourlyElement.js";
 import { runotherInfo } from "./otherInfo.js";
+import {currentWeatherObject} from "../main.js";
 
 export const runDailyElement = () => {
   const {
@@ -82,8 +83,8 @@ export const runDailyElement = () => {
       runotherInfo(button.value);
       otherInfoDiv.style.display = "block";
       hourlyDivWrapper.style.display = "block";
-      mainDiv.innerHTML = "";
-      heroBox.innerHTML = "";
+      mainDiv.style.display = "none";
+      heroBox.style.display = "none";
       infoDiv.style.display = "inherit";
       timeInfo.style.display = "inherit";
     });
@@ -107,5 +108,4 @@ export const runDailyElement = () => {
     infoDiv.style.display = "inherit";
     timeInfo.style.display = "inherit";
   });
-
 };
