@@ -63,8 +63,7 @@ export const runDailyElement = () => {
     // Gives button content from dataArray
     button.innerHTML = `
         <div class="dayBtn">
-          <h2>${dataArray[i].name}</h2> <h3>${parseInt(dataArray[i].date.day,10)}/
-          ${parseInt(dataArray[i].date.month, 10)}</h3>
+          <h2>${dataArray[i].name}</h2> <h3>${parseInt(dataArray[i].date.day,10)}/${parseInt(dataArray[i].date.month, 10)}</h3>
         </div>
         <div>
           <div>${weathericon}</div><div> <h3>${Math.round(

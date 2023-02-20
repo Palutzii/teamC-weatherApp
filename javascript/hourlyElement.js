@@ -13,7 +13,6 @@ export const weatherIcons = {
 };
 
 export const runHourlyElement = (buttonValue) => {
-  let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
   let hourlyWeekday = document.querySelector(".hourlyWeekday");
   let hourlyWeatherDiv = document.querySelector(".hourlyWeatherDiv");
 
@@ -105,7 +104,7 @@ export const runHourlyElement = (buttonValue) => {
         <div class="hourlyDayDiv" >
             <span class="hourlyElementDiv__Wind info">${currentHour.windSpeed}</span>
             <span class="hourlyElementDiv__Rain info">${currentHour.rain}</span>
-            ${weathericon}
+            <div class="logo-wrapper">${weathericon}</div>
             <span class="hourlyElementDiv__Temp info">${currentHour.temp}&deg</span>
         </div>
     </div>`;
