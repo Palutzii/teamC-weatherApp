@@ -7,9 +7,13 @@
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 
   @include fontSemiBold("Inter");
+
+  @include devices(mobile) {
+    font-size: 2rem;
+  }
 
   @include devices(tablet) {
     font-size: 2.5rem;
@@ -21,9 +25,13 @@ h1 {
 }
 
 h2 {
-  font-size: 1.625rem;
+  font-size: 1.375rem;
 
   @include fontMedium("Inter");
+
+  @include devices(mobile) {
+    font-size: 1.625rem;
+  }
 
   @include devices(tablet) {
     font-size: 2rem;
@@ -33,10 +41,15 @@ h2 {
     font-size: 2.25rem;
   }
 }
+
 h3 {
-  font-size: 1.375rem;
+  font-size: 1rem;
 
   @include fontMedium("Inter");
+
+  @include devices(mobile) {
+    font-size: 1.375rem;
+  }
 
   @include devices(tablet) {
     font-size: 1.5rem;
@@ -46,6 +59,7 @@ h3 {
     font-size: 1.75rem;
   }
 }
+
 h4 {
   font-size: 1.125rem;
 

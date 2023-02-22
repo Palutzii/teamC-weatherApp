@@ -109,10 +109,10 @@ export const runDailyElement = () => {
     runotherInfo(heroinfo.value);
     otherInfoDiv.style.display = "block";
     hourlyDivWrapper.style.display = "block";
-    mainDiv.innerHTML = "";
-    heroBox.innerHTML = "";
-    infoDiv.style.display = "inherit";
-    timeInfo.style.display = "inherit";
+    mainDiv.style.display = "none";
+    heroBox.style.display = "none";
+    infoDiv.style.display = "block";
+    timeInfo.style.display = "block";
   });
 
 
@@ -121,10 +121,7 @@ export const runDailyElement = () => {
   // TOGGLE FUNKTION MELLAN C OCH F ------------------------------------------------------------
 
 
- 
 
-
-  
   let button = document.querySelectorAll("button");
 
   for (let i = 0; i < button.length; i++) {

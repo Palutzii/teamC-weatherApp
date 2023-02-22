@@ -56,16 +56,10 @@ async function main() {
           }
         });
       }
-
-
-
-
     }
     // Kör loadingScreenOff och stänger loadingScreen när vi har hämtat data ------------------------------
     
     loadingScreenOff();
-    
-    runHeroElement();
     let check = document.querySelector(".check");
     check.addEventListener("change", function () {
       if (check.checked) {
@@ -76,18 +70,13 @@ async function main() {
 
 
     });
+    
+    runHeroElement();
     runDailyElement();
    
   });
 
   //loggar array
- 
-
-
-
-
-
-
 }
 
 main();

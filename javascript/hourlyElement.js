@@ -142,9 +142,14 @@ export const runHourlyElement = (buttonValue) => {
   let heroBox = document.querySelector(".hero-box");
 
   breadNavContent.innerHTML = `
-        <div id="home">
-          <h3>${currentWeatherObject.location}/</h3><h3>${buttonValue}</h3>
-        </div>`;
+      <div>
+        <div id="home" class="breadNavHome">
+        <img src="content/icons/house.svg" alt="home">
+          <h3>${currentWeatherObject.location}</h3>
+        </div>
+        <span>/</span>
+        <div><h3>${buttonValue}</h3></div>
+      </div>`;
   breadNav.append(breadNavContent);
 
   let homeDiv = document.querySelector("#home");
@@ -152,30 +157,12 @@ export const runHourlyElement = (buttonValue) => {
     console.log("hej")
     otherInfoDiv.style.display = "none";
     hourlyDivWrapper.style.display = "none";
-    mainDiv.style.display = "block";
-    heroBox.style.display = "block";
+    mainDiv.style.display = "inherit";
+    heroBox.style.display = "flex";
     infoDiv.style.display = "none";
     timeInfo.style.display = "none";
     breadNavContent.innerHTML = "";
   });
 
 
-
-
-// for (let i = 0; i < dataArray.length; i++) {
-     
-//   for (let j = 0; j < dataArray[i].hourly.length; j++) {
-//     console.log(dataArray[i].hourly[j].temp);
-//     let check = document.querySelector(".check");
-
-//     check.addEventListener("change", function () {
-      
-//       if (check.checked) {
-//     dataArray[i].hourly[j].temp = dataArray[i].hourly[j].temp * 1.8 + 32;
-//       } else  {
-//         dataArray[i].hourly[j].temp = (dataArray[i].hourly[j].temp - 32) / 1.8;
-//       }
-//     });
-//   }
-// }
 };
