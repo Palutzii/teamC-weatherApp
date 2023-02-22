@@ -103,9 +103,9 @@ export const runDailyElement = () => {
     runotherInfo(heroinfo.value);
     otherInfoDiv.style.display = "block";
     hourlyDivWrapper.style.display = "block";
-    mainDiv.innerHTML = "";
-    heroBox.innerHTML = "";
-    infoDiv.style.display = "inherit";
-    timeInfo.style.display = "inherit";
+    mainDiv.style.display = "none";
+    heroBox.style.display = "none";
+    infoDiv.style.display = "block";
+    timeInfo.style.display = "block";
   });
 };
