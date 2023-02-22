@@ -20,14 +20,18 @@
 
     &:hover {
       cursor: pointer;
-      background: linear-gradient(180deg,
-          rgba(255, 255, 255, 0.2) 0%,
-          rgba(255, 255, 255, 0.2) 100%);
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.2) 100%
+      );
     }
 
-    background: linear-gradient(180deg,
+    background: linear-gradient(
+      180deg,
       rgba(255, 255, 255, 0.2) 0%,
-      rgba(255, 255, 255, 0.04) 100%);
+      rgba(255, 255, 255, 0.04) 100%
+    );
     color: #fff;
 
     :last-child {
@@ -38,7 +42,7 @@
 
       div:first-child {
         display: flex;
-        margin-right: .5rem;
+        margin-right: 0.5rem;
 
         @include devices(mobile) {
           margin-right: 2rem;
