@@ -70,9 +70,9 @@ export const runDailyElement = () => {
     )}/${parseInt(dataArray[i].date.month, 10)}</h3>
         </div>
         <div>
-          <div>${weathericon}</div><div> <h3 class="tempMax">${Math.round(
+          <div>${weathericon}</div><div> <h3 class="tempMax tempCF">${Math.round(
       dataArray[i].daily.tempMax
-    )}&deg</h3>  <h3 class="tempMax">${Math.round(
+    )}&deg</h3>  <h3 class="tempMax tempCF">${Math.round(
       dataArray[i].daily.tempMin
     )}&deg</h3>
         </div>
@@ -121,7 +121,7 @@ export const runDailyElement = () => {
 
   for (let i = 0; i < button.length; i++) {
     console.log(button[i]);
-    let temperature = button[i].querySelectorAll(".tempMax");
+    let temperature = button[i].querySelectorAll(".tempCF");
     let check = document.querySelector(".check");
 
     check.addEventListener("change", function () {

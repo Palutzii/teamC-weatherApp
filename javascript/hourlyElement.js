@@ -104,7 +104,7 @@ export const runHourlyElement = (buttonValue) => {
 
     hourlyWeatherDiv = document.querySelectorAll(".hourlyWeatherDiv");
 
-    
+
 
     for (let i = 0; i < hourlyWeatherDiv.length; i++) {
       let temperature = hourlyWeatherDiv[i].querySelectorAll(
@@ -119,7 +119,7 @@ export const runHourlyElement = (buttonValue) => {
             temperature[j].innerHTML = `${Math.round(
               (currentHour.temp * 9) / 5 + 32
             )}&deg`;
-          } else {
+          } else if (!check.checked) {
             temperature[j].innerHTML = `${Math.round(
               ((currentHour.temp - 32) * 5) / 9
             )}&deg`;
@@ -149,6 +149,7 @@ export const runHourlyElement = (buttonValue) => {
 
   let homeDiv = document.querySelector("#home");
   homeDiv.addEventListener("click", () => {
+    console.log("hej")
     otherInfoDiv.style.display = "none";
     hourlyDivWrapper.style.display = "none";
     mainDiv.style.display = "block";
@@ -158,3 +159,5 @@ export const runHourlyElement = (buttonValue) => {
     breadNavContent.innerHTML = "";
   });
 };
+
+
