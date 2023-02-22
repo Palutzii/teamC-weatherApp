@@ -400,7 +400,17 @@ nav {
   }
 }
 .weather-temp-titles div:first-child {
-  margin-right: 2.5rem;
+  margin-right: 1rem;
+}
+@media (min-width: 320px) {
+  .weather-temp-titles div:first-child {
+    margin-right: 0rem;
+  }
+}
+@media (min-width: 980px) {
+  .weather-temp-titles div:first-child {
+    margin-right: 2.5rem;
+  }
 }
 
 .temp-high-low {

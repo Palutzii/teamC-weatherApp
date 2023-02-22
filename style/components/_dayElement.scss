@@ -125,7 +125,15 @@
   }
 
   div:first-child {
-    margin-right: 2.5rem;
+    margin-right: 1rem;
+
+    @include devices(mobile) {
+      margin-right: 0rem;
+    }
+
+    @include devices(desktop) {
+      margin-right: 2.5rem;
+    }
   }
 }
 
