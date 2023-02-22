@@ -101,11 +101,11 @@ export const runDailyElement = () => {
   heroinfo.addEventListener("click", () => {
     runHourlyElement(heroinfo.value);
     runotherInfo(heroinfo.value);
-    otherInfoDiv.style.display = "block";
-    hourlyDivWrapper.style.display = "block";
+    otherInfoDiv.style.display = "flex";
+    hourlyDivWrapper.style.display = "flex";
     mainDiv.style.display = "none";
     heroBox.style.display = "none";
-    infoDiv.style.display = "block";
-    timeInfo.style.display = "block";
+    infoDiv.style.display = "flex";
+    timeInfo.style.display = "flex";
   });
 };

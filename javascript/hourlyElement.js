@@ -125,7 +125,7 @@ export const runHourlyElement = (buttonValue) => {
   homeDiv.addEventListener("click", () => {
     otherInfoDiv.style.display = "none";
     hourlyDivWrapper.style.display = "none";
-    mainDiv.style.display = "inherit";
+    mainDiv.style.display = "flex";
     heroBox.style.display = "flex";
     infoDiv.style.display = "none";
     timeInfo.style.display = "none";
