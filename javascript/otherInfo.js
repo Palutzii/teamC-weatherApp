@@ -9,6 +9,7 @@ let dailyWindspeed = document.querySelector(".dailywindspeed-info");
     for(let i = 0; i < dataArray.length; i++){
          if(dataArray[i].name === buttonValue){
             dailyPrecip.innerHTML = dataArray[i].daily.precipitationSum + " mm";
+            console.log(dailyPrecip.innerHTML)
             break;
          }
     }

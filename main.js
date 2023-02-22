@@ -7,11 +7,14 @@ export { dataArray };
 import { runHourlyElement } from "./javascript/hourlyElement.js";
 import { runDailyElement } from "./javascript/dayElement.js";
 import { runotherInfo } from "./javascript/otherInfo.js";
-import { runHeroElement } from "./javascript/heroelement.js";
+import {runHeroElement } from "./javascript/heroelement.js";
+
+import {runWarningElement } from "./javascript/waring.js";
+
 import { loadingScreen } from "./javascript/loadingScreens.js";
 import { loadingScreenOff } from "./javascript/loadingScreens.js";
-
-async function main() {
+ 
+async function main(){
   let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
   let otherInfoDiv = document.querySelector(".otherinfo-div");
   let mainDayDiv = document.querySelector(".main-daydiv");
@@ -67,16 +70,16 @@ async function main() {
       } else {
         currentWeatherObject.temp = (currentWeatherObject.temp - 32) / 1.8;
       }
-
-
     });
-    
-    runHeroElement();
-    runDailyElement();
-   
-  });
+
+
+runHeroElement();
+runWarningElement();
+ runDailyElement();
 
   //loggar array
+});
 }
+
 
 main();
