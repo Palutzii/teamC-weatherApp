@@ -166,6 +166,14 @@ nav {
     transform: rotate(360deg);
   }
 }
+.search-icon-wrapper {
+  position: absolute;
+  width: 53px;
+}
+.search-icon-wrapper img {
+  width: 20px;
+}
+
 .hero-box {
   display: flex;
   flex-direction: column;
