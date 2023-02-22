@@ -1,10 +1,29 @@
 .search {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 2%;
+  top: 20%;
 }
 
-.search-icon-wrapper {
-  position: absolute;
-  width: 53px;
+.search-bar {
   img {
+    position: absolute;
+    right: 3%;
+    top: 26%;
     width: 20px;
   }
+}
+
+#searchInput {
+  color: #0f4a57;
+  border: none;
+  border-radius: 30px;
+  width: 250px;
+  height: 54px;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 30px;
+
+  font-size: 1rem;
 }
