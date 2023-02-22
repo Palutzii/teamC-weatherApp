@@ -166,6 +166,24 @@ nav {
     transform: rotate(360deg);
   }
 }
+.cloud-wrapper img {
+  top: 50%;
+  width: 100%;
+  animation-name: moveCloud;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveCloud {
+  0% {
+    transform: translateX(-450px);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
 .hero-box {
   display: flex;
   flex-direction: column;
