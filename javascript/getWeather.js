@@ -89,6 +89,7 @@ export async function getWeather(latitude, longitude) {
     const res = await fetch(url);
     const data = await res.json();
     weatherData = data;
+    console.log(weatherData)
     createArray();
     createCurrentWeatherObject();
 }
