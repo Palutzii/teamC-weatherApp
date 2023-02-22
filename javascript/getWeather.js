@@ -27,6 +27,7 @@ let createCurrentWeatherObject = () => {
         temp: weatherData.current_weather.temperature,
         weathercode: weatherData.current_weather.weathercode,
         apparentTemp: (weatherData.hourly.apparent_temperature[weatherData.hourly.time.indexOf(currentDateAndTimeByHour)]),
+        windspeed: (weatherData.hourly.windspeed_10m[weatherData.hourly.time.indexOf(currentDateAndTimeByHour)]),
         name: dataArray[0].name,
         date: dataArray[0].date,
         location: "Din Plats" //placeholder så länge
