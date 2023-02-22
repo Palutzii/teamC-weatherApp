@@ -8,8 +8,12 @@ import { runHourlyElement } from "./javascript/hourlyElement.js";
 import { runDailyElement } from "./javascript/dayElement.js";
 import { runotherInfo } from "./javascript/otherInfo.js";
 import {runHeroElement } from "./javascript/heroelement.js";
+
+import {runWarningElement } from "./javascript/waring.js";
+
 import { loadingScreen } from "./javascript/loadingScreens.js";
 import { loadingScreenOff } from "./javascript/loadingScreens.js";
+ 
 async function main(){
   let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
   let otherInfoDiv = document.querySelector(".otherinfo-div");
@@ -40,6 +44,7 @@ myLocation(async function(position) {
 loadingScreenOff();
 
 runHeroElement();
+runWarningElement();
  runDailyElement();
 });
 
