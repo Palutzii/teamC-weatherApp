@@ -48,6 +48,9 @@ let createArray = () => {
                     weathercode: weatherData.hourly.weathercode[index],
                     windDirection: weatherData.hourly.winddirection_10m[index],
                     windSpeed: weatherData.hourly.windspeed_10m[index],
+                    pressure: weatherData.hourly.pressure_msl[index],
+                    humidity: weatherData.hourly.relativehumidity_2m[index],
+                    visibility: weatherData.hourly.visibility[index],
                 }
                 hours.push(hour);
             }
@@ -69,6 +72,8 @@ let createArray = () => {
                 tempMax: weatherData.daily.temperature_2m_max[i],
                 tempMin: weatherData.daily.temperature_2m_min[i],
                 weathercode: weatherData.daily.weathercode[i], //väderkod för dagen (ikon)
+                uvIndex: weatherData.daily.uv_index_max[i],
+                windDirectionDom: weatherData.daily.winddirection_10m_dominant[i],
             },
             hourly: hours,
         }
@@ -78,7 +83,8 @@ let createArray = () => {
 
 export async function getWeather(latitude, longitude) {
     weatherData = "";
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m,weathercode,apparent_temperature,rain,windspeed_10m,winddirection_10m&windspeed_unit=ms&daily=temperature_2m_max,temperature_2m_min,weathercode,precipitation_sum&timezone=auto`
+    // const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m,weathercode,apparent_temperature,rain,windspeed_10m,winddirection_10m&windspeed_unit=ms&daily=temperature_2m_max,temperature_2m_min,weathercode,precipitation_sum&timezone=auto`
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=relativehumidity_2m,pressure_msl,visibility,temperature_2m,weathercode,apparent_temperature,rain,windspeed_10m,winddirection_10m&windspeed_unit=ms&daily=uv_index_max,winddirection_10m_dominant,temperature_2m_max,temperature_2m_min,weathercode,precipitation_sum&timezone=auto`
     const res = await fetch(url);
     const data = await res.json();
     weatherData = data;

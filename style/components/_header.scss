@@ -20,6 +20,10 @@
     @include devices(desktop) {
       width: 150px;
     }
+
+    &:hover {
+      animation-duration: 3s;
+    }
   }
 }
 
