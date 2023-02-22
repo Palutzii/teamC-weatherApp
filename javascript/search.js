@@ -39,12 +39,16 @@ const createPlacesList = (arr) => {
         }
         if ("admin1" in location) {
             state = `${location.admin1}, `;
+            if (state === name) {
+                state = "";
+            }
         }
         if ("admin2" in location) {
             muni = `${location.admin2}, `;
         }
         if ("country" in location) {
             country = `${location.country}`;
+            
         }
         let place = document.createElement("li");
         let placeBtn = document.createElement("button");
