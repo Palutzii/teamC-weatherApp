@@ -7,7 +7,8 @@
   margin-bottom: 1.5rem;
 }
 
-.hourlyElement {}
+.hourlyElement {
+}
 
 .hourlyInfo {
   display: flex;
@@ -22,7 +23,6 @@
   @include devices(mobile) {
     margin-left: 8px;
   }
-
 }
 
 .infoDiv {
@@ -30,9 +30,8 @@
   justify-content: flex-end;
   align-items: center;
   padding: 8px 1px 8px 8px;
-  font-size: .6rem;
+  font-size: 0.6rem;
   gap: 1.05rem;
-
 
   @include devices(mobile) {
     font-size: 0.75rem;
@@ -79,21 +78,21 @@
   margin-bottom: 0.5rem;
   padding: 6px;
 
-
   @include devices(mobile) {
     font-size: 22px;
   }
 
-  background: linear-gradient(180deg,
+  background: linear-gradient(
+    180deg,
     rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0.04) 100%);
+    rgba(255, 255, 255, 0.04) 100%
+  );
 }
 
 .hourlyDayDiv {
   display: flex;
   text-align: left;
-  gap: .5rem;
-
+  gap: 0.5rem;
 
   @include devices(mobile) {
     gap: 1rem;
@@ -106,7 +105,11 @@
     @include devices(mobile) {
       width: 40px;
     }
+  }
 
+  .logo-wrapper {
+    justify-content: flex-end;
+    width: 40px;
   }
 
   .weatherIcon {

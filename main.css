@@ -528,6 +528,10 @@ nav {
     width: 40px;
   }
 }
+.hourlyDayDiv .logo-wrapper {
+  justify-content: flex-end;
+  width: 40px;
+}
 .hourlyDayDiv .weatherIcon {
   width: 20px;
 }
