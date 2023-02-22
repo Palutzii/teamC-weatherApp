@@ -1,5 +1,5 @@
 import { dataArray } from "../main.js";
-import {currentWeatherObject} from "../main.js";
+import { currentWeatherObject } from "../main.js";
 
 export const weatherIcons = {
   cloudBolt: `<img class="weatherIcon" src="content/icons/cloud-bolt.svg" alt="cloudBolt">`,
@@ -32,7 +32,6 @@ export const runHourlyElement = (buttonValue) => {
   let weathericon = "";
   let hourlyData = null;
 
-
   // Find the corresponding hourly data for the button clicked
   for (let i = 0; i < dataArray.length; i++) {
     if (dataArray[i].name === buttonValue) {
@@ -45,8 +44,6 @@ export const runHourlyElement = (buttonValue) => {
   if (!hourlyData) {
     return;
   }
-
-
 
   hourlyWeekday.innerHTML = `${buttonValue}`;
 
@@ -66,17 +63,12 @@ export const runHourlyElement = (buttonValue) => {
       }
     }
 
-
-    
-
-
     // Add a leading zero to the hour value if it's less than 10
     let formattedHour = (weekdayTime < 10 ? "0" : "") + weekdayTime;
 
     currentHour.temp = Math.round(currentHour.temp);
     currentHour.windSpeed = Math.round(currentHour.windSpeed);
 
-    
     if (currentHour.weathercode == 0) {
       weathericon = sun;
     } else if (currentHour.weathercode > 0 && currentHour.weathercode < 3) {
@@ -96,8 +88,6 @@ export const runHourlyElement = (buttonValue) => {
       weathericon = cloudBolt;
     }
 
-    
-
     let hourlyWeatherDiv = document.querySelector(".hourlyWeatherDiv");
 
     hourlyWeatherDiv.innerHTML += `<div class="hourlyElementDiv" >
@@ -109,9 +99,7 @@ export const runHourlyElement = (buttonValue) => {
             <span class="hourlyElementDiv__Temp info">${currentHour.temp}&deg</span>
         </div>
     </div>`;
-
-    
-  } 
+  }
   // Breadcrumb navigation
   let breadNav = document.querySelector("#breadNav");
   let breadNavContent = document.createElement("div");
@@ -124,11 +112,11 @@ export const runHourlyElement = (buttonValue) => {
 
   breadNavContent.innerHTML = `
         <div id="home">
-          <h3>${currentWeatherObject.location}/</h3><h3>${buttonValue}</h3>
+          <h3>${currentWeatherObject.location}</h3> <span>/</span><h3>${buttonValue}</h3>
         </div>`;
   breadNav.append(breadNavContent);
 
-  let homeDiv= document.querySelector("#home")
+  let homeDiv = document.querySelector("#home");
   homeDiv.addEventListener("click", () => {
     otherInfoDiv.style.display = "none";
     hourlyDivWrapper.style.display = "none";
@@ -139,6 +127,3 @@ export const runHourlyElement = (buttonValue) => {
     breadNavContent.innerHTML = "";
   });
 };
-
-
-  
