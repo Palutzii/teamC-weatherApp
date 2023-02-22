@@ -2,6 +2,7 @@ const todayDate = new Date();
 const weekday = ["Söndag","Måndag","Tisdag","Onsdag","Torsdag","Fredag","Lördag","Söndag","Måndag","Tisdag","Onsdag","Torsdag","Fredag","Lördag"];
 
 let weatherData = "";
+let reverseData = "";
 export let dataArray = [];
 export let currentWeatherObject = {};
 
@@ -23,6 +24,14 @@ let createCurrentWeatherObject = () => {
     }
     let currentDateAndTimeByHour = `${year}-${month}-${date}T${hour}:00`
 
+    let locationName = "";
+    if (reverseData === "") {
+        locationName = "Din plats"
+    }
+    else {
+        locationName = reverseData.results[0].address_components[0].long_name;
+    }
+
     currentWeatherObject = {
         temp: weatherData.current_weather.temperature,
         weathercode: weatherData.current_weather.weathercode,
@@ -30,7 +39,7 @@ let createCurrentWeatherObject = () => {
         windspeed: (weatherData.hourly.windspeed_10m[weatherData.hourly.time.indexOf(currentDateAndTimeByHour)]),
         name: dataArray[0].name,
         date: dataArray[0].date,
-        location: "Din Plats" //placeholder så länge
+        location: locationName
     }
 }
 
@@ -90,6 +99,18 @@ export async function getWeather(latitude, longitude) {
     const data = await res.json();
     weatherData = data;
     console.log(weatherData)
+
+    reverseData = "";
+    const key = ""
+    if (key !== "") {
+
+        const urlReverse = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${key}`
+        const res2 = await fetch(urlReverse);
+        const data2 = await res2.json();
+        reverseData = data2;
+        console.log(reverseData)
+    }
+
     createArray();
     createCurrentWeatherObject();
 }
