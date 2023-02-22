@@ -43,6 +43,8 @@ export const runHeroElement = () => {
          weathericon = cloudBolt;
        }
 
+    
+
      // Ger div inehåll från dataArray
      hero.innerHTML = `
      <div class="hero-location">
@@ -69,7 +71,11 @@ export const runHeroElement = () => {
      `;
 
    heroinfo.append(hero); 
-console.log(hero)
+
+
+    
+
+
 }; 
 
 

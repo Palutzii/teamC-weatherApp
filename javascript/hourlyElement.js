@@ -158,6 +158,24 @@ export const runHourlyElement = (buttonValue) => {
     timeInfo.style.display = "none";
     breadNavContent.innerHTML = "";
   });
+
+
+
+
+// for (let i = 0; i < dataArray.length; i++) {
+     
+//   for (let j = 0; j < dataArray[i].hourly.length; j++) {
+//     console.log(dataArray[i].hourly[j].temp);
+//     let check = document.querySelector(".check");
+
+//     check.addEventListener("change", function () {
+      
+//       if (check.checked) {
+//     dataArray[i].hourly[j].temp = dataArray[i].hourly[j].temp * 1.8 + 32;
+//       } else  {
+//         dataArray[i].hourly[j].temp = (dataArray[i].hourly[j].temp - 32) / 1.8;
+//       }
+//     });
+//   }
+// }
 };
-
-

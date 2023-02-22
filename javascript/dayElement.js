@@ -72,7 +72,7 @@ export const runDailyElement = () => {
         <div>
           <div>${weathericon}</div><div> <h3 class="tempMax tempCF">${Math.round(
       dataArray[i].daily.tempMax
-    )}&deg</h3>  <h3 class="tempMax tempCF">${Math.round(
+    )}&deg</h3>  <h3 class="tempMin tempCF">${Math.round(
       dataArray[i].daily.tempMin
     )}&deg</h3>
         </div>
@@ -115,8 +115,16 @@ export const runDailyElement = () => {
     timeInfo.style.display = "inherit";
   });
 
+
+
+
   // TOGGLE FUNKTION MELLAN C OCH F ------------------------------------------------------------
 
+
+ 
+
+
+  
   let button = document.querySelectorAll("button");
 
   for (let i = 0; i < button.length; i++) {

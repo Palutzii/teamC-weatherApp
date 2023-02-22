@@ -10,6 +10,7 @@ import { runotherInfo } from "./javascript/otherInfo.js";
 import { runHeroElement } from "./javascript/heroelement.js";
 import { loadingScreen } from "./javascript/loadingScreens.js";
 import { loadingScreenOff } from "./javascript/loadingScreens.js";
+
 async function main() {
   let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
   let otherInfoDiv = document.querySelector(".otherinfo-div");
@@ -18,6 +19,9 @@ async function main() {
   otherInfoDiv.style.display = "none";
   hourlyDivWrapper.style.display = "none";
 
+
+
+  
   // Kör loading screen innan vi hämtar data ------------------------------
 
   loadingScreen();
@@ -32,19 +36,58 @@ async function main() {
     longitude = coordinates.longitude;
     await getWeather(latitude, longitude);
 
-    console.log(dataArray);
-    console.log(currentWeatherObject);
+    // console.log(dataArray);
+    // console.log(currentWeatherObject);
 
+    // console.log(dataArray)
+
+
+
+
+
+    for (let i = 0; i < dataArray.length; i++) {
+      for (let j = 0; j < dataArray[i].hourly.length; j++) {
+        let check = document.querySelector(".check");
+        check.addEventListener("change", function () {
+          if (check.checked) {
+        dataArray[i].hourly[j].temp = dataArray[i].hourly[j].temp * 1.8 + 32;
+          } else  {
+            dataArray[i].hourly[j].temp = (dataArray[i].hourly[j].temp - 32) / 1.8;
+          }
+        });
+      }
+
+
+
+
+    }
     // Kör loadingScreenOff och stänger loadingScreen när vi har hämtat data ------------------------------
-
+    
     loadingScreenOff();
-
+    
     runHeroElement();
+    let check = document.querySelector(".check");
+    check.addEventListener("change", function () {
+      if (check.checked) {
+        currentWeatherObject.temp = currentWeatherObject.temp * 1.8 + 32;
+      } else {
+        currentWeatherObject.temp = (currentWeatherObject.temp - 32) / 1.8;
+      }
+
+
+    });
     runDailyElement();
+   
   });
 
   //loggar array
-  console.log(dataArray);
+ 
+
+
+
+
+
+
 }
 
 main();
