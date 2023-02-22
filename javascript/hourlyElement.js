@@ -109,6 +109,7 @@ export const runHourlyElement = (buttonValue) => {
   let infoDiv = document.querySelector(".infoDiv");
   let timeInfo = document.querySelector(".timeInfo");
   let heroBox = document.querySelector(".hero-box");
+  let warningInfo = document.querySelector(".warning");
 
   breadNavContent.innerHTML = `
       <div>
@@ -130,5 +131,6 @@ export const runHourlyElement = (buttonValue) => {
     infoDiv.style.display = "none";
     timeInfo.style.display = "none";
     breadNavContent.innerHTML = "";
+    warningInfo.style.display = "flex";
   });
 };
