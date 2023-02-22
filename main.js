@@ -9,6 +9,8 @@ import { runDailyElement } from "./javascript/dayElement.js";
 import { runotherInfo } from "./javascript/otherInfo.js";
 import {runHeroElement } from "./javascript/heroelement.js";
 import {searchInput} from "./javascript/search.js"
+import { loadingScreen } from "./javascript/loadingScreens.js";
+import { loadingScreenOff } from "./javascript/loadingScreens.js";
 async function main(){
   let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
   let otherInfoDiv = document.querySelector(".otherinfo-div");
@@ -16,6 +18,10 @@ async function main(){
   mainDayDiv.style.display = "none";
   otherInfoDiv.style.display = "none";
   hourlyDivWrapper.style.display = "none";
+
+  // Kör loading screen innan vi hämtar data ------------------------------
+
+  loadingScreen();
 
 // hittar och skriver ut koordinater för enhetens plats
 
@@ -30,27 +36,16 @@ myLocation(async function(position) {
   console.log(dataArray)
   console.log(currentWeatherObject)
 
+// Kör loadingScreenOff och stänger loadingScreen när vi har hämtat data ------------------------------
 
-  // runHourlyElement(1);
+loadingScreenOff();
 
- // runHourlyElement();
 runHeroElement();
  runDailyElement();
 });
 
 //loggar array
 console.log(dataArray);
-
-
-//Kör hourlyElement.js
-
-
-
-// import {imgIcons} from "./javascript/hourlyElement.js";
-// imgIcons();
-
-
-
 }
 
 main();

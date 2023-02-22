@@ -32,10 +32,15 @@
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 700;
+}
+@media (min-width: 320px) {
+  h1 {
+    font-size: 2rem;
+  }
 }
 @media (min-width: 740px) {
   h1 {
@@ -49,10 +54,15 @@ h1 {
 }
 
 h2 {
-  font-size: 1.625rem;
+  font-size: 1.375rem;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 600;
+}
+@media (min-width: 320px) {
+  h2 {
+    font-size: 1.625rem;
+  }
 }
 @media (min-width: 740px) {
   h2 {
@@ -66,10 +76,15 @@ h2 {
 }
 
 h3 {
-  font-size: 1.375rem;
+  font-size: 1rem;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 600;
+}
+@media (min-width: 320px) {
+  h3 {
+    font-size: 1.375rem;
+  }
 }
 @media (min-width: 740px) {
   h3 {
@@ -135,6 +150,9 @@ body {
     width: 150px;
   }
 }
+.logo-wrapper .logo:hover {
+  animation-duration: 3s;
+}
 
 nav {
   padding: 1rem;
@@ -187,10 +205,19 @@ nav {
 
 .hero-current .hero-icon {
   display: flex;
-  gap: 1rem;
+}
+@media (min-width: 320px) {
+  .hero-current .hero-icon {
+    gap: 1rem;
+  }
 }
 .hero-current .hero-icon .weatherIcon {
-  width: 100px;
+  width: 75px;
+}
+@media (min-width: 320px) {
+  .hero-current .hero-icon .weatherIcon {
+    width: 100px;
+  }
 }
 
 .hero-temp {
@@ -259,7 +286,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 8px 10px;
-  gap: 48px;
   position: relative;
   width: 100%;
   border: none;
@@ -267,6 +293,11 @@ nav {
   margin-bottom: 8px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
   color: #fff;
+}
+@media (min-width: 320px) {
+  .main-daydiv button {
+    gap: 48px;
+  }
 }
 .main-daydiv button:hover {
   cursor: pointer;
@@ -282,7 +313,19 @@ nav {
 }
 .main-daydiv button :last-child div:first-child {
   display: flex;
-  margin-right: 2rem;
+  margin-right: 0.5rem;
+  width: 30px;
+}
+@media (min-width: 320px) {
+  .main-daydiv button :last-child div:first-child {
+    margin-right: 2rem;
+  }
+}
+@media (min-width: 980px) {
+  .main-daydiv button :last-child div:first-child {
+    justify-content: center;
+    width: 60px;
+  }
 }
 @media (min-width: 980px) {
   .main-daydiv button :last-child div:first-child .weatherIcon {
@@ -293,6 +336,11 @@ nav {
   flex-direction: column;
   align-items: flex-end;
   width: 30px;
+}
+@media (min-width: 980px) {
+  .main-daydiv button :last-child div:last-child {
+    width: 60px;
+  }
 }
 .main-daydiv button :last-child div:last-child :first-child {
   font-family: "Inter", Arial, Helvetica, sans-serif;
@@ -306,10 +354,16 @@ nav {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 700;
+  text-align: left;
 }
 .dayBtn h2 {
-  width: 105px;
-  margin-right: 1rem;
+  width: 95px;
+}
+@media (min-width: 320px) {
+  .dayBtn h2 {
+    width: 105px;
+    margin-right: 1rem;
+  }
 }
 @media (min-width: 740px) {
   .dayBtn h2 {
@@ -334,10 +388,29 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 1.5rem;
+  font-size: 0.6rem;
   margin-right: 8px;
-  font-size: 0.75rem;
   padding: 8px 1px 8px 8px;
+}
+@media (min-width: 320px) {
+  .weather-temp-titles {
+    gap: 1.5rem;
+    font-size: 0.75rem;
+    margin-right: 20px;
+  }
+}
+.weather-temp-titles div:first-child {
+  margin-right: 1rem;
+}
+@media (min-width: 320px) {
+  .weather-temp-titles div:first-child {
+    margin-right: 0rem;
+  }
+}
+@media (min-width: 980px) {
+  .weather-temp-titles div:first-child {
+    margin-right: 2.5rem;
+  }
 }
 
 .temp-high-low {
@@ -349,6 +422,21 @@ nav {
   border-bottom: 1px solid #fff;
   margin-bottom: 1px;
   padding-bottom: 1px;
+}
+
+.breadNav {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+.breadNav div div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.breadNav div div h3 {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.09) 100%);
+  border-radius: 8px;
+  padding: 8px;
 }
 
 .hourlyDivWrapper {
@@ -368,17 +456,28 @@ nav {
 }
 
 .timeInfo {
-  margin-left: 8px;
+  margin-left: 5px;
+}
+@media (min-width: 320px) {
+  .timeInfo {
+    margin-left: 8px;
+  }
 }
 
 .infoDiv {
   display: flex;
   justify-content: flex-end;
-  font-size: 0.75rem;
   align-items: center;
-  gap: 1.2rem;
   padding: 8px 1px 8px 8px;
-  margin-right: 14px;
+  font-size: 0.6rem;
+  gap: 1.05rem;
+}
+@media (min-width: 320px) {
+  .infoDiv {
+    font-size: 0.75rem;
+    gap: 1.2rem;
+    margin-right: 14px;
+  }
 }
 
 .hourlyWind {
@@ -414,20 +513,47 @@ nav {
   justify-content: space-between;
   align-items: center;
   border-radius: 8px;
-  font-size: 22px;
-  padding: 6px;
+  font-size: 18px;
   margin-bottom: 0.5rem;
+  padding: 6px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
+}
+@media (min-width: 320px) {
+  .hourlyElementDiv {
+    font-size: 22px;
+  }
 }
 
 .hourlyDayDiv {
   display: flex;
-  gap: 1.5rem;
+  text-align: left;
+  gap: 0.5rem;
 }
-.hourlyDayDiv span,
-.hourlyDayDiv img {
-  text-align: center;
-  width: 30px;
+@media (min-width: 320px) {
+  .hourlyDayDiv {
+    gap: 1rem;
+  }
+}
+.hourlyDayDiv span {
+  text-align: right;
+  width: 35px;
+}
+@media (min-width: 320px) {
+  .hourlyDayDiv span {
+    width: 40px;
+  }
+}
+.hourlyDayDiv .logo-wrapper {
+  justify-content: flex-end;
+  width: 40px;
+}
+.hourlyDayDiv .weatherIcon {
+  width: 20px;
+}
+@media (min-width: 320px) {
+  .hourlyDayDiv .weatherIcon {
+    width: 25px;
+  }
 }
 
 .weatherIcon {
@@ -476,4 +602,92 @@ footer {
 
 .copyright {
   margin-bottom: 2rem;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #20a2be;
+}
+
+.progress {
+  align-self: center;
+  background-color: #f4a261;
+  position: relative;
+  height: 15px;
+  width: 165px;
+  border: 1px solid #f4a261;
+  border-radius: 15px;
+}
+
+.progress .color {
+  position: absolute;
+  background-color: #ffa800;
+  width: 0px;
+  height: 15px;
+  border-radius: 15px;
+  animation: progres 4s infinite linear;
+}
+
+@keyframes progres {
+  0% {
+    width: 0%;
+  }
+  25% {
+    width: 50%;
+  }
+  50% {
+    width: 75%;
+  }
+  75% {
+    width: 85%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@media (min-width: 740px) {
+  .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #20a2be;
+  }
+  .progress {
+    align-self: center;
+    background-color: #f4a261;
+    position: relative;
+    height: 20px; /* increase the height */
+    width: 220px; /* double the width */
+    border: 1px solid #f4a261;
+    border-radius: 15px;
+  }
+  .progress .color {
+    position: absolute;
+    background-color: #ffa800;
+    width: 0px;
+    height: 20px; /* adjust the height */
+    border-radius: 15px;
+    animation: progress 4s infinite linear;
+  }
+  @keyframes progress {
+    0% {
+      width: 0%;
+    }
+    25% {
+      width: 50%;
+    }
+    50% {
+      width: 75%;
+    }
+    75% {
+      width: 85%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,98 @@
+// Kod för loadingscreen
+
+
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #20a2be;;
+  
+  }
+  .progress {
+    align-self: center;
+    background-color: #f4a261;
+    position: relative;
+    height: 15px;
+    width: 165px;
+    border: 1px solid #f4a261;
+    border-radius: 15px;
+  }
+  .progress .color {
+    position: absolute;
+    background-color: #ffa800;
+    width: 0px;
+    height: 15px;
+    border-radius: 15px;
+    animation: progres 4s infinite linear;
+  }
+  @keyframes progres {
+    0% {
+      width: 0%;
+    }
+    25% {
+      width: 50%;
+    }
+    50% {
+      width: 75%;
+    }
+    75% {
+      width: 85%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+
+
+  @media (min-width: 740px) {
+
+
+  .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #20a2be;
+  }
+  
+  .progress {
+    align-self: center;
+    background-color: #f4a261;
+    position: relative;
+    height: 20px; /* increase the height */
+    width: 220px; /* double the width */
+    border: 1px solid #f4a261;
+    border-radius: 15px;
+  }
+  
+  .progress .color {
+    position: absolute;
+    background-color: #ffa800;
+    width: 0px;
+    height: 20px; /* adjust the height */
+    border-radius: 15px;
+    animation: progress 4s infinite linear;
+  }
+  
+  @keyframes progress {
+    0% {
+      width: 0%;
+    }
+    25% {
+      width: 50%;
+    }
+    50% {
+      width: 75%;
+    }
+    75% {
+      width: 85%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  }
