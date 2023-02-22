@@ -111,7 +111,8 @@ export const runHourlyElement = (buttonValue) => {
     </div>`;
 
     
-  } //ANNAS KOD
+  } 
+  // Breadcrumb navigation
   let breadNav = document.querySelector("#breadNav");
   let breadNavContent = document.createElement("div");
   let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
@@ -131,7 +132,7 @@ export const runHourlyElement = (buttonValue) => {
   homeDiv.addEventListener("click", () => {
     otherInfoDiv.style.display = "none";
     hourlyDivWrapper.style.display = "none";
-    mainDiv.style.display = "block";
+    mainDiv.style.display = "inherit";
     heroBox.style.display = "block";
     infoDiv.style.display = "none";
     timeInfo.style.display = "none";
