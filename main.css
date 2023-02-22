@@ -125,13 +125,22 @@ body {
 }
 
 .header {
+  position: relative;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+  margin: 0 1rem;
+  margin-top: 1rem;
 }
 @media (min-width: 980px) {
   .header {
     justify-content: flex-start;
   }
+}
+
+.navbar {
+  height: 53px;
 }
 
 .logo-wrapper {
@@ -140,6 +149,10 @@ body {
 .logo-wrapper a {
   display: inline-block;
   margin: auto;
+  transition: all 200ms ease-in-out;
+}
+.logo-wrapper a.is-covered {
+  display: none;
 }
 .logo-wrapper .logo {
   width: 70px;
@@ -154,10 +167,6 @@ body {
   animation-duration: 3s;
 }
 
-nav {
-  padding: 1rem;
-}
-
 @keyframes rotateSun {
   from {
     transform: rotate(0deg);
@@ -168,29 +177,75 @@ nav {
 }
 .search {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  right: 2%;
-  top: 20%;
+  right: 0;
+  width: 100%;
 }
 
-.search-bar img {
+.search-bar {
+  position: relative;
+  width: 100%;
+  height: 50px;
+}
+
+.search-icon-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  right: 3%;
-  top: 26%;
+  background-color: #d8eff3;
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+}
+
+.search-icon {
+  position: relative;
   width: 20px;
+  height: 24px;
 }
 
 #searchInput {
-  color: #0f4a57;
+  background-color: #d8eff3;
+  width: 53px;
+  height: 53px;
+  border-radius: 100px;
   border: none;
-  border-radius: 30px;
-  width: 250px;
-  height: 54px;
-  text-align: left;
-  padding-left: 20px;
-  padding-right: 30px;
-  font-size: 1rem;
+  color: #0f4a57;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 200ms ease-in-out;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+#searchInput:active, #searchInput:focus, #searchInput:focus-visible, #searchInput:focus-within {
+  outline: none;
+}
+#searchInput.is-clicked {
+  width: calc(100% - 16px);
+  padding-left: 16px;
+}
+
+.search-results {
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-top: 8px;
+  z-index: 2;
+}
+.search-results ul {
+  list-style: none;
+}
+.search-results li button {
+  color: #0f4a57;
+}
+
+.flag {
+  display: none;
 }
 
 .hero-box {
