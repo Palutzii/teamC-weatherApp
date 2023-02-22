@@ -424,6 +424,21 @@ nav {
   padding-bottom: 1px;
 }
 
+.breadNav {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+.breadNav div div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.breadNav div div h3 {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.09) 100%);
+  border-radius: 8px;
+  padding: 8px;
+}
+
 .hourlyDivWrapper {
   display: flex;
   flex-direction: column;
