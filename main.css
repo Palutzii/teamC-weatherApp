@@ -135,12 +135,18 @@ body {
 }
 @media (min-width: 980px) {
   .header {
-    justify-content: flex-start;
+    justify-content: space-between;
+    margin: auto;
   }
 }
 
 .navbar {
   height: 53px;
+}
+@media (min-width: 980px) {
+  .navbar {
+    height: auto;
+  }
 }
 
 .logo-wrapper {
@@ -153,6 +159,11 @@ body {
 }
 .logo-wrapper a.is-covered {
   display: none;
+}
+@media (min-width: 980px) {
+  .logo-wrapper a.is-covered {
+    display: block;
+  }
 }
 .logo-wrapper .logo {
   width: 70px;
@@ -183,6 +194,11 @@ body {
 }
 .search.is-clicked {
   width: 100%;
+}
+@media (min-width: 980px) {
+  .search {
+    position: relative;
+  }
 }
 
 .search-bar {
@@ -239,7 +255,8 @@ body {
 
 .search-results {
   position: absolute;
-  width: 100%;
+  width: calc(100% - 30px);
+  left: 15px;
   background-color: #fff;
   border-radius: 8px;
   margin-top: 8px;

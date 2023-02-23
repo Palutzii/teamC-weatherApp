@@ -7,6 +7,10 @@
   &.is-clicked {
     width: 100%;
   }
+
+  @include devices(desktop) {
+    position: relative;
+  }
 }
 
 .search-bar {
@@ -69,7 +73,8 @@
 
 .search-results {
   position: absolute;
-  width: 100%;
+  width: calc(100% - 30px);
+  left: 15px;
   background-color: #fff;
   border-radius: 8px;
   margin-top: 8px;
