@@ -123,4 +123,13 @@ searchIconHolder.addEventListener("click", () => {
         searchResultsList.classList.remove("hej") // OBS
         searchIsActive = false;
     }
-})
+});
+document.body.addEventListener('click', (event) =>{
+    if (event.target !== searchInput && event.target !== searchIconHolder && event.target !== document.getElementById("searchIcon")) {
+            searchInput.classList.remove("is-clicked");
+            homeSun.classList.remove("is-covered")
+            searchResultsList.classList.remove("hej") // OBS
+            searchIsActive = false;
+        }
+    })
+
