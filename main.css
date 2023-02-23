@@ -452,6 +452,7 @@ nav {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.09) 100%);
   border-radius: 8px;
   padding: 8px;
+  cursor: pointer;
 }
 .breadNavHome h3 {
   font-weight: 500;
