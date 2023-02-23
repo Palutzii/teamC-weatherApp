@@ -13,10 +13,13 @@ input[type=checkbox]#toggle-switch {
     position: relative;
     color: black;
     }
+
     input[type=checkbox]#toggle-switch:checked {
     background-color: #D8EFF3;
     color: black;
     }
+
+
     input[type=checkbox]#toggle-switch::after {
     content: '';
     width: 2em;
@@ -30,6 +33,8 @@ input[type=checkbox]#toggle-switch {
     box-shadow: 0 0 rgba(0, 0, 0, 0.5);
     color: black;
     }
+
+    
     input[type=checkbox]#toggle-switch:checked::after {
     left: 2em;
     color: black;
