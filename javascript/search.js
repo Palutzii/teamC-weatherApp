@@ -13,6 +13,7 @@ const placesList = document.getElementById("placesList");
 const searchIconHolder = document.getElementById("searchIconHolder");
 const homeSun = document.getElementById("homeSun");
 const searchResultsList = document.getElementById("searchResultsList")
+const searchDiv = document.getElementById("searchDiv");
 let searchResults = [];
 
 searchInput.addEventListener("input", () => {
@@ -117,12 +118,14 @@ searchIconHolder.addEventListener("click", () => {
         searchInput.classList.add("is-clicked");
         homeSun.classList.add("is-covered")
         searchResultsList.classList.add("hej") // OBS
+        searchDiv.classList.add("is-clicked");
         searchIsActive = true;
     }
     else if (searchIsActive === true) {
         searchInput.classList.remove("is-clicked");
         homeSun.classList.remove("is-covered")
         searchResultsList.classList.remove("hej") // OBS
+        searchDiv.classList.remove("is-clicked");
         searchIsActive = false;
     }
 });
@@ -131,6 +134,7 @@ document.body.addEventListener('click', (event) =>{
             searchInput.classList.remove("is-clicked");
             homeSun.classList.remove("is-covered")
             searchResultsList.classList.remove("hej") // OBS
+            searchDiv.classList.remove("is-clicked");
             searchIsActive = false;
         }
     })
