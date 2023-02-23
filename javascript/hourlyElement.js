@@ -119,13 +119,13 @@ export const runHourlyElement = (buttonValue) => {
   let warningInfo = document.querySelector(".warning");
 
   breadNavContent.innerHTML = `
-      <div>
+      <div class= "breadcrumb-wrapper">
         <div id="home" class="breadNavHome">
-        <img src="content/icons/house.svg" alt="home">
+       <div class"home-icon"> <img src="content/icons/house.svg" alt="home"></div>
           <h3>${currentWeatherObject.location}</h3>
         </div>
         <span>/</span>
-        <div><h3>${buttonValue}</h3></div>
+        <div class="breadcrumb-day"><h3>${buttonValue}</h3></div>
       </div>`;
   breadNav.append(breadNavContent);
 
