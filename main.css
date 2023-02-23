@@ -428,12 +428,47 @@ nav {
   margin-top: 2rem;
   margin-bottom: 3rem;
 }
-.breadNav div div {
+
+.breadcrumb-wrapper {
   display: flex;
-  gap: 5rem;
+  align-items: center;
+  gap: 1rem;
 }
-.breadNav div #home {
+.breadcrumb-wrapper span {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.breadNavHome {
   display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.09) 100%);
+  border-radius: 8px;
+  padding: 8px;
+}
+.breadNavHome h3 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.home-icon-holder {
+  width: 30px;
+}
+
+.home-icon {
+  width: 23px;
+  filter: brightness(0) invert(1);
+}
+
+.breadcrumb-day {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.09) 100%);
+  border-radius: 8px;
+  padding: 8px;
+}
+.breadcrumb-day h3 {
+  font-weight: 500;
+  font-size: 20px;
 }
 
 .hourlyDivWrapper {
