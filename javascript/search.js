@@ -9,6 +9,8 @@ export {searchBtn};
 const searchInput = document.getElementById("searchInput");
 const searchBtn = document.getElementById("searchBtn");
 const placesList = document.getElementById("placesList");
+const searchIconHolder = document.getElementById("searchIconHolder");
+const homeSun = document.getElementById("homeSun");
 let searchResults = [];
 
 searchInput.addEventListener("input", () => {
@@ -86,4 +88,18 @@ const getCoordinates = (id) => {
         }
     })
     placesList.innerHTML = "";
+    
 }
+let searchIsActive = false;
+searchIconHolder.addEventListener("click", () => {
+    if (searchIsActive === false) {
+        searchInput.classList.add("is-clicked");
+        homeSun.classList.add("is-covered")
+        searchIsActive = true;
+    }
+    else if (searchIsActive === true) {
+        searchInput.classList.remove("is-clicked");
+        homeSun.classList.remove("is-covered")
+        searchIsActive = false;
+    }
+})
