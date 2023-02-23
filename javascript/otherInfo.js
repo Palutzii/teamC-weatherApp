@@ -1,6 +1,7 @@
 import { dataArray } from "../main.js";
 export const runotherInfo = (buttonValue) => {
     
+// Fetches elements from html
 
 let dailyPrecip = document.querySelector(".dailyprecip-info");
 let dailyWindspeed = document.querySelector(".dailywindspeed-info");
@@ -8,8 +9,10 @@ let dailyHumidity = document.querySelector(".daily-humidity");
 let dailyVisibility = document.querySelector(".daily-visibility");
 let dailyUVIndex = document.querySelector(".daily-uvindex");
 let dailyPressure = document.querySelector(".daily-pressure");
+let typeOfPressure = document.querySelector(".typeof-pressure")
 let dailyWindDirection = document.querySelector(".dominant-winddirection");
 
+// Loops through array fetches all the correct data then renders it
 
     for(let i = 0; i < dataArray.length; i++){
          if(dataArray[i].name === buttonValue){
@@ -36,16 +39,29 @@ let dailyWindDirection = document.querySelector(".dominant-winddirection");
      for(let i = 0; i < dataArray.length; i++){
         if(dataArray[i].name === buttonValue){
             let degrees = dataArray[i].daily.windDirectionDom;
-            if(degrees < 45 || degrees > 315){
+            if(degrees === 0 || degrees === 360){
                 dailyWindDirection.innerHTML = "Nordlig Vind";
-            }else if(degrees < 135){
+            }
+            else if(degrees < 90){
+                dailyWindDirection.innerHTML = "Nordöstlig Vind";
+            }
+            else if(degrees === 90){
                 dailyWindDirection.innerHTML = "Östlig Vind";
             }
-            else if(degrees < 225){
+            else if(degrees < 180){
+                dailyWindDirection.innerHTML = "Sydöstlig Vind";
+            }
+            else if(degrees === 180){
                 dailyWindDirection.innerHTML = "Sydlig Vind";
             }
-            else if(degrees < 315){
+            else if(degrees < 270){
+                dailyWindDirection.innerHTML = "Sydvästlig Vind";
+            }
+            else if(degrees === 270){
                 dailyWindDirection.innerHTML = "Västlig Vind";
+            }
+            else if(degrees < 360){
+                dailyWindDirection.innerHTML = "Nordvästlig Vind";
             }
         }
     }
@@ -77,6 +93,15 @@ let dailyWindDirection = document.querySelector(".dominant-winddirection");
             })
             let avaragePressure = (sumPressure / 24);
             dailyPressure.innerHTML = Math.round(avaragePressure) + " hPa";
+            if(avaragePressure > 1020){
+                typeOfPressure.innerHTML = "Högtryck" 
+            }
+            else if(avaragePressure < 1005){
+                typeOfPressure.innerHTML = "Lågtryck"
+            }
+            else{
+                typeOfPressure.innerHTML = "Normalt Tryck"
+            }
         }
      }
 }
