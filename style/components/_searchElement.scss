@@ -2,6 +2,7 @@
   position: absolute;
   right: 0;
   width: 53px;
+  transition: all 200ms ease-in-out;
 
   &.is-clicked {
     width: 100%;
@@ -77,26 +78,39 @@
   ul {
     list-style: none;
     border-radius: 8px;
-  }
 
-  li {
-    background-color: #fff;
+    li {
+      background-color: #fff;
+      display: inline-block;
+      width: 100%;
 
-    &:hover {
-      background-color: #0f4a57;
+      &:first-child {
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+
+      &:hover {
+        background-color: #0f4a57;
+
+        button {
+          background-color: #0f4a57;
+          color: #fff;
+        }
+      }
 
       button {
-        background-color: #0f4a57;
-        color: #fff;
+        color: #0f4a57;
+        border: none;
+        background-color: #fff;
+        text-align: left;
+        padding: 8px;
+        border-radius: inherit;
       }
-    }
-    button {
-      color: #0f4a57;
-      border: none;
-      background-color: #fff;
-      text-align: left;
-      padding: 8px;
-      border-radius: inherit;
     }
   }
 }

@@ -179,6 +179,7 @@ body {
   position: absolute;
   right: 0;
   width: 53px;
+  transition: all 200ms ease-in-out;
 }
 .search.is-clicked {
   width: 100%;
@@ -248,17 +249,27 @@ body {
   list-style: none;
   border-radius: 8px;
 }
-.search-results li {
+.search-results ul li {
   background-color: #fff;
+  display: inline-block;
+  width: 100%;
 }
-.search-results li:hover {
+.search-results ul li:first-child {
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+.search-results ul li:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.search-results ul li:hover {
   background-color: #0f4a57;
 }
-.search-results li:hover button {
+.search-results ul li:hover button {
   background-color: #0f4a57;
   color: #fff;
 }
-.search-results li button {
+.search-results ul li button {
   color: #0f4a57;
   border: none;
   background-color: #fff;
