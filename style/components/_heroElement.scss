@@ -46,14 +46,12 @@
       gap: 1rem;
     }
 
-
     .weatherIcon {
       width: 75px;
 
       @include devices(mobile) {
         width: 100px;
       }
-
     }
   }
 }
@@ -85,6 +83,12 @@
   text-align: center;
 }
 
+.warning {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
 .now-box {
   display: flex;
   flex-direction: column;
@@ -99,9 +103,11 @@
   border-radius: 8px;
   width: 290px;
   height: 150px;
-  background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.3) 0%,
-      rgba(255, 255, 255, 0.09) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.09) 100%
+  );
 }
 
 .now-warning {
