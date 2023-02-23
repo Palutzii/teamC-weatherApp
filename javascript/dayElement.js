@@ -108,6 +108,8 @@ export const runDailyElement = () => {
 
   // Eventlistener for hero
   heroinfo.addEventListener("click", () => {
+    let breadNav = document.querySelector("#breadNav");
+    breadNav.innerHTML = "";
     runHourlyElement(heroinfo.value);
     runotherInfo(heroinfo.value);
     otherInfoDiv.style.display = "flex";
