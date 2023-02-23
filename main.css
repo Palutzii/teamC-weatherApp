@@ -579,7 +579,7 @@ nav {
 }
 @media (min-width: 980px) {
   .article-info-wrapper {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
 }
@@ -589,6 +589,7 @@ nav {
   flex-direction: column;
   border-radius: 8px;
   padding: 16px 8px;
+  gap: 0.5rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
 }
 
