@@ -1,7 +1,11 @@
 .search {
   position: absolute;
   right: 0;
-  width: 100%;
+  width: 53px;
+
+  &.is-clicked {
+    width: 100%;
+  }
 }
 
 .search-bar {

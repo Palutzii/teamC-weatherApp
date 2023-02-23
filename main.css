@@ -178,6 +178,9 @@ body {
 .search {
   position: absolute;
   right: 0;
+  width: 53px;
+}
+.search.is-clicked {
   width: 100%;
 }
 
