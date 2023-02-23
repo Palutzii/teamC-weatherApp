@@ -246,6 +246,12 @@ nav {
   text-align: center;
 }
 
+.warning {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
 .now-box {
   display: flex;
   flex-direction: column;
