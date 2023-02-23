@@ -117,25 +117,26 @@ searchIconHolder.addEventListener("click", () => {
     if (searchIsActive === false) {
         searchInput.classList.add("is-clicked");
         homeSun.classList.add("is-covered")
-        searchResultsList.classList.add("hej") // OBS
         searchDiv.classList.add("is-clicked");
         searchIsActive = true;
     }
     else if (searchIsActive === true) {
         searchInput.classList.remove("is-clicked");
         homeSun.classList.remove("is-covered")
-        searchResultsList.classList.remove("hej") // OBS
         searchDiv.classList.remove("is-clicked");
         searchIsActive = false;
+        placesList.innerHTML = "";
+        searchInput.value = "";
     }
 });
 document.body.addEventListener('click', (event) =>{
     if (event.target !== searchInput && event.target !== searchIconHolder && event.target !== document.getElementById("searchIcon")) {
             searchInput.classList.remove("is-clicked");
             homeSun.classList.remove("is-covered")
-            searchResultsList.classList.remove("hej") // OBS
             searchDiv.classList.remove("is-clicked");
             searchIsActive = false;
+            placesList.innerHTML = "";
+            searchInput.value = "";
         }
     })
 
