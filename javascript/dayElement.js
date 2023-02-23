@@ -22,7 +22,8 @@ export const runDailyElement = () => {
   let infoDiv = document.querySelector(".infoDiv");
   let timeInfo = document.querySelector(".timeInfo");
   let heroBox = document.querySelector(".hero-box");
-  let otherInfo = document.querySelector(".otherinfo-div");
+  let warningInfo = document.querySelector(".warning");
+  
 
   mainDiv.style.display = "block"
   mainDiv.innerHTML = "";
@@ -94,6 +95,7 @@ export const runDailyElement = () => {
       heroBox.style.display = "none";
       infoDiv.style.display = "inherit";
       timeInfo.style.display = "inherit";
+      warningInfo.style.display = "none";
     });
   }
   // Fetches elements from html
@@ -108,11 +110,12 @@ export const runDailyElement = () => {
   heroinfo.addEventListener("click", () => {
     runHourlyElement(heroinfo.value);
     runotherInfo(heroinfo.value);
-    otherInfoDiv.style.display = "block";
-    hourlyDivWrapper.style.display = "block";
+    otherInfoDiv.style.display = "flex";
+    hourlyDivWrapper.style.display = "flex";
     mainDiv.style.display = "none";
     heroBox.style.display = "none";
-    infoDiv.style.display = "block";
-    timeInfo.style.display = "block";
+    infoDiv.style.display = "flex";
+    timeInfo.style.display = "flex";
+    warningInfo.style.display = "none";
   });
 };

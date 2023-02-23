@@ -109,21 +109,28 @@ export const runHourlyElement = (buttonValue) => {
   let infoDiv = document.querySelector(".infoDiv");
   let timeInfo = document.querySelector(".timeInfo");
   let heroBox = document.querySelector(".hero-box");
+  let warningInfo = document.querySelector(".warning");
 
   breadNavContent.innerHTML = `
-        <div id="home">
-          <h3>${currentWeatherObject.location}</h3> <span>/</span><h3>${buttonValue}</h3>
-        </div>`;
+      <div>
+        <div id="home" class="breadNavHome">
+        <img src="content/icons/house.svg" alt="home">
+          <h3>${currentWeatherObject.location}</h3>
+        </div>
+        <span>/</span>
+        <div><h3>${buttonValue}</h3></div>
+      </div>`;
   breadNav.append(breadNavContent);
 
   let homeDiv = document.querySelector("#home");
   homeDiv.addEventListener("click", () => {
     otherInfoDiv.style.display = "none";
     hourlyDivWrapper.style.display = "none";
-    mainDiv.style.display = "inherit";
-    heroBox.style.display = "block";
+    mainDiv.style.display = "flex";
+    heroBox.style.display = "flex";
     infoDiv.style.display = "none";
     timeInfo.style.display = "none";
     breadNavContent.innerHTML = "";
+    warningInfo.style.display = "flex";
   });
 };

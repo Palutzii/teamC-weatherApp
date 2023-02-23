@@ -1,17 +1,19 @@
 import { myLocation } from "./javascript/myLocation.js";
 import { getWeather } from "./javascript/getWeather.js";
-import {currentWeatherObject} from "./javascript/getWeather.js"; // Object att använda i "hero"
+import { currentWeatherObject } from "./javascript/getWeather.js"; // Object att använda i "hero"
 export { currentWeatherObject };
 import { dataArray } from "./javascript/getWeather.js";
 export { dataArray };
 import { runHourlyElement } from "./javascript/hourlyElement.js";
 import { runDailyElement } from "./javascript/dayElement.js";
 import { runotherInfo } from "./javascript/otherInfo.js";
-import {runHeroElement } from "./javascript/heroelement.js";
-import {searchInput} from "./javascript/search.js"
+import { runHeroElement } from "./javascript/heroelement.js";
+import { searchInput } from "./javascript/search.js";
+import { runWarningElement } from "./javascript/waring.js";
 import { loadingScreen } from "./javascript/loadingScreens.js";
 import { loadingScreenOff } from "./javascript/loadingScreens.js";
-async function main(){
+
+async function main() {
   let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
   let otherInfoDiv = document.querySelector(".otherinfo-div");
   let mainDayDiv = document.querySelector(".main-daydiv");
@@ -23,29 +25,30 @@ async function main(){
 
   loadingScreen();
 
-// hittar och skriver ut koordinater för enhetens plats
+  // hittar och skriver ut koordinater för enhetens plats
 
-let latitude, longitude;
+  let latitude, longitude;
 
-myLocation(async function(position) {
-  const coordinates = position.coords;
-  latitude = coordinates.latitude;
-  longitude = coordinates.longitude;
-  await getWeather(latitude, longitude);
+  myLocation(async function (position) {
+    const coordinates = position.coords;
+    latitude = coordinates.latitude;
+    longitude = coordinates.longitude;
+    await getWeather(latitude, longitude);
 
-  console.log(dataArray)
-  console.log(currentWeatherObject)
+    console.log(dataArray);
+    console.log(currentWeatherObject);
 
-// Kör loadingScreenOff och stänger loadingScreen när vi har hämtat data ------------------------------
+    // Kör loadingScreenOff och stänger loadingScreen när vi har hämtat data ------------------------------
 
-loadingScreenOff();
+    loadingScreenOff();
 
-runHeroElement();
- runDailyElement();
-});
+    runHeroElement();
+    runWarningElement();
+    runDailyElement();
+  });
 
-//loggar array
-console.log(dataArray);
+  //loggar array
+  console.log(dataArray);
 }
 
 main();
