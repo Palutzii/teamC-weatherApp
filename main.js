@@ -13,6 +13,9 @@ import {runWarningElement } from "./javascript/waring.js";
 
 import { loadingScreen } from "./javascript/loadingScreens.js";
 import { loadingScreenOff } from "./javascript/loadingScreens.js";
+
+export let deviceLat, deviceLong;
+export const key = "";
  
 async function main(){
   let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
@@ -34,6 +37,10 @@ myLocation(async function(position) {
   const coordinates = position.coords;
   latitude = coordinates.latitude;
   longitude = coordinates.longitude;
+  deviceLat = latitude;
+  deviceLong = longitude;
+  // Test koordinater (ignorera) 52.51117679876553, 13.443010599083433
+
   await getWeather(latitude, longitude);
 
   console.log(dataArray)
