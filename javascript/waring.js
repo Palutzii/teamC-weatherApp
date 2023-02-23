@@ -14,7 +14,7 @@ let warningWind ="";
 
 
 if (currentWeatherObject.temp > -4 && currentWeatherObject.temp < 4){
-warningHalt = "halt väglag";
+warningHalt = "Varning för halt väglag";
 warningInfo.style.display = "flex";
 warning.style.display="block";
 } 
@@ -22,11 +22,11 @@ warning.style.display="block";
    
 
 if (currentWeatherObject.windspeed > 20 && currentWeatherObject.windspeed < 27){
-    warningWind = "hård vind"; 
+    warningWind = "Varning för hård vind"; 
     warningInfo.style.display = "flex";
     warning.style.display="block";
 } else if (currentWeatherObject.windspeed > 27 && currentWeatherObject.windspeed < 40){ 
-    warningWind ="storm "; 
+    warningWind ="Varning för storm"; 
     warningInfo.style.display = "flex";
     warning.style.display="block";
 }
@@ -38,11 +38,11 @@ warning.innerHTML= `
 </div>
 <div class="now-info">
 <div class="now-warning">
-<h2 id="right-now">varning:</h2>
+<h2 id="right-now">Just nu:</h2>
   <div class="now-icon">
     <img
       class="weatherIcon"
-      src="content/icons/"
+      src="content/icons/triangle.svg"
       alt=""
       id="varning-icon"
     />
