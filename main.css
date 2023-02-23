@@ -348,6 +348,12 @@ body {
   text-align: center;
 }
 
+.warning {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
 .now-box {
   display: flex;
   flex-direction: column;
@@ -530,15 +536,48 @@ body {
   margin-top: 2rem;
   margin-bottom: 3rem;
 }
-.breadNav div div {
+
+.breadcrumb-wrapper {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-.breadNav div div h3 {
+.breadcrumb-wrapper span {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.breadNavHome {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.09) 100%);
   border-radius: 8px;
   padding: 8px;
+  cursor: pointer;
+}
+.breadNavHome h3 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.home-icon-holder {
+  width: 30px;
+}
+
+.home-icon {
+  width: 23px;
+  filter: brightness(0) invert(1);
+}
+
+.breadcrumb-day {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.09) 100%);
+  border-radius: 8px;
+  padding: 8px;
+}
+.breadcrumb-day h3 {
+  font-weight: 500;
+  font-size: 20px;
 }
 
 .hourlyDivWrapper {
@@ -681,7 +720,7 @@ body {
 }
 @media (min-width: 980px) {
   .article-info-wrapper {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
 }
@@ -691,7 +730,16 @@ body {
   flex-direction: column;
   border-radius: 8px;
   padding: 16px 8px;
+  gap: 0.5rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
+}
+.otherinfo-article h4 {
+  font-weight: 500;
+  line-height: 24px;
+}
+.otherinfo-article p {
+  font-weight: 400;
+  line-height: 24px;
 }
 
 footer {
