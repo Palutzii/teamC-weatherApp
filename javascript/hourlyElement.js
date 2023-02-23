@@ -121,7 +121,7 @@ export const runHourlyElement = (buttonValue) => {
   breadNavContent.innerHTML = `
       <div class= "breadcrumb-wrapper">
         <div id="home" class="breadNavHome">
-       <div class"home-icon"> <img src="content/icons/house.svg" alt="home"></div>
+       <div class"home-icon-holder"> <img class="home-icon" src="content/icons/house.svg" alt="home"></div>
           <h3>${currentWeatherObject.location}</h3>
         </div>
         <span>/</span>
