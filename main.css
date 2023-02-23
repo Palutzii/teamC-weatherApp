@@ -198,6 +198,10 @@ body {
   border-radius: 50%;
   top: 0;
   right: 0;
+  cursor: pointer;
+}
+.search-icon-holder.is-clicked {
+  cursor: default;
 }
 
 .search-icon {
@@ -239,9 +243,25 @@ body {
 }
 .search-results ul {
   list-style: none;
+  border-radius: 8px;
+}
+.search-results li {
+  background-color: #fff;
+}
+.search-results li:hover {
+  background-color: #0f4a57;
+}
+.search-results li:hover button {
+  background-color: #0f4a57;
+  color: #fff;
 }
 .search-results li button {
   color: #0f4a57;
+  border: none;
+  background-color: #fff;
+  text-align: left;
+  padding: 8px;
+  border-radius: inherit;
 }
 
 .flag {

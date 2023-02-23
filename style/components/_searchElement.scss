@@ -21,6 +21,11 @@
   border-radius: 50%;
   top: 0;
   right: 0;
+  cursor: pointer;
+
+  &.is-clicked {
+    cursor: default;
+  }
 }
 
 .search-icon {
@@ -67,11 +72,27 @@
 
   ul {
     list-style: none;
+    border-radius: 8px;
   }
 
   li {
+    background-color: #fff;
+
+    &:hover {
+      background-color: #0f4a57;
+
+      button {
+        background-color: #0f4a57;
+        color: #fff;
+      }
+    }
     button {
       color: #0f4a57;
+      border: none;
+      background-color: #fff;
+      text-align: left;
+      padding: 8px;
+      border-radius: inherit;
     }
   }
 }
