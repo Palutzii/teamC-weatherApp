@@ -114,6 +114,7 @@ const getCoordinates = (id) => {
 }
 let searchIsActive = false;
 searchIconHolder.addEventListener("click", () => {
+    searchInput.focus(); 
     if (searchIsActive === false) {
         searchInput.classList.add("is-clicked");
         homeSun.classList.add("is-covered")
