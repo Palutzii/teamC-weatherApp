@@ -3,6 +3,7 @@ import { dataArray } from "../main.js";
 import { runDailyElement } from "./dayElement.js";
 import {runHeroElement } from "./heroelement.js";
 import {currentWeatherObject} from "../main.js";
+import { runWarningElement } from "./waring.js";
 export {searchInput};
 export {searchBtn};
 
@@ -77,6 +78,7 @@ async function getSearchWeather(latitude, longitude, name) {
     currentWeatherObject.location = name;
     console.log(currentWeatherObject)
     runHeroElement();
+    runWarningElement();
     runDailyElement();
 
 }
@@ -105,8 +107,8 @@ const getCoordinates = (id) => {
     heroBox.style.display = "flex";
     infoDiv.style.display = "none";
     timeInfo.style.display = "none";
-    breadNav.innerHTML = ""; //OBS!
     warningInfo.style.display = "flex";
+    breadNav.innerHTML = ""; //OBS!
     
 }
 let searchIsActive = false;

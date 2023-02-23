@@ -4,6 +4,8 @@ export const runWarningElement = ()=> {
 
 
 let warningInfo = document.querySelector(".warning");
+warningInfo.innerHTML = "";
+warningInfo.style.display = "none";
 
 let warning = document.createElement('div'); 
 warning.style.display="none";
@@ -13,6 +15,7 @@ let warningWind ="";
 
 if (currentWeatherObject.temp > -4 && currentWeatherObject.temp < 4){
 warningHalt = "halt väglag";
+warningInfo.style.display = "flex";
 warning.style.display="block";
 } 
 
@@ -20,9 +23,11 @@ warning.style.display="block";
 
 if (currentWeatherObject.windspeed > 20 && currentWeatherObject.windspeed < 27){
     warningWind = "hård vind"; 
+    warningInfo.style.display = "flex";
     warning.style.display="block";
 } else if (currentWeatherObject.windspeed > 27 && currentWeatherObject.windspeed < 40){ 
     warningWind ="storm "; 
+    warningInfo.style.display = "flex";
     warning.style.display="block";
 }
 
