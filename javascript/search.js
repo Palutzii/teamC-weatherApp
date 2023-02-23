@@ -11,6 +11,7 @@ const searchBtn = document.getElementById("searchBtn");
 const placesList = document.getElementById("placesList");
 const searchIconHolder = document.getElementById("searchIconHolder");
 const homeSun = document.getElementById("homeSun");
+const searchResultsList = document.getElementById("searchResultsList")
 let searchResults = [];
 
 searchInput.addEventListener("input", () => {
@@ -80,6 +81,16 @@ async function getSearchWeather(latitude, longitude, name) {
 
 }
 
+let breadNav = document.querySelector("#breadNav");
+let breadNavContent = document.createElement("div");
+let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
+let otherInfoDiv = document.querySelector(".otherinfo-div");
+let mainDiv = document.querySelector(".main-daydiv");
+let infoDiv = document.querySelector(".infoDiv");
+let timeInfo = document.querySelector(".timeInfo");
+let heroBox = document.querySelector(".hero-box");
+let warningInfo = document.querySelector(".warning");
+
 const getCoordinates = (id) => {
     let idAsNumber = (parseInt(id))
     searchResults.forEach((index) => {
@@ -88,6 +99,14 @@ const getCoordinates = (id) => {
         }
     })
     placesList.innerHTML = "";
+    otherInfoDiv.style.display = "none";
+    hourlyDivWrapper.style.display = "none";
+    mainDiv.style.display = "flex";
+    heroBox.style.display = "flex";
+    infoDiv.style.display = "none";
+    timeInfo.style.display = "none";
+    breadNav.innerHTML = ""; //OBS!
+    warningInfo.style.display = "flex";
     
 }
 let searchIsActive = false;
@@ -95,11 +114,13 @@ searchIconHolder.addEventListener("click", () => {
     if (searchIsActive === false) {
         searchInput.classList.add("is-clicked");
         homeSun.classList.add("is-covered")
+        searchResultsList.classList.add("hej") // OBS
         searchIsActive = true;
     }
     else if (searchIsActive === true) {
         searchInput.classList.remove("is-clicked");
         homeSun.classList.remove("is-covered")
+        searchResultsList.classList.remove("hej") // OBS
         searchIsActive = false;
     }
 })
