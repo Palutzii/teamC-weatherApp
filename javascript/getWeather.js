@@ -3,6 +3,7 @@ const weekday = ["Söndag","Måndag","Tisdag","Onsdag","Torsdag","Fredag","Lörd
 
 let weatherData = "";
 let reverseData = "";
+let filteredReverseData = [];
 export let dataArray = [];
 export let currentWeatherObject = {};
 
@@ -25,11 +26,11 @@ let createCurrentWeatherObject = () => {
     let currentDateAndTimeByHour = `${year}-${month}-${date}T${hour}:00`
 
     let locationName = "";
-    if (reverseData === "") {
+    if (filteredReverseData.length === 0) {
         locationName = "Din plats"
     }
     else {
-        locationName = reverseData.results[0].address_components[0].long_name;
+        locationName = filteredReverseData[0].long_name;
     }
 
     currentWeatherObject = {
@@ -88,13 +89,14 @@ let createArray = () => {
 
 export async function getWeather(latitude, longitude) {
     weatherData = "";
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m,weathercode,apparent_temperature,rain,windspeed_10m,winddirection_10m&windspeed_unit=ms&daily=temperature_2m_max,temperature_2m_min,weathercode,precipitation_sum&timezone=auto`
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=relativehumidity_2m,pressure_msl,visibility,temperature_2m,weathercode,apparent_temperature,rain,windspeed_10m,winddirection_10m&windspeed_unit=ms&daily=uv_index_max,winddirection_10m_dominant,temperature_2m_max,temperature_2m_min,weathercode,precipitation_sum&timezone=auto`
     const res = await fetch(url);
     const data = await res.json();
     weatherData = data;
     console.log(weatherData)
 
     reverseData = "";
+    filteredReverseData = [];
     const key = ""
     if (key !== "") {
 
@@ -103,6 +105,25 @@ export async function getWeather(latitude, longitude) {
         const data2 = await res2.json();
         reverseData = data2;
         console.log(reverseData)
+        reverseData.results.forEach((res) => {
+            res.address_components.forEach((comp) => {
+                if (!comp.types.includes("sublocality_level_4") && !comp.types.includes("sublocality_level_4") && !comp.types.includes("sublocality_level_3")){
+                    comp.types.forEach((type) =>{
+                        if (type === "sublocality"){
+                            filteredReverseData.push(comp)
+                        }
+                    })
+                }
+            })
+            res.address_components.forEach((comp) => {
+                comp.types.forEach((type) =>{
+                    if (type === "locality"){
+                        filteredReverseData.push(comp)
+                    }
+                })
+            })
+        })
+        console.log(filteredReverseData);
     }
 
     createArray();
