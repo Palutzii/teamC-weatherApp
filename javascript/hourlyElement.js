@@ -96,15 +96,11 @@ export const runHourlyElement = (buttonValue) => {
             <span class="hourlyElementDiv__Wind info">${currentHour.windSpeed}</span>
             <span class="hourlyElementDiv__Rain info">${currentHour.rain}</span>
             <div class="logo-wrapper">${weathericon}</div>
-            <span class="hourlyElementDiv__Temp info">${currentHour.temp}&deg</span>
+            <span class="hourlyElementDiv__Temp hideC info">${currentHour.temp}&deg</span>
+            <span class="hourlyElementDiv__Temp hideF info">${Math.round(currentHour.temp * 1.8 + 32)}&deg</span>
         </div>
     </div>`;
 
-    // TOGGLE FUNKTION MELLAN C OCH F ------------------------------------------------------------
-
- 
-
-    // TOGGLE FUNKTION MELLAN C OCH F SLUT --------------------------------------------------------
   }
 
   //ANNAS KOD
@@ -141,6 +137,19 @@ export const runHourlyElement = (buttonValue) => {
     breadNavContent.innerHTML = "";
     warningInfo.style.display = "flex";
   });
+
+  let check = document.querySelector(".check");
+
+  if (check.checked) {
+    let hideC = document.querySelectorAll(".hideC");
+    let hideF = document.querySelectorAll(".hideF");
+
+    for (let i = 0; i < hideC.length; i++) {
+      hideC[i].style.display = "none";
+      hideF[i].style.display = "grid";
+    }
+
+  } 
 
 
 };

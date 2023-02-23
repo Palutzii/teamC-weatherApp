@@ -60,3 +60,25 @@ console.log(dataArray);
 }
 
 main();
+let check = document.querySelector(".check");
+
+    check.addEventListener("change", () => {
+      
+        let hideC = document.querySelectorAll(".hideC");
+        let hideF = document.querySelectorAll(".hideF");
+
+        for (let i = 0; i < hideC.length; i++) {
+          if (check.checked) {
+            hideC[i].style.display = "none";
+            hideF[i].style.display = "grid";
+
+            
+          } else if (!check.checked) {
+            hideC[i].style.display = "grid";
+            hideF[i].style.display = "none";
+          }
+        }
+
+      })
+
+

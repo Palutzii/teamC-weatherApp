@@ -71,15 +71,17 @@ export const runDailyElement = () => {
     )}/${parseInt(dataArray[i].date.month, 10)}</h3>
         </div>
         <div>
-          <div>${weathericon}</div><div> <h3 class="tempMax tempCF">${Math.round(
-      dataArray[i].daily.tempMax
-    )}&deg</h3>  <h3 class="tempMin tempCF">${Math.round(
-      dataArray[i].daily.tempMin
-    )}&deg</h3>
+          <div>${weathericon}</div><div> 
+          <h3 class="tempMax hideC">${Math.round(dataArray[i].daily.tempMax)}&deg</h3>
+          <h3 class="tempMax hideF">${Math.round(dataArray[i].daily.tempMax * 1.8 + 32)}&deg</h3>
+
+          <h3 class="tempMin hideC">${Math.round(dataArray[i].daily.tempMin)}&deg</h3>
+          <h3 class="tempMin hideF" style="display:none">${Math.round(dataArray[i].daily.tempMin * 1.8 + 32)}&deg</h3>
         </div>
       `;
     mainDiv.append(button);
-
+          
+    
     // Fetches elements from html
     let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
     let otherInfoDiv = document.querySelector(".otherinfo-div");
@@ -121,15 +123,4 @@ export const runDailyElement = () => {
 
 
 
-  // TOGGLE FUNKTION MELLAN C OCH F ------------------------------------------------------------
-
-
-
-  let button = document.querySelectorAll("button");
-
-
-
-
-
-  // TOGGLE FUNKTION MELLAN C OCH F SLUT ----------------------------------------------------------
 };
