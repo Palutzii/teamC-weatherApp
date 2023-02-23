@@ -48,29 +48,14 @@ async function main(){
 
 
 
-    for (let i = 0; i < dataArray.length; i++) {
-      for (let j = 0; j < dataArray[i].hourly.length; j++) {
-        let check = document.querySelector(".check");
-        check.addEventListener("change", function () {
-          if (check.checked) {
-        dataArray[i].hourly[j].temp = dataArray[i].hourly[j].temp * 1.8 + 32;
-          } else  {
-            dataArray[i].hourly[j].temp = (dataArray[i].hourly[j].temp - 32) / 1.8;
-          }
-        });
-      }
-    }
+
+
+
+    
     // Kör loadingScreenOff och stänger loadingScreen när vi har hämtat data ------------------------------
     
     loadingScreenOff();
-    let check = document.querySelector(".check");
-    check.addEventListener("change", function () {
-      if (check.checked) {
-        currentWeatherObject.temp = currentWeatherObject.temp * 1.8 + 32;
-      } else {
-        currentWeatherObject.temp = (currentWeatherObject.temp - 32) / 1.8;
-      }
-    });
+   
 
 
 runHeroElement();

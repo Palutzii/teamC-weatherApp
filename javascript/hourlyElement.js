@@ -102,31 +102,7 @@ export const runHourlyElement = (buttonValue) => {
 
     // TOGGLE FUNKTION MELLAN C OCH F ------------------------------------------------------------
 
-    hourlyWeatherDiv = document.querySelectorAll(".hourlyWeatherDiv");
-
-
-
-    for (let i = 0; i < hourlyWeatherDiv.length; i++) {
-      let temperature = hourlyWeatherDiv[i].querySelectorAll(
-        ".hourlyElementDiv__Temp"
-      );
-      let check = document.querySelector(".check");
-
-      check.addEventListener("change", function () {
-        for (let j = 0; j < temperature.length; j++) {
-          let currentHour = { temp: parseFloat(temperature[j].innerHTML) };
-          if (check.checked) {
-            temperature[j].innerHTML = `${Math.round(
-              (currentHour.temp * 9) / 5 + 32
-            )}&deg`;
-          } else if (!check.checked) {
-            temperature[j].innerHTML = `${Math.round(
-              ((currentHour.temp - 32) * 5) / 9
-            )}&deg`;
-          }
-        }
-      });
-    }
+ 
 
     // TOGGLE FUNKTION MELLAN C OCH F SLUT --------------------------------------------------------
   }

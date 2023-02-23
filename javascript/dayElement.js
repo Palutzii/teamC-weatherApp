@@ -127,60 +127,6 @@ export const runDailyElement = () => {
 
   let button = document.querySelectorAll("button");
 
-  // for (let i = 0; i < button.length; i++) {
-  //   console.log(button[i]);
-  //   let temperature = button[i].querySelectorAll(".tempCF");
-  //   let check = document.querySelector(".check");
-
-  //   check.addEventListener("change", function () {
-  //     for (let j = 0; j < temperature.length; j++) {
-  //       dataArray[i].daily = { temp: parseFloat(temperature[j].innerHTML) };
-  //       if (check.checked) {
-  //         temperature[j].innerHTML = `${Math.round(
-  //           (dataArray[i].daily.temp * 9) / 5 + 32
-  //         )}&deg`;
-  //       } else {
-  //         temperature[j].innerHTML = `${Math.round(
-  //           ((dataArray[i].daily.temp - 32) * 5) / 9
-  //         )}&deg`;
-  //       }
-  //     }
-  //   });
-  // }
-
-  let buttons = document.querySelectorAll("button");
-
-for (let i = 0; i < buttons.length; i++) {
-  let temperatureMax = buttons[i].querySelector(".tempMax.tempCF");
-  let temperatureMin = buttons[i].querySelector(".tempMin.tempCF");
-
-  temperatureMax.dataset.tempC = Math.round(dataArray[i].daily.tempMax);
-  temperatureMin.dataset.tempC = Math.round(dataArray[i].daily.tempMin);
-
-  temperatureMax.innerHTML = `${temperatureMax.dataset.tempC}&deg`;
-  temperatureMin.innerHTML = `${temperatureMin.dataset.tempC}&deg`;
-
-  let check = document.querySelector(".check");
-  check.addEventListener("change", function () {
-    if (check.checked) {
-      temperatureMax.dataset.tempF = Math.round((dataArray[i].daily.tempMax * 9) / 5 + 32);
-      temperatureMin.dataset.tempF = Math.round((dataArray[i].daily.tempMin * 9) / 5 + 32);
-
-      temperatureMax.innerHTML = `${temperatureMax.dataset.tempF}&deg`;
-      temperatureMin.innerHTML = `${temperatureMin.dataset.tempF}&deg`;
-
-      dataArray[i].daily.tempMax = temperatureMax.dataset.tempF;
-      dataArray[i].daily.tempMin = temperatureMin.dataset.tempF;
-    } else {
-      temperatureMax.innerHTML = `${temperatureMax.dataset.tempC}&deg`;
-      temperatureMin.innerHTML = `${temperatureMin.dataset.tempC}&deg`;
-
-      dataArray[i].daily.tempMax = temperatureMax.dataset.tempC;
-      dataArray[i].daily.tempMin = temperatureMin.dataset.tempC;
-    }
-  });
-}
-
 
 
 
