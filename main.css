@@ -235,6 +235,10 @@ input[type=checkbox]#toggle-switch:checked::after {
   align-items: center;
 }
 
+.hideF {
+  display: none;
+}
+
 .hero-box {
   display: flex;
   flex-direction: column;
