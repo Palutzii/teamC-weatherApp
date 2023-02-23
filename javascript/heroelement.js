@@ -43,6 +43,8 @@ export const runHeroElement = () => {
          weathericon = cloudBolt;
        }
 
+    
+
      // Ger div inehåll från dataArray
      hero.innerHTML = `
      <div class="hero-location">
@@ -58,18 +60,24 @@ export const runHeroElement = () => {
             <div class="hero-icon">
               <p id="hero-icon" class="wheatericon">${weathericon}</p>
                <div class="hero-temp">
-                  <p id="hero-temp">${Math.round(currentWeatherObject.temp)}&deg</p> 
+                  <p id="hero-temp" class="hideC">${Math.round(currentWeatherObject.temp)}&deg</p> 
+                  <p id="hero-temp" class="hideF">${Math.round(currentWeatherObject.temp * 1.8 + 32)}&deg</p> 
                   <div class="hero-feels">
                    <p> känns som <p>
-                    <p id="feels">${Math.round(currentWeatherObject.apparentTemp)}&deg</p>
-                  </div>
+                   <p id="feels" class="hideC">${Math.round(currentWeatherObject.apparentTemp)}&deg</p>
+                   <p id="feels" class="hideF">${Math.round(currentWeatherObject.apparentTemp * 1.8 + 32)}&deg</p>
+                   </div>
                  </div>
                 </div>
              </div>
      `;
 
    heroinfo.append(hero); 
-console.log(hero)
+
+
+    
+
+
 }; 
 
 

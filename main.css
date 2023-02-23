@@ -166,6 +166,79 @@ nav {
     transform: rotate(360deg);
   }
 }
+input[type=checkbox]#toggle-switch {
+  font-size: 17px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  width: 4em;
+  height: 2em;
+  border-radius: 2em;
+  background-color: #D8EFF3;
+  outline: 0;
+  cursor: pointer;
+  transition: background-color 0.09s ease-in-out;
+  position: relative;
+  color: black;
+}
+
+input[type=checkbox]#toggle-switch:checked {
+  background-color: #D8EFF3;
+  color: black;
+}
+
+input[type=checkbox]#toggle-switch::after {
+  content: "";
+  width: 2em;
+  height: 2em;
+  background-color: #FFCB44;
+  border-radius: 2em;
+  position: absolute;
+  transform: scale 0.7;
+  left: 0;
+  transition: left 0.09s ease-in-out;
+  box-shadow: 0 0 rgba(0, 0, 0, 0.5);
+  color: black;
+}
+
+input[type=checkbox]#toggle-switch:checked::after {
+  left: 2em;
+  color: black;
+}
+
+.C {
+  color: #727472;
+  font-size: 20px;
+  z-index: 1;
+}
+
+.F {
+  color: #727472;
+  font-size: 20px;
+  z-index: 1;
+}
+
+.toggleDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggleElement {
+  padding-top: 4px;
+  padding-left: 3px;
+  position: absolute;
+  width: 4em;
+  height: 1.7em;
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+
+.hideF {
+  display: none;
+}
+
 .hero-box {
   display: flex;
   flex-direction: column;

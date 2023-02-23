@@ -2,7 +2,7 @@ import { dataArray } from "../main.js";
 import { weatherIcons } from "./hourlyElement.js";
 import { runHourlyElement } from "./hourlyElement.js";
 import { runotherInfo } from "./otherInfo.js";
-import {currentWeatherObject} from "../main.js";
+import { currentWeatherObject } from "../main.js";
 
 export const runDailyElement = () => {
   const {
@@ -16,7 +16,7 @@ export const runDailyElement = () => {
     sun,
     tornado,
   } = weatherIcons;
-  
+
   // Fetches elements from html
   let mainDiv = document.querySelector(".main-daydiv");
   let infoDiv = document.querySelector(".infoDiv");
@@ -25,10 +25,10 @@ export const runDailyElement = () => {
   let warningInfo = document.querySelector(".warning");
   
 
-  mainDiv.style.display = "block"
+  mainDiv.style.display = "block";
   let weathericon = "";
 
-  // Loops thrue dataArray 
+  // Loops thrue dataArray
   for (let i = 0; i < dataArray.length; i++) {
     //creates buttons
     let button = document.createElement("button");
@@ -65,15 +65,25 @@ export const runDailyElement = () => {
     // Gives button content from dataArray
     button.innerHTML = `
         <div class="dayBtn">
-          <h2>${dataArray[i].name}</h2> <h3>${parseInt(dataArray[i].date.day,10)}/${parseInt(dataArray[i].date.month, 10)}</h3>
+          <h2>${dataArray[i].name}</h2> <h3>${parseInt(
+      dataArray[i].date.day,
+      10
+    )}/${parseInt(dataArray[i].date.month, 10)}</h3>
         </div>
         <div>
-          <div>${weathericon}</div><div> <h3>${Math.round(
-      dataArray[i].daily.tempMax)}&deg</h3>  <h3>${Math.round(dataArray[i].daily.tempMin)}&deg</h3>
+          <div>${weathericon}</div>
+          <div> 
+          <h3 class="tempMax hideC">${Math.round(dataArray[i].daily.tempMax)}&deg</h3>
+          <h3 class="tempMax hideF">${Math.round(dataArray[i].daily.tempMax * 1.8 + 32)}&deg</h3>
+
+          <h3 class="tempMin hideC">${Math.round(dataArray[i].daily.tempMin)}&deg</h3>
+          <h3 class="tempMin hideF" style="display:none">${Math.round(dataArray[i].daily.tempMin * 1.8 + 32)}&deg</h3>
+        </div>
         </div>
       `;
     mainDiv.append(button);
-
+          
+    
     // Fetches elements from html
     let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
     let otherInfoDiv = document.querySelector(".otherinfo-div");
@@ -111,4 +121,8 @@ export const runDailyElement = () => {
     timeInfo.style.display = "flex";
     warningInfo.style.display = "none";
   });
+
+
+
+
 };

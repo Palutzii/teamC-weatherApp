@@ -96,11 +96,14 @@ export const runHourlyElement = (buttonValue) => {
             <span class="hourlyElementDiv__Wind info">${currentHour.windSpeed}</span>
             <span class="hourlyElementDiv__Rain info">${currentHour.rain}</span>
             <div class="logo-wrapper">${weathericon}</div>
-            <span class="hourlyElementDiv__Temp info">${currentHour.temp}&deg</span>
+            <span class="hourlyElementDiv__Temp hideC info">${currentHour.temp}&deg</span>
+            <span class="hourlyElementDiv__Temp hideF info">${Math.round(currentHour.temp * 1.8 + 32)}&deg</span>
         </div>
     </div>`;
+
   }
-  // Breadcrumb navigation
+
+  //ANNAS KOD
   let breadNav = document.querySelector("#breadNav");
   let breadNavContent = document.createElement("div");
   let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
@@ -124,6 +127,7 @@ export const runHourlyElement = (buttonValue) => {
 
   let homeDiv = document.querySelector("#home");
   homeDiv.addEventListener("click", () => {
+    console.log("hej")
     otherInfoDiv.style.display = "none";
     hourlyDivWrapper.style.display = "none";
     mainDiv.style.display = "flex";
@@ -133,4 +137,19 @@ export const runHourlyElement = (buttonValue) => {
     breadNavContent.innerHTML = "";
     warningInfo.style.display = "flex";
   });
+
+  let check = document.querySelector(".check");
+
+  if (check.checked) {
+    let hideC = document.querySelectorAll(".hideC");
+    let hideF = document.querySelectorAll(".hideF");
+
+    for (let i = 0; i < hideC.length; i++) {
+      hideC[i].style.display = "none";
+      hideF[i].style.display = "grid";
+    }
+
+  } 
+
+
 };
