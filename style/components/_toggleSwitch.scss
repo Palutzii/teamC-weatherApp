@@ -1,81 +1,126 @@
-input[type=checkbox]#toggle-switch {
-    font-size: 17px;
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    width: 4em;
-    height: 2em;
-    border-radius: 2em;
-    background-color: #D8EFF3;
-    outline: 0;
-    cursor: pointer;
-    transition: background-color 0.09s ease-in-out;
+// input[type=checkbox]#toggle-switch {
+//     font-size: 17px;
+//     appearance: none;
+//     -moz-appearance: none;
+//     -webkit-appearance: none;
+//     width: 4em;
+//     height: 2em;
+//     border-radius: 2em;
+//     background-color: #D8EFF3;
+//     outline: 0;
+//     cursor: pointer;
+//     transition: background-color 0.09s ease-in-out;
+//     position: relative;
+//     color: black;
+//     padding: 4px;
+
+// }
+
+// input[type=checkbox]#toggle-switch:checked {
+//     background-color: #D8EFF3;
+//     color: black;
+// }
+
+
+// input[type=checkbox]#toggle-switch::after {
+//     content: '';
+//     width: 2em;
+//     height: 2em;
+//     background-color: #FFCB44;
+//     border-radius: 2em;
+//     position: absolute;
+//     transform: scale (0.7);
+//     left: 0;
+//     top: 0;
+//     transition: left 0.09s ease-in-out;
+//     box-shadow: 0 0 rgba(0, 0, 0, 0.5);
+//     color: black;
+// }
+
+
+// input[type=checkbox]#toggle-switch:checked::after {
+//     left: 2em;
+//     color: black;
+// }
+
+// .C {
+//     color: #727472;
+//     font-size: 20px;
+//     z-index: 1;
+// }
+
+// .F {
+//     color: #727472;
+//     font-size: 20px;
+//     z-index: 1;
+// }
+
+// .toggleDiv {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// .toggleElement {
+//     padding: 4px;
+//     position: absolute;
+//     width: 4em;
+//     height: 1.7em;
+//     display: flex;
+//     gap: 13px;
+//     align-items: center;
+// }
+
+// .hideF {
+//     display: none;
+// }
+
+.toggleDiv {
     position: relative;
-    color: black;
-    }
+}
 
-    input[type=checkbox]#toggle-switch:checked {
+.toggleElement {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
     background-color: #D8EFF3;
-    color: black;
-    }
+    border-radius: 50px;
+    width: 106px;
+    height: 53px;
+    position: relative;
+    padding: 4px;
 
-
-    input[type=checkbox]#toggle-switch::after {
-    content: '';
-    width: 2em;
-    height: 2em;
-    background-color: #FFCB44;
-    border-radius: 2em;
-    position: absolute;
-    transform: scale (0.7);
-    left: 0;
-    transition: left 0.09s ease-in-out;
-    box-shadow: 0 0 rgba(0, 0, 0, 0.5);
-    color: black;
-    }
-
-    
-    input[type=checkbox]#toggle-switch:checked::after {
-    left: 2em;
-    color: black;
-    }
-
-    .C {
-    color: #727472;
-    // position: absolute;
-    // top: 26px;
-    // left: 24px;
-    font-size: 20px;
-    z-index: 1;
-
-    }
-
-    .F {
-    color: #727472;
-    // position: absolute;
-    
-    
-    font-size: 20px;
-    // left: 88px;
-    // top: 26px;
-    z-index: 1;
-    }
-
-    .toggleDiv {
+    label {
         display: flex;
+        color: #0F4A57;
+        z-index: 1;
+        width: 53px;
+        height: 53px;
         justify-content: center;
         align-items: center;
     }
-    .toggleElement {
-        padding-top: 4px;
-        padding-left: 3px;
-        position: absolute;
-        width: 4em;
-        height: 1.7em;
-        display: flex;
-       gap: 13px;
-        align-items: center;
+}
+
+.check {
+    position: absolute;
+    appearance: none;
+    background-color: #FFCB44;
+    width: 53px;
+    height: 53px;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding: 8px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 100px;
+    margin-left: 6px;
+    margin-right: 6px;
+    transition: all 200ms ease-in-out;
+
+    &:checked {
+        transform: translate(calc(100% - 4px), -50%);
+        transition: all 200ms ease-in-out;
     }
-    .hideF {
-        display: none;
-    }
+}
