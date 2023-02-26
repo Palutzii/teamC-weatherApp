@@ -37,24 +37,25 @@ warning.innerHTML= `
 
 </div>
 <div class="now-info">
-<div class="now-warning">
-<h2 id="right-now">Just nu:</h2>
-  <div class="now-icon">
-    <img
-      class="weatherIcon"
-      src="content/icons/triangle.svg"
-      alt=""
-      id="varning-icon"
-    />
+  <div class="now-warning">
+    <h2 id="right-now">Just nu:</h2>
+    <div class="now-two-holder">
+      <div class="now-icon">
+        <img
+          class="weatherIcon"
+          src="content/icons/triangle.svg"
+          alt=""
+          id="varning-icon"
+        />
+      </div>
+      <div class="now-message">
+        <p id="message">${warningHalt}</p>
+        <p id="message">${warningWind}</p>
+      </div>
+    </div>
   </div>
-  <div class="now-message">
-    <p id="message">${warningHalt}</p>
-    <p id="message">${warningWind}</p>
-
-  </div>
-</div>
 </div>
 `;
-warningInfo.append(warning); 
-console.log(warning)
-}; 
+  warningInfo.append(warning);
+  console.log(warning);
+};
