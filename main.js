@@ -32,15 +32,15 @@ async function main() {
 
   let latitude, longitude;
 
-myLocation(async function(position) {
-  const coordinates = position.coords;
-  latitude = coordinates.latitude;
-  longitude = coordinates.longitude;
-  deviceLat = latitude;
-  deviceLong = longitude;
-  // Test koordinater (ignorera) 52.51117679876553, 13.443010599083433
+  myLocation(async function (position) {
+    const coordinates = position.coords;
+    latitude = coordinates.latitude;
+    longitude = coordinates.longitude;
+    deviceLat = latitude;
+    deviceLong = longitude;
+    // Test koordinater (ignorera) 52.51117679876553, 13.443010599083433
 
-  await getWeather(latitude, longitude);
+    await getWeather(latitude, longitude);
 
     console.log(dataArray);
     console.log(currentWeatherObject);
@@ -59,3 +59,19 @@ myLocation(async function(position) {
 }
 
 main();
+let check = document.querySelector(".check");
+
+check.addEventListener("change", () => {
+  let hideC = document.querySelectorAll(".hideC");
+  let hideF = document.querySelectorAll(".hideF");
+
+  for (let i = 0; i < hideC.length; i++) {
+    if (check.checked) {
+      hideC[i].style.display = "none";
+      hideF[i].style.display = "grid";
+    } else if (!check.checked) {
+      hideC[i].style.display = "grid";
+      hideF[i].style.display = "none";
+    }
+  }
+});

@@ -57,7 +57,7 @@ let createCurrentWeatherObject = () => {
         weatherData.hourly.time.indexOf(currentDateAndTimeByHour)
       ],
     windspeed: 35,
-      //weatherData.hourly.windspeed_10m[weatherData.hourly.time.indexOf(currentDateAndTimeByHour)],
+    //weatherData.hourly.windspeed_10m[weatherData.hourly.time.indexOf(currentDateAndTimeByHour)],
     name: dataArray[0].name,
     date: dataArray[0].date,
     location: locationName,
@@ -113,47 +113,49 @@ let createArray = () => {
 };
 
 export async function getWeather(latitude, longitude) {
-    let timezone = "Europe/Stockholm";
-    reverseData = "";
-    filteredReverseData = [];
-    if (key !== "") {
-        
-        const urlReverse = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${key}`
-        const res2 = await fetch(urlReverse);
-        const data2 = await res2.json();
-        reverseData = data2;
-        console.log(reverseData)
-        reverseData.results.forEach((res) => {
-            res.address_components.forEach((comp) => {
-                if (!comp.types.includes("sublocality_level_4") && !comp.types.includes("sublocality_level_4") && !comp.types.includes("sublocality_level_3")){
-                    comp.types.forEach((type) =>{
-                        if (type === "sublocality"){
-                            filteredReverseData.push(comp)
-                        }
-                    })
-                }
-            })
-            res.address_components.forEach((comp) => {
-                comp.types.forEach((type) =>{
-                    if (type === "locality"){
-                        filteredReverseData.push(comp)
-                    }
-                })
-            })
-        })
+  let timezone = "Europe/Stockholm";
+  reverseData = "";
+  filteredReverseData = [];
+  if (key !== "") {
+    const urlReverse = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${key}`;
+    const res2 = await fetch(urlReverse);
+    const data2 = await res2.json();
+    reverseData = data2;
+    console.log(reverseData);
+    reverseData.results.forEach((res) => {
+      res.address_components.forEach((comp) => {
+        if (
+          !comp.types.includes("sublocality_level_4") &&
+          !comp.types.includes("sublocality_level_4") &&
+          !comp.types.includes("sublocality_level_3")
+        ) {
+          comp.types.forEach((type) => {
+            if (type === "sublocality") {
+              filteredReverseData.push(comp);
+            }
+          });
+        }
+      });
+      res.address_components.forEach((comp) => {
+        comp.types.forEach((type) => {
+          if (type === "locality") {
+            filteredReverseData.push(comp);
+          }
+        });
+      });
+    });
 
-        const urlTimeZone = `https://maps.googleapis.com/maps/api/timezone/json?location=${deviceLat},${deviceLong}&timestamp=0&key=${key}`
-        const res3 = await fetch(urlTimeZone);
-        const data3 = await res3.json();
-        timezoneData = data3;
-        timezone = data3.timeZoneId;
-    }
-    weatherData = "";
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=relativehumidity_2m,pressure_msl,visibility,temperature_2m,weathercode,apparent_temperature,rain,windspeed_10m,winddirection_10m&windspeed_unit=ms&daily=uv_index_max,winddirection_10m_dominant,temperature_2m_max,temperature_2m_min,weathercode,precipitation_sum&timezone=${timezone}`
-    const res = await fetch(url);
-    const data = await res.json();
-    weatherData = data;
-
+    const urlTimeZone = `https://maps.googleapis.com/maps/api/timezone/json?location=${deviceLat},${deviceLong}&timestamp=0&key=${key}`;
+    const res3 = await fetch(urlTimeZone);
+    const data3 = await res3.json();
+    timezoneData = data3;
+    timezone = data3.timeZoneId;
+  }
+  weatherData = "";
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=relativehumidity_2m,pressure_msl,visibility,temperature_2m,weathercode,apparent_temperature,rain,windspeed_10m,winddirection_10m&windspeed_unit=ms&daily=uv_index_max,winddirection_10m_dominant,temperature_2m_max,temperature_2m_min,weathercode,precipitation_sum&timezone=${timezone}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  weatherData = data;
 
   createArray();
   createCurrentWeatherObject();

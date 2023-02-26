@@ -30,6 +30,7 @@
           </div>
         </nav>
       </div>
+
       <div id="searchDiv" class="search">
         <div class="search-bar">
           <input
@@ -38,12 +39,25 @@
             placeholder="Sök efter ny plats"
           />
           <div id="searchIconHolder" class="search-icon-holder">
-            <img id="searchIcon" class="search-icon" src="content/icons/search.svg" alt="" />
+            <img
+              id="searchIcon"
+              class="search-icon"
+              src="content/icons/search.svg"
+              alt=""
+            />
           </div>
         </div>
         <div id="searchResultsList" class="search-results">
           <ul id="placesList"></ul>
         </div>
+      </div>
+
+      <div class="toggleDiv">
+        <div class="toggleElement">
+          <label for="toggle-switch" class="C">&degC</label>
+          <label for="toggle-switch" class="F">&degF</label>
+        </div>
+        <input type="checkbox" class="check" id="toggle-switch" />
       </div>
     </header>
 
@@ -130,7 +144,7 @@
             <h4>Nederbörd</h4>
             <p class="dailyprecip-info"></p>
           </article>
-           <article class="otherinfo-article">
+          <article class="otherinfo-article">
             <h4>Luftfuktighet</h4>
             <p class="daily-humidity"></p>
           </article>
@@ -151,7 +165,7 @@
             <h4>Tryck</h4>
             <p class="daily-pressure"></p>
             <p class="typeof-pressure"></p>
-          </article> 
+          </article>
         </div>
       </div>
     </main>
