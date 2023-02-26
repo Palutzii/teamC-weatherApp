@@ -299,21 +299,35 @@ body {
   display: none;
 }
 
+.hero {
+  margin-top: 4rem;
+  margin-bottom: 3.625rem;
+  display: flex !important;
+  flex-direction: column;
+  gap: 3.875rem;
+}
+@media (min-width: 740px) {
+  .hero {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
 .hero-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-  margin-bottom: 4rem;
   margin-top: 1rem;
 }
-@media (min-width: 980px) {
+@media (min-width: 740px) {
   .hero-box {
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10rem;
-    margin-top: 3rem;
+    margin-top: 0rem;
   }
 }
 
@@ -329,11 +343,19 @@ body {
 .hero-location {
   text-align: center;
 }
+.hero-location h1 {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+}
 .hero-location .hero-date span {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 0.5rem;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
 }
 
 .hero-current .hero-icon {
@@ -349,7 +371,7 @@ body {
 }
 @media (min-width: 320px) {
   .hero-current .hero-icon .weatherIcon {
-    width: 100px;
+    width: 114px;
   }
 }
 
@@ -360,10 +382,15 @@ body {
 .hero-temp .hero-feels {
   display: flex;
   gap: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 #hero-temp {
+  font-weight: 400;
   font-size: 60px;
+  line-height: 73px;
   text-align: center;
 }
 
@@ -382,7 +409,11 @@ body {
 .warning {
   display: flex;
   justify-content: center;
-  max-width: 100%;
+}
+@media (min-width: 740px) {
+  .warning {
+    width: 332px;
+  }
 }
 .warning div {
   width: 100%;
@@ -410,11 +441,16 @@ body {
   gap: 8px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.09) 100%);
   border-radius: 16px;
+  padding: 24px 0;
+}
+@media (min-width: 740px) {
+  .now-two-holder {
+    padding: 24px 0;
+  }
 }
 
 .now-icon {
   text-align: center;
-  margin-top: 24px;
 }
 
 #varning-icon {
@@ -427,14 +463,8 @@ body {
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-  margin-bottom: 24px;
   gap: 8px;
-}
-
-#message {
-  width: 213px;
-  margin-right: auto;
-  margin-left: auto;
+  text-align: center;
 }
 
 .main-daydiv {
