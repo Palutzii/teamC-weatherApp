@@ -400,6 +400,8 @@ body {
   display: flex !important;
   flex-direction: column;
   align-items: center;
+}
+.hero.is-warning-active {
   gap: 3.875rem;
 }
 @media (min-width: 740px) {
@@ -503,18 +505,10 @@ body {
   text-align: center;
 }
 
-.warning-box {
-  width: 290px;
-}
-
 .warning {
   display: flex;
   justify-content: center;
-}
-@media (min-width: 740px) {
-  .warning {
-    width: 332px;
-  }
+  width: 290px;
 }
 .warning div {
   width: 100%;
