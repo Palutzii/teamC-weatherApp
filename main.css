@@ -953,7 +953,7 @@ footer {
 
 .progress {
   align-self: center;
-  background-color: #f4a261;
+  background-color: #d8eff3;
   position: relative;
   height: 15px;
   width: 165px;
@@ -997,7 +997,7 @@ footer {
   }
   .progress {
     align-self: center;
-    background-color: #f4a261;
+    background-color: #d8eff3;
     position: relative;
     height: 20px; /* increase the height */
     width: 220px; /* double the width */
