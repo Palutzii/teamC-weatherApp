@@ -1,18 +1,50 @@
 .header {
+  position: relative;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0 1rem;
+  margin-top: 1rem;
+  height: 85px;
 
   @include devices(desktop) {
-    justify-content: flex-start;
+    justify-content: flex-end;
+    margin: auto;
+    height: auto;
+  }
+}
+
+.navbar {
+  position: relative;
+  order: 1;
+  user-select: none;
+
+  @include devices(desktop) {
+    height: auto;
+    margin-right: auto;
   }
 }
 
 .logo-wrapper {
   display: flex;
+
   a {
     display: inline-block;
     margin: auto;
+    transition: all 200ms ease-in-out;
+
+    &.is-covered {
+      display: none;
+    }
+
+    @include devices(desktop) {
+      &.is-covered {
+        display: block;
+      }
+    }
   }
+
   .logo {
     width: 70px;
     animation: rotateSun 10s linear infinite;
@@ -25,10 +57,6 @@
       animation-duration: 3s;
     }
   }
-}
-
-nav {
-  padding: 1rem;
 }
 
 @keyframes rotateSun {
