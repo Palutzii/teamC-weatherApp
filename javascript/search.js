@@ -108,7 +108,6 @@ const getCoordinates = (id) => {
     heroBox.style.display = "flex";
     infoDiv.style.display = "none";
     timeInfo.style.display = "none";
-    warningInfo.style.display = "flex";
     breadNav.innerHTML = ""; //OBS!
     
 }
