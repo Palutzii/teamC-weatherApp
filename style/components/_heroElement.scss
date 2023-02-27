@@ -66,6 +66,8 @@
 }
 
 .hero-current {
+  margin-top: 1rem;
+
   .hero-icon {
     display: flex;
 
@@ -75,6 +77,7 @@
 
     .weatherIcon {
       width: 75px;
+      height: 91px;
 
       @include devices(mobile) {
         width: 114px;

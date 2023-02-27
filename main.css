@@ -460,6 +460,9 @@ body {
   line-height: 19px;
 }
 
+.hero-current {
+  margin-top: 1rem;
+}
 .hero-current .hero-icon {
   display: flex;
 }
@@ -470,6 +473,7 @@ body {
 }
 .hero-current .hero-icon .weatherIcon {
   width: 75px;
+  height: 91px;
 }
 @media (min-width: 320px) {
   .hero-current .hero-icon .weatherIcon {
