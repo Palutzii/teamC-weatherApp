@@ -56,8 +56,7 @@ let createCurrentWeatherObject = () => {
       weatherData.hourly.apparent_temperature[
         weatherData.hourly.time.indexOf(currentDateAndTimeByHour)
       ],
-    windspeed: 35,
-    //weatherData.hourly.windspeed_10m[weatherData.hourly.time.indexOf(currentDateAndTimeByHour)],
+    windspeed: weatherData.hourly.windspeed_10m[weatherData.hourly.time.indexOf(currentDateAndTimeByHour)],
     name: dataArray[0].name,
     date: dataArray[0].date,
     location: locationName,
