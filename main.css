@@ -310,6 +310,7 @@ body {
   text-align: left;
   padding: 8px;
   border-radius: inherit;
+  width: 100%;
 }
 
 .flag {
@@ -388,6 +389,7 @@ body {
   transform: translate(calc(100% + 6px), -50%);
   transition: all 200ms ease-in-out;
 }
+
 .hideF {
   display: none;
 }
