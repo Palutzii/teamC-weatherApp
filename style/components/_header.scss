@@ -8,7 +8,7 @@
   margin-top: 1rem;
 
   @include devices(desktop) {
-    justify-content: space-between;
+    justify-content: flex-end;
     margin: auto;
   }
 }
@@ -16,9 +16,11 @@
 .navbar {
   position: relative;
   order: 1;
+  user-select: none;
 
   @include devices(desktop) {
     height: auto;
+    margin-right: auto;
   }
 }
 
