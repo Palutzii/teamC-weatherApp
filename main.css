@@ -313,6 +313,11 @@ body {
 .toggleDiv.is-covered {
   display: none;
 }
+@media (min-width: 980px) {
+  .toggleDiv.is-covered {
+    display: block;
+  }
+}
 
 .toggleElement {
   display: flex;

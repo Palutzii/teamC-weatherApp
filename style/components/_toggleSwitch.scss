@@ -75,6 +75,10 @@
 
   &.is-covered {
     display: none;
+
+    @include devices(desktop) {
+      display: block;
+    }
   }
 }
 
