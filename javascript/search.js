@@ -12,6 +12,7 @@ const searchBtn = document.getElementById("searchBtn");
 const placesList = document.getElementById("placesList");
 const searchIconHolder = document.getElementById("searchIconHolder");
 const homeSun = document.getElementById("homeSun");
+const toggleDiv = document.getElementById("toggleDiv");
 const searchResultsList = document.getElementById("searchResultsList")
 const searchDiv = document.getElementById("searchDiv");
 let searchResults = [];
@@ -116,13 +117,15 @@ searchIconHolder.addEventListener("click", () => {
     searchInput.focus(); 
     if (searchIsActive === false) {
         searchInput.classList.add("is-clicked");
-        homeSun.classList.add("is-covered")
+        homeSun.classList.add("is-covered");
+        toggleDiv.classList.add("is-covered");
         searchDiv.classList.add("is-clicked");
         searchIsActive = true;
     }
     else if (searchIsActive === true) {
         searchInput.classList.remove("is-clicked");
-        homeSun.classList.remove("is-covered")
+        homeSun.classList.remove("is-covered");
+        toggleDiv.classList.remove("is-covered");
         searchDiv.classList.remove("is-clicked");
         searchIsActive = false;
         placesList.innerHTML = "";
@@ -132,7 +135,8 @@ searchIconHolder.addEventListener("click", () => {
 document.body.addEventListener('click', (event) =>{
     if (event.target !== searchInput && event.target !== searchIconHolder && event.target !== document.getElementById("searchIcon")) {
             searchInput.classList.remove("is-clicked");
-            homeSun.classList.remove("is-covered")
+            homeSun.classList.remove("is-covered");
+            toggleDiv.classList.remove("is-covered");
             searchDiv.classList.remove("is-clicked");
             searchIsActive = false;
             placesList.innerHTML = "";
