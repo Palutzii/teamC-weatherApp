@@ -17,11 +17,11 @@
     <script type="module" src="main.js" defer></script>
   </head>
   <body>
-    <header class="header">
+    <header class="header content-wrapper">
       <div class="navbar">
         <nav>
           <div class="logo-wrapper">
-            <a href="index.html">
+            <a id="homeSun" href="index.html">
               <img
                 class="logo"
                 src="content/images/Logo-sun.svg"
@@ -30,7 +30,29 @@
           </div>
         </nav>
       </div>
-      <div class="toggleDiv">
+      <div class="search-holder-mobile"></div>
+      <div id="searchDiv" class="search">
+        <div class="search-bar">
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Sök efter ny plats"
+          />
+          <div id="searchIconHolder" class="search-icon-holder">
+            <img
+              id="searchIcon"
+              class="search-icon"
+              src="content/icons/search.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div id="searchResultsList" class="search-results">
+          <ul id="placesList"></ul>
+        </div>
+      </div>
+
+      <div class="toggleDiv" id="toggleDiv">
         <div class="toggleElement">
           <label for="toggle-switch" class="C">&degC</label>
           <label for="toggle-switch" class="F">&degF</label>
@@ -39,44 +61,20 @@
       </div>
     </header>
 
-
     <div class="loading">
       <div class="progress">
         <div class="color"></div>
       </div>
     </div>
 
-    <artical class="hero">
-      <div class="hero-box content-wrapper">
+    <artical id="hero" class="hero content-wrapper">
+      <div class="hero-box">
         <div class="hero-info"></div>
       </div>
 
-       <div class="warning-box content-wrapper">
-        <div class="warning"></div>
-       
+      <div class="warning-box" id="warningBox">
 
-        <!-- <div class="hero-now">
-          <div class="now-box">
-            <div class="now-now">
-              <h2 id="right-now">Just nu:</h2>
-            </div>
-            <div class="now-info">
-              <div class="now-warning">
-                <div class="now-icon">
-                  <img
-                    class="weatherIcon"
-                    src="content/icons/tornado.svg"
-                    alt=""
-                    id="varning-icon"
-                  />
-                </div>
-                <div class="now-message">
-                  <p id="message">kraftiga vindar</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
+      
       </div>
     </artical>
 
@@ -124,7 +122,7 @@
             <h4>Nederbörd</h4>
             <p class="dailyprecip-info"></p>
           </article>
-           <article class="otherinfo-article">
+          <article class="otherinfo-article">
             <h4>Luftfuktighet</h4>
             <p class="daily-humidity"></p>
           </article>
@@ -145,7 +143,7 @@
             <h4>Tryck</h4>
             <p class="daily-pressure"></p>
             <p class="typeof-pressure"></p>
-          </article> 
+          </article>
         </div>
       </div>
     </main>

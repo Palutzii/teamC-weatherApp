@@ -23,9 +23,16 @@ export const runDailyElement = () => {
   let timeInfo = document.querySelector(".timeInfo");
   let heroBox = document.querySelector(".hero-box");
   let warningInfo = document.querySelector(".warning");
-  
 
   mainDiv.style.display = "block";
+  mainDiv.innerHTML = "";
+  mainDiv.innerHTML = `<div class="weather-temp-titles">
+  <div>Väder</div>
+  <div class="temp-high-low">
+    <p>Högst</p>
+    <p>Lägst</p>
+  </div>`;
+
   let weathericon = "";
 
   // Loops thrue dataArray
@@ -73,17 +80,24 @@ export const runDailyElement = () => {
         <div>
           <div>${weathericon}</div>
           <div> 
-          <h3 class="tempMax hideC">${Math.round(dataArray[i].daily.tempMax)}&deg</h3>
-          <h3 class="tempMax hideF">${Math.round(dataArray[i].daily.tempMax * 1.8 + 32)}&deg</h3>
+          <h3 class="tempMax hideC">${Math.round(
+            dataArray[i].daily.tempMax
+          )}&deg</h3>
+          <h3 class="tempMax hideF">${Math.round(
+            dataArray[i].daily.tempMax * 1.8 + 32
+          )}&deg</h3>
 
-          <h3 class="tempMin hideC">${Math.round(dataArray[i].daily.tempMin)}&deg</h3>
-          <h3 class="tempMin hideF" style="display:none">${Math.round(dataArray[i].daily.tempMin * 1.8 + 32)}&deg</h3>
+          <h3 class="tempMin hideC">${Math.round(
+            dataArray[i].daily.tempMin
+          )}&deg</h3>
+          <h3 class="tempMin hideF" style="display:none">${Math.round(
+            dataArray[i].daily.tempMin * 1.8 + 32
+          )}&deg</h3>
         </div>
         </div>
       `;
     mainDiv.append(button);
-          
-    
+
     // Fetches elements from html
     let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
     let otherInfoDiv = document.querySelector(".otherinfo-div");
@@ -111,6 +125,8 @@ export const runDailyElement = () => {
 
   // Eventlistener for hero
   heroinfo.addEventListener("click", () => {
+    let breadNav = document.querySelector("#breadNav");
+    breadNav.innerHTML = "";
     runHourlyElement(heroinfo.value);
     runotherInfo(heroinfo.value);
     otherInfoDiv.style.display = "flex";
@@ -122,7 +138,19 @@ export const runDailyElement = () => {
     warningInfo.style.display = "none";
   });
 
+  
+  let check = document.querySelector(".check");
 
+  if (check.checked) {
+    let hideC = document.querySelectorAll(".hideC");
+    let hideF = document.querySelectorAll(".hideF");
+
+    for (let i = 0; i < hideC.length; i++) {
+      hideC[i].style.display = "none";
+      hideF[i].style.display = "grid";
+    }
+
+  } 
 
 
 };
