@@ -21,7 +21,6 @@
 //     color: black;
 // }
 
-
 // input[type=checkbox]#toggle-switch::after {
 //     content: '';
 //     width: 2em;
@@ -36,7 +35,6 @@
 //     box-shadow: 0 0 rgba(0, 0, 0, 0.5);
 //     color: black;
 // }
-
 
 // input[type=checkbox]#toggle-switch:checked::after {
 //     left: 2em;
@@ -71,56 +69,64 @@
 //     align-items: center;
 // }
 
-// .hideF {
-//     display: none;
-// }
-
 .toggleDiv {
-    position: relative;
+  position: relative;
+  height: 53px;
+
+  &.is-covered {
+    display: none;
+
+    @include devices(desktop) {
+      display: block;
+    }
+  }
 }
 
 .toggleElement {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    background-color: #D8EFF3;
-    border-radius: 50px;
-    width: 106px;
-    height: 53px;
-    position: relative;
-    padding: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  background-color: #d8eff3;
+  border-radius: 50px;
+  width: 106px;
+  height: 100%;
+  position: relative;
 
-    label {
-        display: flex;
-        color: #0F4A57;
-        z-index: 1;
-        width: 53px;
-        height: 53px;
-        justify-content: center;
-        align-items: center;
-    }
+  label {
+    display: flex;
+    color: #0f4a57;
+    z-index: 1;
+    width: 53px;
+    height: 53px;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .check {
-    position: absolute;
-    appearance: none;
-    background-color: #FFCB44;
-    width: 53px;
-    height: 53px;
-    top: 50%;
-    transform: translate(0, -50%);
-    padding: 8px;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 100px;
-    margin-left: 6px;
-    margin-right: 6px;
-    transition: all 200ms ease-in-out;
+  position: absolute;
+  appearance: none;
+  background-color: #ffcb44;
+  width: 46px;
+  height: 46px;
+  top: 50%;
+  transform: translate(0, -50%);
+  padding: 8px;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-right: 4px;
+  transition: all 200ms ease-in-out;
 
-    &:checked {
-        transform: translate(calc(100% - 4px), -50%);
-        transition: all 200ms ease-in-out;
-    }
+  &:checked {
+    transform: translate(calc(100% - (-6px)), -50%);
+    transition: all 200ms ease-in-out;
+  }
+}
+
+.hideF {
+  display: none;
 }
