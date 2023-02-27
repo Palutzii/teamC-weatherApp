@@ -23,9 +23,14 @@
 .otherinfo-article {
   display: flex;
   flex-direction: column;
+  height: fit-content;
   border-radius: 8px;
   padding: 16px 8px;
   gap: 0.5rem;
+
+  @include devices(desktop) {
+    height: auto;
+  }
 
   background: linear-gradient(
     180deg,
