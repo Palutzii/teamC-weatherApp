@@ -103,7 +103,7 @@ export const runHourlyElement = (buttonValue) => {
 
   }
 
-  //ANNAS KOD
+  //Breadcrumb navigation
   let breadNav = document.querySelector("#breadNav");
   let breadNavContent = document.createElement("div");
   let hourlyDivWrapper = document.querySelector(".hourlyDivWrapper");
