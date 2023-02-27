@@ -140,11 +140,13 @@ body {
   padding: 0;
   margin: 0 1rem;
   margin-top: 1rem;
+  height: 85px;
 }
 @media (min-width: 980px) {
   .header {
     justify-content: flex-end;
     margin: auto;
+    height: auto;
   }
 }
 
