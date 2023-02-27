@@ -2,6 +2,9 @@ import {currentWeatherObject} from "../main.js";
 
 export const runWarningElement = ()=> {
 
+const hero  = document.getElementById("hero");
+hero.classList.remove("is-warning-active");
+
 document.querySelector("#warningBox").innerHTML = "";
 
 let warningInfo = document.createElement("div");
@@ -20,6 +23,7 @@ warningHalt = "Varning för halt väglag";
 warningInfo.style.display = "flex";
 warning.style.display="block";
 document.querySelector("#warningBox").append(warningInfo);
+hero.classList.add("is-warning-active");
 } 
 
    
@@ -29,11 +33,13 @@ if (currentWeatherObject.windspeed > 20 && currentWeatherObject.windspeed < 27){
     warningInfo.style.display = "flex";
     warning.style.display="block";
     document.querySelector("#warningBox").append(warningInfo);
+    hero.classList.add("is-warning-active");
 } else if (currentWeatherObject.windspeed > 27 && currentWeatherObject.windspeed < 40){ 
     warningWind ="Varning för storm"; 
     warningInfo.style.display = "flex";
     warning.style.display="block";
     document.querySelector("#warningBox").append(warningInfo);
+    hero.classList.add("is-warning-active");
 }
 
 
