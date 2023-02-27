@@ -308,6 +308,7 @@ body {
 
 .toggleDiv {
   position: relative;
+  height: 53px;
 }
 
 .toggleElement {
@@ -320,9 +321,8 @@ body {
   background-color: #d8eff3;
   border-radius: 50px;
   width: 106px;
-  height: 53px;
+  height: 100%;
   position: relative;
-  padding: 4px;
 }
 .toggleElement label {
   display: flex;
@@ -340,19 +340,19 @@ body {
      -moz-appearance: none;
           appearance: none;
   background-color: #ffcb44;
-  width: 53px;
-  height: 53px;
+  width: 46px;
+  height: 46px;
   top: 50%;
   transform: translate(0, -50%);
   padding: 8px;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 100px;
-  margin-left: 6px;
-  margin-right: 6px;
+  margin-left: 4px;
+  margin-right: 4px;
   transition: all 200ms ease-in-out;
 }
 .check:checked {
-  transform: translate(calc(100% - 4px), -50%);
+  transform: translate(calc(100% + 6px), -50%);
   transition: all 200ms ease-in-out;
 }
 
