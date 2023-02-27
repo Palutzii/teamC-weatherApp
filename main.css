@@ -317,7 +317,7 @@ body {
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-  background-color: #D8EFF3;
+  background-color: #d8eff3;
   border-radius: 50px;
   width: 106px;
   height: 53px;
@@ -326,7 +326,7 @@ body {
 }
 .toggleElement label {
   display: flex;
-  color: #0F4A57;
+  color: #0f4a57;
   z-index: 1;
   width: 53px;
   height: 53px;
@@ -339,7 +339,7 @@ body {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: #FFCB44;
+  background-color: #ffcb44;
   width: 53px;
   height: 53px;
   top: 50%;
@@ -354,6 +354,10 @@ body {
 .check:checked {
   transform: translate(calc(100% - 4px), -50%);
   transition: all 200ms ease-in-out;
+}
+
+.hideF {
+  display: none;
 }
 
 .hero {
