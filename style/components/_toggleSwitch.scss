@@ -72,6 +72,12 @@
 .toggleDiv {
   position: relative;
   height: 53px;
+  user-select: none;
+
+  @include devices(desktop) {
+    order: 3;
+    margin-right: 16px;
+  }
 
   &.is-covered {
     display: none;
@@ -119,11 +125,15 @@
   border-radius: 100px;
   margin-left: 4px;
   margin-right: 4px;
+
   transition: all 200ms ease-in-out;
 
   &:checked {
     transform: translate(calc(100% - (-6px)), -50%);
     transition: all 200ms ease-in-out;
+  }
+
+  &:hover {
   }
 }
 
