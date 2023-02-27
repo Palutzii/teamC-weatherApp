@@ -72,6 +72,10 @@
 .toggleDiv {
   position: relative;
   height: 53px;
+
+  &.is-covered {
+    display: none;
+  }
 }
 
 .toggleElement {

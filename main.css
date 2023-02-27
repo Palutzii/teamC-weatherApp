@@ -310,6 +310,9 @@ body {
   position: relative;
   height: 53px;
 }
+.toggleDiv.is-covered {
+  display: none;
+}
 
 .toggleElement {
   display: flex;
