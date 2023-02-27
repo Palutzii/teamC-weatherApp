@@ -66,7 +66,7 @@ export const runDailyElement = () => {
         dataArray[i].daily.weathercode < 87)
     ) {
       weathericon = snowflake;
-    } else if (currentHour.weathercode > 94) {
+    } else if (dataArray[i].daily.weathercode > 94) {
       weathericon = cloudBolt;
     }
     // Gives button content from dataArray
