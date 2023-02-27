@@ -137,4 +137,20 @@ export const runDailyElement = () => {
     timeInfo.style.display = "flex";
     warningInfo.style.display = "none";
   });
+
+  
+  let check = document.querySelector(".check");
+
+  if (check.checked) {
+    let hideC = document.querySelectorAll(".hideC");
+    let hideF = document.querySelectorAll(".hideF");
+
+    for (let i = 0; i < hideC.length; i++) {
+      hideC[i].style.display = "none";
+      hideF[i].style.display = "grid";
+    }
+
+  } 
+
+
 };
