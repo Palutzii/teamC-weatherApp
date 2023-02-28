@@ -33,7 +33,6 @@ async function main() {
   let latitude, longitude;
 
   myLocation(async function (position) {
-    if (position) {
       const coordinates = position.coords;
       latitude = coordinates.latitude;
       longitude = coordinates.longitude;
@@ -53,9 +52,6 @@ async function main() {
       runHeroElement();
       runWarningElement();
       runDailyElement();
-    } else {
-      console.log(position);
-    }
   });
 
   //loggar array
