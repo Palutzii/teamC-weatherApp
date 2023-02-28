@@ -33,25 +33,29 @@ async function main() {
   let latitude, longitude;
 
   myLocation(async function (position) {
-    const coordinates = position.coords;
-    latitude = coordinates.latitude;
-    longitude = coordinates.longitude;
-    deviceLat = latitude;
-    deviceLong = longitude;
-    // Test koordinater (ignorera) 52.51117679876553, 13.443010599083433
+    if (position) {
+      const coordinates = position.coords;
+      latitude = coordinates.latitude;
+      longitude = coordinates.longitude;
+      deviceLat = latitude;
+      deviceLong = longitude;
+      // Test koordinater (ignorera) 52.51117679876553, 13.443010599083433
 
-    await getWeather(latitude, longitude);
+      await getWeather(latitude, longitude);
 
-    console.log(dataArray);
-    console.log(currentWeatherObject);
+      console.log(dataArray);
+      console.log(currentWeatherObject);
 
-    // Kör loadingScreenOff och stänger loadingScreen när vi har hämtat data ------------------------------
+      // Kör loadingScreenOff och stänger loadingScreen när vi har hämtat data ------------------------------
 
-    loadingScreenOff();
+      loadingScreenOff();
 
-    runHeroElement();
-    runWarningElement();
-    runDailyElement();
+      runHeroElement();
+      runWarningElement();
+      runDailyElement();
+    } else {
+      console.log(position);
+    }
   });
 
   //loggar array
